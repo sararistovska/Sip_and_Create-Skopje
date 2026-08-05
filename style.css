@@ -1,0 +1,543 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#F5F3EF;
+    overflow-x:hidden;
+    transition:1s ease;
+    font-family:Arial,sans-serif;
+}
+
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100px;
+    padding:0 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:50;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:600;
+    color:#2b2520;
+    letter-spacing:1px;
+}
+
+.logo span{
+    display:block;
+    font-size:12px;
+    letter-spacing:6px;
+    color:#8a7768;
+    margin-top:5px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:35px;
+    list-style:none;
+    padding:18px 30px;
+    border-radius:50px;
+    background:rgba(250,247,242,.75);
+    backdrop-filter:blur(15px);
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#322b26;
+    font-size:15px;
+}
+
+.book-btn{
+    background:#2b2520;
+    color:white!important;
+    padding:14px 32px;
+    border-radius:40px;
+}
+
+
+
+/* ================= HERO ================= */
+
+.hero{
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.center{
+    position:absolute;
+    z-index:10;
+    text-align:center;
+}
+
+.center h1{
+    font-size:90px;
+    letter-spacing:-5px;
+    color:#2b2520;
+    overflow:hidden;
+}
+
+#changing-text{
+    display:inline-block;
+    transition:.8s;
+}
+
+.center p{
+    margin-top:40px;
+    font-size:21px;
+    line-height:1.6;
+    color:#8a7768;
+}
+
+
+
+/* ================= ORBIT ================= */
+
+.orbit-scale{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.orbit{
+    position:absolute;
+    width:1600px;
+    height:1600px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    animation:rotateOrbit 100s linear infinite;
+}
+
+@keyframes rotateOrbit{
+    from{
+        transform:translate(-50%,-50%) rotate(0);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+.card{
+    position:absolute;
+    width:270px;
+    height:380px;
+    border-radius:40px;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.25);
+    animation:keepStraight 100s linear infinite;
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+@keyframes keepStraight{
+    from{
+        rotate:0deg;
+    }
+
+    to{
+        rotate:-360deg;
+    }
+}
+
+
+.c1{
+    top:0;
+    left:665px;
+}
+
+.c2{
+    top:200px;
+    right:40px;
+}
+
+.c3{
+    top:650px;
+    right:-50px;
+}
+
+.c4{
+    bottom:200px;
+    right:40px;
+}
+
+.c5{
+    bottom:0;
+    left:665px;
+}
+
+.c6{
+    bottom:200px;
+    left:40px;
+}
+
+.c7{
+    top:650px;
+    left:-50px;
+}
+
+.c8{
+    top:200px;
+    left:40px;
+}
+
+
+
+/* ================= WINE ================= */
+
+.wine-button{
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+.wine-button img{
+    width:45px;
+    transition:.7s;
+}
+
+.wine-button.active img{
+    transform:rotate(-35deg);
+}
+
+.wine-overlay{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    background:linear-gradient(
+            180deg,
+            rgba(130,20,50,.95),
+            rgba(30,5,15,1)
+    );
+    clip-path:circle(0% at 50% 0%);
+    transition:clip-path 1.8s cubic-bezier(.77,0,.18,1);
+    pointer-events:none;
+}
+
+.wine-overlay.active{
+    clip-path:circle(150% at 50% 0%);
+}
+
+.wine-message{
+    position:fixed;
+    inset:0;
+    z-index:101;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transition:.5s;
+    pointer-events:none;
+}
+
+.wine-message.show{
+    opacity:1;
+}
+
+.wine-message span{
+    color:white;
+    font-size:35px;
+}
+
+
+
+/* ================= DARK MODE ================= */
+
+body.dark{
+    background:#151014;
+}
+
+body.dark .center h1,
+body.dark .logo{
+    color:white;
+}
+
+body.dark .center p{
+    color:#c8aaa0;
+}
+
+body.dark .nav-links{
+    background:rgba(30,20,25,.8);
+}
+
+body.dark .nav-links a{
+    color:white;
+}
+
+
+
+/* ================= STORY ================= */
+
+.story-section{
+    height:250vh;
+    background:#faf7f2;
+    position:relative;
+}
+
+.story-wrapper{
+    position:sticky;
+    top:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.story-content{
+    position:relative;
+    text-align:center;
+}
+
+.story-content h2{
+    font-size:45px;
+    letter-spacing:12px;
+    color:#8a7768;
+    margin-bottom:25px;
+}
+
+.story-content h1{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:25px;
+    font-size:95px;
+    letter-spacing:-5px;
+    color:#2b2520;
+}
+
+.story-image-space{
+    width:160px;
+    height:100px;
+}
+
+.story-image{
+    position:absolute;
+    width:160px;
+    height:100px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(-4deg);
+    overflow:hidden;
+    border-radius:18px;
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+}
+
+.story-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.fade-text{
+    transition:.2s;
+}
+
+.cheers-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:120px;
+    letter-spacing:15px;
+    color:white;
+    font-weight:700;
+    opacity:0;
+    z-index:20;
+}
+
+body.dark .story-section{
+    background:#151014;
+}
+
+body.dark .story-content h1{
+    color:white;
+}
+
+
+
+/* ================= TESTIMONIALS ================= */
+
+.testimonials-section{
+    padding:140px 70px;
+    background:#faf7f2;
+    text-align:center;
+}
+
+.tag{
+    font-size:14px;
+    letter-spacing:6px;
+    color:#8a7768;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.testimonials-section h3{
+    font-size:50px;
+    color:#2b2520;
+    margin-bottom:70px;
+}
+
+.testimonial-carousel{
+    max-width:1150px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.testimonial-track{
+    display:flex;
+    gap:25px;
+    transition:.6s ease;
+}
+
+.testimonial-card{
+    flex:0 0 calc(33.333% - 17px);
+    padding:45px 40px;
+    text-align:left;
+    background:rgba(255,255,255,.65);
+    backdrop-filter:blur(20px);
+    border-radius:35px;
+}
+
+.testimonial-stars{
+    color:#c8934f;
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+.testimonial-text{
+    font-size:17px;
+    line-height:1.6;
+    min-height:120px;
+    margin-bottom:30px;
+    color:#3a322c;
+}
+
+.testimonial-author{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.testimonial-avatar{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.testimonial-name{
+    font-weight:600;
+    color:#2b2520;
+}
+
+.testimonial-workshop{
+    font-size:13px;
+    color:#8a7768;
+}
+
+.testimonial-controls{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    margin-top:40px;
+}
+
+.testimonial-arrow{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:none;
+    background:#2b2520;
+    color:white;
+    cursor:pointer;
+    font-size:25px;
+}
+
+.testimonial-dots{
+    display:flex;
+    gap:10px;
+}
+
+.testimonial-dot{
+    width:8px;
+    height:8px;
+    background:#d8cfc4;
+    border-radius:50%;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.testimonial-dot.active{
+    width:25px;
+    border-radius:10px;
+    background:#2b2520;
+}
+
+
+@media(max-width:1300px){
+
+    .testimonial-card{
+        flex:0 0 calc(50% - 12.5px);
+    }
+
+}
+
+
+@media(max-width:900px){
+
+    .testimonial-card{
+        flex:0 0 100%;
+    }
+
+}
+
+
+body.dark .testimonials-section{
+    background:#151014;
+}
+
+body.dark .testimonials-section h3{
+    color:white;
+}
+
+body.dark .testimonial-card{
+    background:rgba(255,255,255,.08);
+}
+
+body.dark .testimonial-text{
+    color:#eee;
+}
+
+body.dark .testimonial-name{
+    color:white;
+}
+
+body.dark .testimonial-arrow{
+    background:white;
+    color:#151014;
+}
