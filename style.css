@@ -541,3 +541,929 @@ body.dark .testimonial-arrow{
     background:white;
     color:#151014;
 }
+
+
+
+
+/*******FAQ********/
+
+.faq-section {
+    min-height: 100vh;
+    padding: 18px 30px 60px;
+    background: #faf7f2;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.small-title {
+    font-size:14px;
+    letter-spacing:6px;
+    color:#8a7768;
+    text-transform:uppercase;
+    margin-bottom: 17px;
+}
+
+.faq-title {
+    font-size:50px;
+    color:#2b2520;
+    line-height: 1.1;
+    font-weight: bold;
+
+}
+
+.faq-description {
+    color: #706b66;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.faq-cards {
+    max-width: 1166px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.faq-card {
+    height: 220px;
+    perspective: 1000px;
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+@media (hover: hover) {
+    .faq-card:hover {
+        transform: scale(1.02);
+    }
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 30px;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    box-shadow: 0 18px 28px rgba(85, 68, 49, 0.08);
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    transition: box-shadow 0.3s ease;
+}
+
+
+@media (hover: hover) {
+    .faq-card:hover .card-front,
+    .faq-card:hover .card-back {
+        box-shadow: 0 22px 38px rgba(85, 68, 49, 0.16);
+    }
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.faq-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front {
+    background-color: #ffffff;
+    transform: translateZ(0);
+
+}
+
+.card-back {
+    /*
+    background: #817365;
+    */
+    /*background-color: #d8cfc4;*/
+    background: #958378;
+
+    /*transform: rotateY(180deg);*/
+    transform: rotateY(180deg) translateZ(0);
+
+}
+
+.card-question {
+    font-size: 17px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.tap-text {
+    color: #92908d;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.card-answer {
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 1.65;
+    letter-spacing: 0.3px;
+    color: white;
+}
+
+/* phone */
+@media screen and (max-width: 600px) {
+    .faq-section {
+        padding: 25px 18px 45px;
+    }
+
+    .faq-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-title {
+        font-size: 32px;
+    }
+
+    .faq-card {
+        height: 210px;
+    }
+
+    .faq-header {
+        margin-bottom: 30px;
+    }
+}
+
+/* ==================================
+   FOOTER
+================================== */
+
+.site-footer {
+    width: 100%;
+
+    background-color: #2b2520;
+    color: #f5f1ed;
+    font-family: Georgia, Times, serif;
+}
+
+
+/* ==================================
+   ПОДВИЖНА ЛЕНТА
+================================== */
+
+.moving-bar {
+    width: 100%;
+    overflow: hidden;
+
+    padding: 7px 0;
+
+    background-color: #f8f5f0;
+    color: #2b2520;
+
+    white-space: nowrap;
+}
+
+.moving-content {
+    display: flex;
+    width: max-content;
+
+    animation: move-bar-right 25s linear infinite;
+}
+
+.moving-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.moving-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-right: 25px;
+
+    font-size: 22px;
+    letter-spacing: 3px;
+
+}
+
+.moving-star {
+    font-size: 30px;
+    line-height: 1;
+}
+
+@keyframes move-bar-right {
+
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+.moving-bar:hover .moving-content {
+    animation-play-state: paused;
+}
+
+
+/* ==================================
+   ГЛАВЕН ДЕЛ
+================================== */
+
+.footer-main {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    padding: 38px 40px 14px;
+
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.2fr;
+    gap: 50px;
+
+    align-items: start;
+}
+
+
+/* ==================================
+   QUICK LINKS
+================================== */
+
+.footer-heading {
+    /*margin: 20px 0 25px 150px;*/
+
+    margin-top: 26px;
+    margin-bottom: 25px;
+    text-align: center;
+
+    font-weight: normal;
+    font-size: 20px;
+    /*letter-spacing:6px;*/
+    color: #c6c4c4;
+    text-transform:uppercase;
+}
+
+.footer-links-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* хоризонтално центрирање */
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* линковите се центрирани */
+    gap: 22px;
+}
+
+
+.footer-links a {
+    color: #c6c4c4;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+
+    transition:
+            color 0.25s ease,
+            transform 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: #c58994;
+    transform: translateX(5px);
+}
+
+
+/* ==================================
+   ЛОГО
+================================== */
+
+.footer-logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.footer-logo-link {
+    display: inline-block;
+}
+
+.footer-logo {
+    display: block;
+
+    width: 380px;
+    max-width: 100%;
+    height: 300px;
+
+    object-fit: contain;
+}
+
+.footer-logo-text {
+    margin: 5px 0 0;
+
+    color: #c58994;
+
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+
+/* ==================================
+   NEWSLETTER
+================================== */
+
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    color: #c6c4c4;
+}
+
+.newsletter-title {
+    margin: 20px 0 25px 0;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform:uppercase;
+
+}
+
+.newsletter-description {
+    max-width: 360px;
+
+    margin: 0 0 20px 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.newsletter-form {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 12px 14px;
+
+    border: 1px solid transparent;
+    border-radius: 25px;
+    outline: none;
+
+    background-color: #3d3d3d;
+    color: #ffffff;
+}
+
+.newsletter-form input::placeholder {
+    color: #b5b2b1;
+}
+
+.newsletter-form input:focus {
+    border-color: #d68ab0;
+}
+
+.newsletter-form button {
+    min-width: 84px;
+
+    padding: 11px 20px;
+
+    border: none;
+    border-radius: 25px;
+
+    background-color: #c58994;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-family: Georgia, Times, serif;
+
+    cursor: pointer;
+
+    transition:
+            background-color 0.25s ease,
+            transform 0.25s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #e3a6c3;
+    transform: translateY(-2px);
+}
+
+.newsletter-form button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+}
+
+
+/* Порака од newsletter формата */
+
+.newsletter-message {
+    min-height: 22px;
+
+    margin: 8px 0 0;
+
+    font-size: 13px;
+}
+
+.newsletter-message.success {
+    color: #efbad2;
+}
+
+.newsletter-message.error {
+    color: #ffb0b0;
+}
+
+/* ==================================
+   СОЦИЈАЛНИ МЕДИУМИ
+================================== */
+
+.social-links {
+    /*margin-top: 10px;*/
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    gap: 10px;
+}
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #c38893;
+    font-size: 20px;
+    text-decoration: none;
+
+    transition:
+            color 0.25s ease,
+            transform 0.25s ease;
+}
+
+.social-link:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* ==================================
+   PHONE TOOLTIP
+================================== */
+
+.phone-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.phone-tooltip {
+    position: absolute;
+
+    right: 0;
+    bottom: 34px;
+
+    width: max-content;
+
+    padding: 7px 10px;
+
+    border-radius: 6px;
+
+    background-color: #2f2f2f;
+    color: #ffffff;
+
+    font-size: 12px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(5px);
+
+    transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+
+    pointer-events: none;
+}
+
+/* Мал триаголник под tooltip */
+
+.phone-tooltip::after {
+    content: "";
+
+    position: absolute;
+
+    top: 100%;
+    right: 6px;
+
+    border-width: 5px;
+    border-style: solid;
+    border-color: #2f2f2f transparent transparent transparent;
+}
+
+.phone-wrapper:hover .phone-tooltip {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* ==================================
+   ДОЛЕН ДЕЛ
+================================== */
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    padding: 10px 5px;
+
+    border-top: 1px solid #999999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #c6c6c6;
+    font-size: 13px;
+}
+
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.footer-legal-links a,
+.footer-legal-links button {
+    color: #d1cbd0;
+
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.footer-legal-links button {
+    padding: 0;
+
+    border: none;
+    background: none;
+
+    cursor: pointer;
+    font-family: Georgia, Times, serif;
+
+}
+
+.footer-legal-links a:hover,
+.footer-legal-links button:hover {
+    color: #c58994;
+}
+
+
+/* ==================================
+   СКРИЕН LABEL
+================================== */
+
+.visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* ==================================
+   TABLET
+================================== */
+
+@media screen and (max-width: 950px) {
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-logo-section {
+        grid-column: 1 / 3;
+        grid-row: 1;
+
+        order: -1;
+    }
+
+    .footer-links-section {
+        grid-column: 1;
+    }
+
+    .footer-newsletter {
+        grid-column: 2;
+    }
+
+    .footer-logo {
+        width: 280px;
+        height: 190px;
+    }
+
+    .footer-logo-text {
+        font-size: 25px;
+    }
+
+    .social-links {
+        padding-top: 35px;
+    }
+
+}
+
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media screen and (max-width: 600px) {
+
+    .moving-item {
+        margin-right: 20px;
+        font-size: 23px;
+    }
+
+    .moving-star {
+        font-size: 29px;
+    }
+
+    .footer-main {
+        padding: 35px 20px 25px;
+
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .footer-logo-section,
+    .footer-links-section,
+    .footer-newsletter {
+        grid-column: 1;
+    }
+
+    .footer-logo-section {
+        grid-row: auto;
+    }
+
+    .footer-logo {
+        width: 240px;
+        height: 170px;
+    }
+
+    .footer-logo-text {
+        font-size: 22px;
+    }
+
+    .footer-links-section {
+        text-align: center;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .newsletter-title,
+    .newsletter-description {
+        text-align: center;
+    }
+
+    .newsletter-description {
+        max-width: none;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+        padding-top: 25px;
+    }
+
+    .footer-bottom {
+        padding: 20px;
+
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .footer-legal-links {
+        justify-content: center;
+    }
+
+}
+
+
+/* ==================================
+   НАМАЛЕНИ АНИМАЦИИ
+================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .moving-content {
+        animation: none;
+    }
+
+    .footer-links a,
+    .newsletter-form button,
+    .social-link,
+    .phone-tooltip {
+        transition: none;
+    }
+
+}
+
+/* ==================================
+   FAQ - DARK MODE
+================================== */
+
+body.dark .faq-section {
+    background-color: #151014;
+}
+
+body.dark .faq-title {
+    color: #f5f1ed;
+}
+
+body.dark .faq-description {
+    color: #b8aba0;
+}
+
+body.dark .card-front {
+    background-color: #272326;
+    color: #f5f1ed;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+body.dark .card-question {
+    color: #f5f1ed;
+}
+
+body.dark .tap-text {
+    color: #b8aba0;
+}
+
+body.dark .card-back {
+    /*background: linear-gradient(135deg, #3a2c33, #24342f);*/
+    background: #615f5f;
+    color: #f5f1ed;
+}
+
+body.dark .faq-card:hover .card-front,
+body.dark .faq-card:hover .card-back {
+    box-shadow: 0 16px 35px rgba(0,0,0,0.5);
+}
+
+
+/* ==================================
+   FOOTER - DARK MODE
+================================== */
+
+body.dark .site-footer {
+    background-color: #181311;
+    color: #f5f1ed;
+}
+
+/* Горна подвижна лента */
+body.dark .moving-bar {
+    background-color: #151014;
+    color: #a5978f;
+}
+
+/* Главен footer дел */
+body.dark .footer-main {
+    background-color: #181311;
+}
+
+/* Наслови */
+body.dark .footer-heading,
+body.dark .newsletter-title {
+    color: #f5f1ed;
+}
+
+/* Линкови */
+body.dark .footer-links a,
+body.dark .footer-legal-links a,
+body.dark .footer-legal-links button {
+    color: #e7ddd4;
+}
+
+body.dark .footer-links a:hover,
+body.dark .footer-legal-links a:hover,
+body.dark .footer-legal-links button:hover {
+    color: #e0a9c0;
+}
+
+/* Newsletter текст */
+body.dark .newsletter-description {
+    color: #d8cfc5;
+}
+
+/* Поле за email */
+body.dark .newsletter-form input {
+    background-color: #2a2420;
+    border-color: #3a312c;
+    color: #ffffff;
+}
+
+body.dark .newsletter-form input::placeholder {
+    color: #b8aba0;
+}
+
+/* Join копче */
+body.dark .newsletter-form button {
+    background-color: #c58aa6;
+    color: #ffffff;
+}
+
+body.dark .newsletter-form button:hover {
+    background-color: #d89bb6;
+}
+
+/* Социјални икони */
+body.dark .social-link {
+    color: #d89bb6;
+}
+
+body.dark .social-link:hover {
+    color: #ffffff;
+}
+
+/* Tooltip за телефон */
+body.dark .phone-tooltip {
+    background-color: #2a2420;
+    color: #ffffff;
+}
+
+body.dark .phone-tooltip::after {
+    border-color: #2a2420 transparent transparent transparent;
+}
+
+/* Долен дел */
+body.dark .footer-bottom {
+    border-top-color: #3a312c;
+}
+
+body.dark .footer-bottom p {
+    color: #b8aba0;
+}
