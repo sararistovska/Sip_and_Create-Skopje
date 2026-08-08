@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F5F3EF;
+    color:#2b2520;
+    font-family:"DM Sans", Arial, sans-serif;
+    overflow-x:hidden;
+    transition:
+            background 1s ease,
+            color 1s ease;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    display:block;
+}
+
+
+
+/* =========================================================
+   NAVBAR (shared across all pages)
+========================================================= */
+
+.navbar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100px;
+    padding:0 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:150;
+}
+
+.logo{
+    display:inline-block;
+    font-size:28px;
+    font-weight:600;
+    color:#2b2520;
+    letter-spacing:1px;
+    transition:color .7s ease;
+}
+
+.logo span{
+    display:block;
+    margin-top:5px;
+    font-size:12px;
+    letter-spacing:6px;
+    color:#8a7768;
+    transition:color .7s ease;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:35px;
+    list-style:none;
+    padding:18px 30px;
+    border-radius:50px;
+    background:rgba(250,247,242,.75);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.35);
+    transition:
+            background .7s ease,
+            border .7s ease;
+}
+
+.nav-links a{
+    position:relative;
+    color:#322b26;
+    font-size:15px;
+    transition:color .5s ease;
+}
+
+.nav-links li:not(:last-child) a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:1px;
+    background:currentColor;
+    transition:width .3s ease;
+}
+
+.nav-links li:not(:last-child) a:hover::after{
+    width:100%;
+}
+
+.nav-links li.current a::after{
+    width:100%;
+}
+
+.book-btn{
+    display:inline-block;
+    background:#2b2520;
+    color:white!important;
+    padding:14px 32px;
+    border-radius:40px;
+    transition:
+            transform .3s ease,
+            background .4s ease;
+}
+
+.book-btn:hover{
+    transform:translateY(-2px);
+    background:#8f5965;
+}
+
+
+
+/* =========================================================
+   WINE BUTTON / DARK MODE TOGGLE (shared)
+========================================================= */
+
+.wine-button{
+    border:none;
+    background:none;
+    cursor:pointer;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.wine-button img{
+    width:45px;
+    transform-origin:bottom center;
+    transition:transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.wine-button:hover img{
+    transform:rotate(-8deg) translateY(-3px);
+}
+
+.wine-button.active img{
+    transform:rotate(-35deg);
+}
+
+.wine-overlay{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    pointer-events:none;
+    background:linear-gradient(
+            180deg,
+            rgba(130,20,50,.96),
+            rgba(30,5,15,1)
+    );
+    clip-path:circle(0% at 50% 0%);
+    transition:clip-path 1.8s cubic-bezier(.77,0,.18,1);
+}
+
+.wine-overlay.active{
+    clip-path:circle(150% at 50% 0%);
+}
+
+.wine-message{
+    position:fixed;
+    inset:0;
+    z-index:101;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transition:.5s;
+    pointer-events:none;
+}
+
+.wine-message.show{
+    opacity:1;
+}
+
+.wine-message span{
+    color:white;
+    font-family:"Playfair Display", serif;
+    font-size:35px;
+}
+
+
+
+/* =========================================================
+   DARK MODE — shared
+========================================================= */
+
+body.dark{
+    background:#121012;
+    color:#f5eee9;
+}
+
+body.dark .logo{
+    color:#fff;
+}
+
+body.dark .logo span{
+    color:#bd939d;
+}
+
+body.dark .nav-links{
+    background:rgba(28,22,26,.82);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 10px 35px rgba(0,0,0,.2);
+}
+
+body.dark .nav-links a{
+    color:#f7f1ed;
+}
+
+body.dark .book-btn{
+    background:#f5eee9;
+    color:#29231f!important;
+}
+
+body.dark .book-btn:hover{
+    background:#d3a4ad;
+}
+
+
+
+/* =========================================================
+   HOME — HERO
+========================================================= */
+
+.hero{
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.center{
+    position:absolute;
+    z-index:10;
+    text-align:center;
+}
+
+.center h1{
+    font-family:"Playfair Display", serif;
+    font-weight:400;
+    font-size:90px;
+    letter-spacing:-5px;
+    color:#2b2520;
+    overflow:hidden;
+    transition:color .7s ease;
+}
+
+#changing-text{
+    display:inline-block;
+    transition:.8s;
+}
+
+.center p{
+    margin-top:40px;
+    font-size:21px;
+    line-height:1.6;
+    color:#8a7768;
+    transition:color .7s ease;
+}
+
+body.dark .center h1{
+    color:white;
+}
+
+body.dark .center p{
+    color:#c8aaa0;
+}
+
+
+
+/* =========================================================
+   HOME — ORBIT
+========================================================= */
+
+.orbit-scale{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.orbit{
+    position:absolute;
+    width:1600px;
+    height:1600px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    animation:rotateOrbit 100s linear infinite;
+}
+
+@keyframes rotateOrbit{
+    from{ transform:translate(-50%,-50%) rotate(0); }
+    to{ transform:translate(-50%,-50%) rotate(360deg); }
+}
+
+.card{
+    position:absolute;
+    width:270px;
+    height:380px;
+    border-radius:40px;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.25);
+    animation:keepStraight 100s linear infinite;
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+@keyframes keepStraight{
+    from{ rotate:0deg; }
+    to{ rotate:-360deg; }
+}
+
+.c1{ top:0; left:665px; }
+.c2{ top:200px; right:40px; }
+.c3{ top:650px; right:-50px; }
+.c4{ bottom:200px; right:40px; }
+.c5{ bottom:0; left:665px; }
+.c6{ bottom:200px; left:40px; }
+.c7{ top:650px; left:-50px; }
+.c8{ top:200px; left:40px; }
+
+
+
+/* =========================================================
+   HOME — STORY
+========================================================= */
+
+.story-section{
+    height:250vh;
+    background:#faf7f2;
+    position:relative;
+    transition:background .8s ease;
+}
+
+.story-wrapper{
+    position:sticky;
+    top:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.story-content{
+    position:relative;
+    text-align:center;
+}
+
+.story-content h2{
+    font-family:"Playfair Display", serif;
+    font-weight:400;
+    font-size:45px;
+    letter-spacing:12px;
+    color:#8a7768;
+    margin-bottom:25px;
+}
+
+.story-content h1{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:25px;
+    font-family:"Playfair Display", serif;
+    font-weight:400;
+    font-size:95px;
+    letter-spacing:-5px;
+    color:#2b2520;
+    transition:color .7s ease;
+}
+
+.story-image-space{
+    width:160px;
+    height:100px;
+}
+
+.story-image{
+    position:absolute;
+    width:160px;
+    height:100px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(-4deg);
+    overflow:hidden;
+    border-radius:18px;
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+}
+
+.story-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.fade-text{
+    transition:.2s;
+}
+
+.cheers-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-family:"Playfair Display", serif;
+    font-size:120px;
+    letter-spacing:15px;
+    color:white;
+    font-weight:700;
+    opacity:0;
+    z-index:20;
+}
+
+body.dark .story-section{
+    background:#151014;
+}
+
+body.dark .story-content h1{
+    color:white;
+}
+
+
+
+/* =========================================================
+   HOME — TESTIMONIALS
+========================================================= */
+
+.testimonials-section{
+    padding:140px 70px;
+    background:#faf7f2;
+    text-align:center;
+    transition:background .8s ease;
+}
+
+.tag{
+    font-size:14px;
+    letter-spacing:6px;
+    color:#8a7768;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.testimonials-section h3{
+    font-family:"Playfair Display", serif;
+    font-weight:400;
+    font-size:50px;
+    color:#2b2520;
+    margin-bottom:70px;
+    transition:color .7s ease;
+}
+
+.testimonial-carousel{
+    max-width:1150px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.testimonial-track{
+    display:flex;
+    gap:25px;
+    transition:.6s ease;
+}
+
+.testimonial-card{
+    flex:0 0 calc(33.333% - 17px);
+    padding:45px 40px;
+    text-align:left;
+    background:rgba(255,255,255,.65);
+    backdrop-filter:blur(20px);
+    border-radius:35px;
+}
+
+.testimonial-stars{
+    color:#c8934f;
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+.testimonial-text{
+    font-size:17px;
+    line-height:1.6;
+    min-height:120px;
+    margin-bottom:30px;
+    color:#3a322c;
+}
+
+.testimonial-author{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.testimonial-avatar{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.testimonial-name{
+    font-weight:600;
+    color:#2b2520;
+}
+
+.testimonial-workshop{
+    font-size:13px;
+    color:#8a7768;
+}
+
+.testimonial-controls{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    margin-top:40px;
+}
+
+.testimonial-arrow{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:none;
+    background:#2b2520;
+    color:white;
+    cursor:pointer;
+    font-size:25px;
+}
+
+.testimonial-dots{
+    display:flex;
+    gap:10px;
+}
+
+.testimonial-dot{
+    width:8px;
+    height:8px;
+    background:#d8cfc4;
+    border-radius:50%;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.testimonial-dot.active{
+    width:25px;
+    border-radius:10px;
+    background:#2b2520;
+}
+
+body.dark .testimonials-section{
+    background:#151014;
+}
+
+body.dark .testimonials-section h3{
+    color:white;
+}
+
+body.dark .testimonial-card{
+    background:rgba(255,255,255,.08);
+}
+
+body.dark .testimonial-text{
+    color:#eee;
+}
+
+body.dark .testimonial-name{
+    color:white;
+}
+
+body.dark .testimonial-arrow{
+    background:white;
+    color:#151014;
+}
+
+
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes heroReveal{
+    from{ opacity:0; transform:translateY(35px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+@keyframes scrollLine{
+    0%{ top:-100%; }
+    50%{ top:0; }
+    100%{ top:100%; }
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:1300px){
+
+    .testimonial-card{
+        flex:0 0 calc(50% - 12.5px);
+    }
+
+}
+
+
+@media(max-width:900px){
+
+    .navbar{
+        padding:0 25px;
+    }
+
+    .nav-links{
+        gap:18px;
+        padding:15px 20px;
+    }
+
+    .nav-links li:not(:last-child){
+        display:none;
+    }
+
+    .testimonial-card{
+        flex:0 0 100%;
+    }
+
+
+
+}
+
+
+@media(max-width:650px){
+
+    .navbar{
+        height:80px;
+        padding:0 18px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .logo span{
+        font-size:8px;
+        letter-spacing:4px;
+    }
+
+    .book-btn{
+        padding:11px 18px;
+    }
+
+    .wine-button img{
+        width:36px;
+    }
+
+    .intro{
+        min-height:80vh;
+        padding:120px 20px 70px;
+    }
+
+    .intro h1{
+        font-size:clamp(58px,18vw,100px);
+        letter-spacing:-4px;
+    }
+
+    .intro p{
+        font-size:13px;
+    }
+
+
+
+    .footer-placeholder{
+        height:140px;
+    }
+
+
+
+}
+
