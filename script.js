@@ -1,49 +1,6 @@
-/* ================= TEXT CHANGE ================= */
-
-const phrases = [
-    "Craft.",
-    "Connect.",
-    "Sip.",
-    "Create.",
-    "Paint.",
-    "Repeat!"
-];
-
-let current = 0;
-
-const title = document.getElementById("changing-text");
-
-
-setInterval(()=>{
-
-    title.style.opacity = "0";
-    title.style.transform = "translateY(35px)";
-
-
-    setTimeout(()=>{
-
-        current++;
-
-        if(current >= phrases.length){
-            current = 0;
-        }
-
-
-        title.textContent = phrases[current];
-
-
-        title.style.opacity = "1";
-        title.style.transform = "translateY(0)";
-
-
-    },800);
-
-
-},3000);
-
-
-
-/* ================= WINE DARK MODE ================= */
+/* =========================================================
+   WINE BUTTON / DARK MODE TOGGLE (shared across all pages)
+========================================================= */
 
 const wineButton = document.getElementById("wineButton");
 const wineOverlay = document.querySelector(".wine-overlay");
@@ -51,590 +8,477 @@ const wineMessage = document.getElementById("wineMessage");
 const wineMessageText = document.getElementById("wineMessageText");
 
 
-wineButton.addEventListener("click",()=>{
+if(wineButton && wineOverlay){
+
+    wineButton.addEventListener("click", function(e){
+
+        e.preventDefault();
 
 
-    const dark =
-        !document.body.classList.contains("dark");
+        const dark =
+            !document.body.classList.contains("dark");
 
 
-    wineMessageText.textContent =
-        dark
-            ?
-            "Oops, you spilled the wine! Dark mode unlocked."
-            :
-            "All cleaned up! Back to daylight.";
+        if(wineMessage && wineMessageText){
+
+            wineMessageText.textContent =
+                dark
+                    ? "Oops, you spilled the wine! Dark mode unlocked."
+                    : "All cleaned up! Back to daylight.";
+
+        }
 
 
+        wineButton.classList.add("active");
 
-    wineButton.classList.add("active");
-
-    wineOverlay.classList.add("active");
-
+        wineOverlay.classList.add("active");
 
 
-    setTimeout(()=>{
+        if(wineMessage){
 
-        wineMessage.classList.add("show");
-
-    },400);
-
-
-
-    setTimeout(()=>{
-
-        wineMessage.classList.remove("show");
-
-    },2200);
+            setTimeout(function(){
+                wineMessage.classList.add("show");
+            },400);
 
 
+            setTimeout(function(){
+                wineMessage.classList.remove("show");
+            },2200);
+
+        }
 
 
-    setTimeout(()=>{
+        setTimeout(function(){
 
-        document.body.classList.toggle("dark");
+            document.body.classList.toggle("dark");
 
-    },1200);
-
-
+        }, wineMessage ? 1200 : 900);
 
 
-    setTimeout(()=>{
+        setTimeout(function(){
 
-        wineOverlay.classList.remove("active");
+            wineOverlay.classList.remove("active");
 
-        wineButton.classList.remove("active");
+            wineButton.classList.remove("active");
 
-    },2800);
+        }, wineMessage ? 2800 : 1800);
 
+    });
 
-});
+}
 
 
 
-/* ================= ORBIT RESPONSIVE ================= */
+
+
+/* =========================================================
+   HOME —  HERO TEXT
+========================================================= */
+
+const changingText =
+    document.getElementById("changing-text");
+
+
+if(changingText){
+
+    const phrases = [
+        "Craft.",
+        "Connect.",
+        "Sip.",
+        "Create.",
+        "Paint.",
+        "Repeat!"
+    ];
+
+    let current = 0;
+
+
+    setInterval(()=>{
+
+        changingText.style.opacity = "0";
+        changingText.style.transform = "translateY(35px)";
+
+
+        setTimeout(()=>{
+
+            current++;
+
+            if(current >= phrases.length){
+                current = 0;
+            }
+
+            changingText.textContent = phrases[current];
+
+            changingText.style.opacity = "1";
+            changingText.style.transform = "translateY(0)";
+
+        },800);
+
+    },3000);
+
+}
+
+
+
+
+
+/* =========================================================
+   HOME — ORBIT RESPONSIVE SCALE
+========================================================= */
 
 const orbitScale =
     document.querySelector(".orbit-scale");
 
 
-function updateOrbit(){
+if(orbitScale){
 
+    function updateOrbit(){
 
-    const size =
-        Math.min(
-            window.innerWidth,
-            window.innerHeight
-        );
+        const size =
+            Math.min(
+                window.innerWidth,
+                window.innerHeight
+            );
 
+        let scale =
+            (size * 1.15) / 1600;
 
-    let scale =
-        (size * 1.15) / 1600;
+        if(scale > 1){
+            scale = 1;
+        }
 
+        orbitScale.style.transform =
+            `scale(${scale})`;
 
-    if(scale > 1){
-        scale = 1;
     }
 
+    updateOrbit();
 
-    orbitScale.style.transform =
-        `scale(${scale})`;
+    window.addEventListener("resize", updateOrbit);
 
 }
 
 
-updateOrbit();
-
-
-window.addEventListener(
-    "resize",
-    updateOrbit
-);
-
-
-
-
-
-/* ================= STORY IMAGE ZOOM ================= */
-
+/* =========================================================
+   HOME — STORY IMAGE ZOOM ON SCROLL
+========================================================= */
 
 const storySection =
     document.querySelector(".story-section");
 
 
-const storyImage =
-    document.querySelector(".story-image");
+if(storySection){
+
+    const storyImage =
+        document.querySelector(".story-image");
+
+    const fadeTexts =
+        document.querySelectorAll(".fade-text");
+
+    const cheers =
+        document.querySelector(".cheers-text");
 
 
-const fadeTexts =
-    document.querySelectorAll(".fade-text");
+    window.addEventListener("scroll",()=>{
+
+        const section =
+            storySection.getBoundingClientRect();
+
+        let progress =
+            -section.top /
+            (storySection.offsetHeight -
+                window.innerHeight);
+
+        progress =
+            Math.max(0, Math.min(1, progress));
+
+        const width =
+            160 + progress * (window.innerWidth - 160);
+
+        const height =
+            100 + progress * (window.innerHeight - 100);
+
+        storyImage.style.width = width+"px";
+        storyImage.style.height = height+"px";
+
+        storyImage.style.borderRadius =
+            (18 - progress*18)+"px";
+
+        storyImage.style.transform =
+            `
+            translate(-50%,-50%)
+            rotate(${-4 + progress*4}deg)
+            `;
+
+        fadeTexts.forEach(text=>{
+            text.style.opacity = 1-progress;
+        });
+
+        if(progress > .75){
+            cheers.style.opacity = (progress-.75)/.25;
+        }
+        else{
+            cheers.style.opacity = 0;
+        }
+
+    });
+
+}
 
 
-const cheers =
-    document.querySelector(".cheers-text");
 
 
 
+/* =========================================================
+   HOME — TESTIMONIAL CAROUSEL
+========================================================= */
 
-window.addEventListener("scroll",()=>{
-
-
-    if(!storySection) return;
-
-
-
-    const section =
-        storySection.getBoundingClientRect();
+const testimonialTrack =
+    document.getElementById("testimonialTrack");
 
 
+if(testimonialTrack) {
 
-    let progress =
-        -section.top /
-        (storySection.offsetHeight -
-            window.innerHeight);
+    const testimonialCards =
+        document.querySelectorAll(".testimonial-card");
+
+    const testimonialDots =
+        document.getElementById("testimonialDots");
+
+    const testimonialPrev =
+        document.getElementById("testimonialPrev");
+
+    const testimonialNext =
+        document.getElementById("testimonialNext");
 
 
+    let testimonialIndex = 0;
 
-    progress =
-        Math.max(
+
+    function visibleTestimonials() {
+
+        if (window.innerWidth <= 900) {
+            return 1;
+        }
+
+        if (window.innerWidth <= 1300) {
+            return 2;
+        }
+
+        return 3;
+
+    }
+
+
+    function maxTestimonials() {
+
+        return Math.max(
             0,
-            Math.min(
-                1,
-                progress
-            )
+            testimonialCards.length -
+            visibleTestimonials()
         );
 
+    }
 
 
-    const width =
-        160 +
-        progress *
-        (window.innerWidth - 160);
+    function createDots() {
+
+        testimonialDots.innerHTML = "";
+
+        for (let i = 0; i <= maxTestimonials(); i++) {
+
+            const dot =
+                document.createElement("div");
+
+            dot.className = "testimonial-dot";
+
+            if (i === testimonialIndex) {
+                dot.classList.add("active");
+            }
+
+            dot.onclick = () => {
+                moveTestimonials(i);
+            };
+
+            testimonialDots.appendChild(dot);
+
+        }
+
+    }
 
 
+    function moveTestimonials(position) {
 
-    const height =
-        100 +
-        progress *
-        (window.innerHeight - 100);
+        testimonialIndex =
+            Math.max(
+                0,
+                Math.min(
+                    position,
+                    maxTestimonials()
+                )
+            );
+
+        const cardWidth =
+            testimonialCards[0].offsetWidth;
+
+        testimonialTrack.style.transform =
+            `translateX(-${
+                testimonialIndex *
+                (cardWidth + 25)
+            }px)`;
+
+        document
+            .querySelectorAll(".testimonial-dot")
+            .forEach((dot, index) => {
+
+                dot.classList.toggle(
+                    "active",
+                    index === testimonialIndex
+                );
+
+            });
+
+    }
 
 
+    testimonialPrev.onclick = () => {
+        moveTestimonials(testimonialIndex - 1);
+    };
 
-    storyImage.style.width =
-        width+"px";
-
-
-    storyImage.style.height =
-        height+"px";
-
-
-
-    storyImage.style.borderRadius =
-        (18 - progress*18)+"px";
+    testimonialNext.onclick = () => {
+        moveTestimonials(testimonialIndex + 1);
+    };
 
 
+    createDots();
 
-    storyImage.style.transform =
-        `
-        translate(-50%,-50%)
-        rotate(${-4 + progress*4}deg)
-        `;
+    moveTestimonials(0);
 
 
+    let autoSlide =
+        setInterval(() => {
+
+            if (testimonialIndex >= maxTestimonials()) {
+                moveTestimonials(0);
+            } else {
+                moveTestimonials(testimonialIndex + 1);
+            }
+
+        }, 5000);
 
 
-    fadeTexts.forEach(text=>{
+    testimonialTrack.addEventListener("mouseenter", () => {
+        clearInterval(autoSlide);
+    });
 
-        text.style.opacity =
-            1-progress;
+
+    testimonialTrack.addEventListener("mouseleave", () => {
+
+        autoSlide =
+            setInterval(() => {
+
+                if (testimonialIndex >= maxTestimonials()) {
+                    moveTestimonials(0);
+                } else {
+                    moveTestimonials(testimonialIndex + 1);
+                }
+
+            }, 5000);
 
     });
 
 
-
-
-    if(progress > .75){
-
-        cheers.style.opacity =
-            (progress-.75)/.25;
-
-    }
-    else{
-
-        cheers.style.opacity = 0;
-
-    }
-
-
-});
-
-
-/* ================= TESTIMONIAL CAROUSEL ================= */
-
-
-const testimonialTrack =
-    document.getElementById(
-        "testimonialTrack"
-    );
-
-
-const testimonialCards =
-    document.querySelectorAll(
-        ".testimonial-card"
-    );
-
-
-const testimonialDots =
-    document.getElementById(
-        "testimonialDots"
-    );
-
-
-const testimonialPrev =
-    document.getElementById(
-        "testimonialPrev"
-    );
-
-
-const testimonialNext =
-    document.getElementById(
-        "testimonialNext"
-    );
-
-
-
-let testimonialIndex = 0;
-
-
-
-
-function visibleTestimonials(){
-
-
-    if(window.innerWidth <= 900){
-        return 1;
-    }
-
-
-    if(window.innerWidth <= 1300){
-        return 2;
-    }
-
-
-    return 3;
-
-}
-
-
-
-
-function maxTestimonials(){
-
-
-    return Math.max(
-        0,
-        testimonialCards.length -
-        visibleTestimonials()
-    );
-
-}
-
-
-
-
-
-function createDots(){
-
-
-    testimonialDots.innerHTML="";
-
-
-
-    for(let i=0;i<=maxTestimonials();i++){
-
-
-        const dot =
-            document.createElement("div");
-
-
-        dot.className =
-            "testimonial-dot";
-
-
-
-        if(i === testimonialIndex){
-
-            dot.classList.add("active");
-
-        }
-
-
-
-        dot.onclick = ()=>{
-
-            moveTestimonials(i);
-
-        };
-
-
-
-        testimonialDots.appendChild(dot);
-
-    }
-
-
-}
-
-
-
-
-function moveTestimonials(position){
-
-
-    testimonialIndex =
-        Math.max(
-            0,
-            Math.min(
-                position,
-                maxTestimonials()
-            )
-        );
-
-
-
-    const cardWidth =
-        testimonialCards[0].offsetWidth;
-
-
-
-    testimonialTrack.style.transform =
-        `translateX(-${
-            testimonialIndex *
-            (cardWidth + 25)
-        }px)`;
-
-
-
-
-
-    document
-        .querySelectorAll(".testimonial-dot")
-        .forEach((dot,index)=>{
-
-            dot.classList.toggle(
-                "active",
-                index === testimonialIndex
-            );
-
-        });
-
-
-}
-
-
-
-
-
-testimonialPrev.onclick = ()=>{
-
-    moveTestimonials(
-        testimonialIndex - 1
-    );
-
-};
-
-
-
-testimonialNext.onclick = ()=>{
-
-    moveTestimonials(
-        testimonialIndex + 1
-    );
-
-};
-
-
-
-
-
-createDots();
-
-moveTestimonials(0);
-
-
-
-
-
-
-/* ================= AUTO PLAY ================= */
-
-
-let autoSlide =
-    setInterval(()=>{
-
-
-        if(testimonialIndex >= maxTestimonials()){
-
-            moveTestimonials(0);
-
-        }
-        else{
-
-            moveTestimonials(
-                testimonialIndex + 1
-            );
-
-        }
-
-
-    },5000);
-
-
-
-
-
-testimonialTrack.addEventListener(
-    "mouseenter",
-    ()=>{
-
-        clearInterval(autoSlide);
-
-    }
-);
-
-
-
-testimonialTrack.addEventListener(
-    "mouseleave",
-    ()=>{
-
-
-        autoSlide =
-            setInterval(()=>{
-
-
-                if(testimonialIndex >= maxTestimonials()){
-
-                    moveTestimonials(0);
-
-                }
-                else{
-
-                    moveTestimonials(
-                        testimonialIndex + 1
-                    );
-
-                }
-
-
-            },5000);
-
-
-    }
-);
-
-
-
-
-
-
-window.addEventListener(
-    "resize",
-    ()=>{
+    window.addEventListener("resize", () => {
 
         createDots();
 
-        moveTestimonials(
-            testimonialIndex
-        );
+        moveTestimonials(testimonialIndex);
 
-    }
-);
-
-
-// FAQ flipping
-
-function flipCard(card) {
-    card.classList.toggle("flipped");
+    });
 }
+
+    // FAQ flipping
+
+    function flipCard(card) {
+        card.classList.toggle("flipped");
+    }
 
 
 //------------FOOTER----------------
 
     const newsletterForm =
-    document.getElementById("newsletterForm");
+        document.getElementById("newsletterForm");
 
     const newsletterEmail =
-    document.getElementById("newsletterEmail");
+        document.getElementById("newsletterEmail");
 
     const newsletterMessage =
-    document.getElementById("newsletterMessage");
+        document.getElementById("newsletterMessage");
 
     newsletterForm.addEventListener("submit", function (event) {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    const email = newsletterEmail.value.trim();
+        const email = newsletterEmail.value.trim();
 
-    const submitButton =
-    newsletterForm.querySelector("button");
+        const submitButton =
+            newsletterForm.querySelector("button");
 
-    newsletterMessage.textContent = "";
-    newsletterMessage.className = "newsletter-message";
-
-
-    // Проверка дали полето е празно
-    if (email === "") {
-
-    showNewsletterMessage(
-    "Please enter your email address.",
-    "error"
-    );
-
-    return;
-}
+        newsletterMessage.textContent = "";
+        newsletterMessage.className = "newsletter-message";
 
 
-    // Проверка дали email адресата е валидна
-    if (!newsletterEmail.checkValidity()) {
+        // Проверка дали полето е празно
+        if (email === "") {
 
-    showNewsletterMessage(
-    "Please enter a valid email address.",
-    "error"
-    );
+            showNewsletterMessage(
+                "Please enter your email address.",
+                "error"
+            );
 
-    return;
-}
-
-
-    submitButton.disabled = true;
-    submitButton.textContent = "Joining...";
+            return;
+        }
 
 
-    /*
-        Ова е привремена симулација.
+        // Проверка дали email адресата е валидна
+        if (!newsletterEmail.checkValidity()) {
 
-        Кога ќе ја поврзете страницата со база,
-        setTimeout делот ќе го замените со fetch()
-        барање до вашиот backend.
-    */
+            showNewsletterMessage(
+                "Please enter a valid email address.",
+                "error"
+            );
 
-    setTimeout(function () {
+            return;
+        }
 
-    showNewsletterMessage(
-    "You're on the list! We will keep you updated.",
-    "success"
-    );
 
-    newsletterForm.reset();
+        submitButton.disabled = true;
+        submitButton.textContent = "Joining...";
 
-    submitButton.disabled = false;
-    submitButton.textContent = "Join";
 
-}, 700);
+        /*
+            Ова е привремена симулација.
 
-});
+            Кога ќе ја поврзете страницата со база,
+            setTimeout делот ќе го замените со fetch()
+            барање до вашиот backend.
+        */
 
+        setTimeout(function () {
+
+            showNewsletterMessage(
+                "You're on the list! We will keep you updated.",
+                "success"
+            );
+
+            newsletterForm.reset();
+
+            submitButton.disabled = false;
+            submitButton.textContent = "Join";
+
+        }, 700);
+
+    });
 
     function showNewsletterMessage(message, type) {
 
@@ -643,6 +487,7 @@ function flipCard(card) {
     newsletterMessage.className =
     "newsletter-message " + type;
 }
+
 
 
     const cookieSettingsButton =
