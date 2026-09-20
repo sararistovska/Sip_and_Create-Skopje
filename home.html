@@ -8,9 +8,83 @@
     <title>Sip & Create Skopje</title>
 
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+    >
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+            rel="stylesheet"
+    >
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
 </head>
 
 <body>
+
+<!-- SIDE CONTROLS -->
+
+<div class="side-controls">
+
+    <!-- LANGUAGE -->
+
+    <div class="language-control">
+
+        <button
+                class="lang-button active"
+                data-lang="en"
+        >
+            EN
+        </button>
+
+        <div class="control-divider"></div>
+
+        <button
+                class="lang-button"
+                data-lang="mk"
+        >
+            MK
+        </button>
+
+    </div>
+
+
+    <!-- DARK MODE -->
+
+    <button
+            class="side-wine-button"
+            id="wineButton"
+            aria-label="Toggle dark mode"
+    >
+        <img
+                src="images/wine-glass.png"
+                alt="Wine glass"
+        >
+    </button>
+
+</div>
+
+<!-- WINE EFFECT -->
+
+<div class="wine-overlay"></div>
+
+<div class="wine-message" id="wineMessage">
+    <span id="wineMessageText"></span>
+</div>
+
 
 <!-- NAVBAR -->
 <nav class="navbar">
@@ -22,24 +96,90 @@
 
 
     <ul class="nav-links">
+        <li>
 
-        <li><a href="#">About</a></li>
-        <li><a href="#">Workshops</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
+            <a
+                    href="#"
+                    data-en="About"
+                    data-mk="За нас"
+            >
+                About
+            </a>
+
+        </li>
+
 
         <li>
-            <a href="#" class="book-btn">
+
+            <a
+                    href="#"
+                    data-en="Workshops"
+                    data-mk="Работилници"
+            >
+                Workshops
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="#"
+                    data-en="Gallery"
+                    data-mk="Галерија"
+            >
+                Gallery
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="#"
+                    data-en="Blog"
+                    data-mk="Блог"
+            >
+                Blog
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="contact.html"
+                    data-en="Contact"
+                    data-mk="Контакт"
+            >
+                Contact
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="reserve.html"
+                    class="book-btn"
+                    data-en="Book Now"
+                    data-mk="Резервирај"
+            >
                 Book Now
             </a>
+
         </li>
 
-        <li>
-            <button class="wine-button" id="wineButton">
-                <img src="images/wine-glass.png">
-            </button>
-        </li>
+
+<!--        <li>-->
+<!--            <button class="wine-button" id="wineButton">-->
+<!--                <img src="images/wine-glass.png">-->
+<!--            </button>-->
+<!--        </li>-->
 
     </ul>
 
@@ -60,7 +200,13 @@
         </h1>
 
 
-        <p>
+        <p
+                data-mk="Сликај стакло, украсувај керамика,<br>
+                прави паста или плети со пријатели.<br>
+                Не е потребно искуство — само љубопитност,<br>
+                креативност и добро друштво."
+                data-en="Paint glass,shape ceramics,<br>roll pasta, or crochet with friends.<br>No experience needed — just curiosity,<br>creativity, and good company."
+        >
             Paint glass, shape ceramics,
             <br>
             roll pasta, or crochet with friends.
@@ -118,17 +264,6 @@
 
 
 
-<!-- WINE EFFECT -->
-
-<div class="wine-overlay"></div>
-
-<div class="wine-message" id="wineMessage">
-    <span id="wineMessageText"></span>
-</div>
-
-
-
-
 <!-- STORY SECTION -->
 
 <section class="story-section">
@@ -138,7 +273,9 @@
         <div class="story-content">
 
 
-            <h2 class="fade-text">
+            <h2 class="fade-text"
+                data-en="TOGETHER WE"
+                data-mk="ЗАЕДНО">
                 TOGETHER WE
             </h2>
 
@@ -146,7 +283,9 @@
 
             <h1>
 
-                <span class="fade-text">
+                <span class="fade-text"
+                      data-en="SIP AND"
+                      data-mk="ПИЕМЕ И ">
                     SIP AND
                 </span>
 
@@ -154,7 +293,9 @@
                 <span class="story-image-space"></span>
 
 
-                <span class="fade-text">
+                <span class="fade-text"
+                      data-en="CREATE"
+                      data-mk="СОЗДАВАМЕ">
                     CREATE
                 </span>
 
@@ -190,12 +331,15 @@
 <section class="testimonials-section">
 
 
-    <div class="tag">
+    <div class="tag"
+         data-en="Testimonials"
+         data-mk="Искуства">
         Testimonials
     </div>
 
 
-    <h3>
+    <h3 data-en="What our guests say"
+        data-mk="Што велат нашите гости">
         What our guests say
     </h3>
 
@@ -213,7 +357,10 @@
                     ★★★★★
                 </div>
 
-                <p class="testimonial-text">
+                <p class="testimonial-text"
+                   data-en="The pottery workshop was amazing. A relaxing afternoon with creative people and a beautiful handmade memory."
+                   data-mk="Работилницата за керамика беше неверојатна. Опуштено попладне со креативни луѓе и прекрасен рачно изработен спомен."
+                >>
                     The pottery workshop was amazing.
                     A relaxing afternoon with creative people
                     and a beautiful handmade memory.
@@ -227,11 +374,15 @@
 
                     <div>
 
-                        <div class="testimonial-name">
+                        <div class="testimonial-name"
+                             data-en="Ana Petrovska "
+                             data-mk="Ана Петровска">
                             Ana Petrovska
                         </div>
 
-                        <div class="testimonial-workshop">
+                        <div class="testimonial-workshop"
+                             data-en="Pottery Workshop"
+                             data-mk="Работилница за керамика">
                             Pottery Workshop
                         </div>
 
@@ -251,7 +402,10 @@
                     ★★★★★
                 </div>
 
-                <p class="testimonial-text">
+                <p class="testimonial-text"
+                   data-en="I came alone and left with new friends. The atmosphere was warm, fun and inspiring."
+                   data-mk="Дојдов сама, а си заминав со нови пријатели. Атмосферата беше топла, забавна и инспиративна."
+                >
                     I came alone and left with new friends.
                     The atmosphere was warm, fun and inspiring.
                 </p>
@@ -264,11 +418,15 @@
 
                     <div>
 
-                        <div class="testimonial-name">
+                        <div class="testimonial-name"
+                        data-en="Marko Ilievski"
+                        data-mk="Марко Илиевски">
                             Marko Ilievski
                         </div>
 
-                        <div class="testimonial-workshop">
+                        <div class="testimonial-workshop"
+                        data-en="Glass Painting"
+                        data-mk="Украсување на чаши">
                             Glass Painting
                         </div>
 
@@ -287,7 +445,10 @@
                     ★★★★★
                 </div>
 
-                <p class="testimonial-text">
+                <p class="testimonial-text"
+                   data-en="The wine and canvas night was perfect. Great music, amazing drinks and lots of creativity."
+                   data-mk="Вечерта со вино и сликање беше совршена. Одлична музика, прекрасни пијалаци и многу креативност."
+                >
                     The wine and canvas night was perfect.
                     Great music, amazing drinks and lots of creativity.
                 </p>
@@ -300,11 +461,15 @@
 
                     <div>
 
-                        <div class="testimonial-name">
+                        <div class="testimonial-name"
+                        data-en="Elena Trajkovska"
+                        data-mk="Елена Трајковска">
                             Elena Trajkovska
                         </div>
 
-                        <div class="testimonial-workshop">
+                        <div class="testimonial-workshop"
+                             data-en="Wine & Canvas"
+                             data-mk="Вино и платно">
                             Wine & Canvas
                         </div>
 
@@ -323,7 +488,9 @@
                     ★★★★★
                 </div>
 
-                <p class="testimonial-text">
+                <p class="testimonial-text"
+                   data-en="The pasta workshop was such a fun experience. Everything felt homemade and cozy."
+                   data-mk="Работилницата за правење тестенини беше прекрасно искуство. Сè беше домашно и во пријатно расположение.">
                     The pasta workshop was such a fun experience.
                     Everything felt homemade and cozy.
                 </p>
@@ -336,11 +503,17 @@
 
                     <div>
 
-                        <div class="testimonial-name">
+                        <div class="testimonial-name"
+                             data-en="Nikolina Nikolovska"
+                             data-mk="Николина Николовска"
+                        >
                             Nikolina Nikolovska
                         </div>
 
-                        <div class="testimonial-workshop">
+                        <div class="testimonial-workshop"
+                             data-en="Pasta Making"
+                             data-mk="Правење тестенини"
+                        >
                             Pasta Making
                         </div>
 
@@ -352,15 +525,16 @@
 
 
 
-
-
             <div class="testimonial-card">
 
                 <div class="testimonial-stars">
                     ★★★★☆
                 </div>
 
-                <p class="testimonial-text">
+                <p class="testimonial-text"
+                   data-en="A beautiful place for a birthday event. Everyone had fun and created something special."
+                   data-mk="Прекрасно место за роденденска прослава. Сите се забавуваа и создадоа нешто посебно."
+                >
                     A beautiful place for a birthday event.
                     Everyone had fun and created something special.
                 </p>
@@ -373,11 +547,16 @@
 
                     <div>
 
-                        <div class="testimonial-name">
+                        <div class="testimonial-name"
+                             data-en="Goran Stojanovski"
+                             data-mk=" работилница">
                             Goran Stojanovski
                         </div>
 
-                        <div class="testimonial-workshop">
+                        <div class="testimonial-workshop"
+                             data-en="Birthday Workshop"
+                             data-mk="Роденденска работилница"
+                        >
                             Birthday Workshop
                         </div>
 
@@ -387,17 +566,16 @@
 
             </div>
 
-
-
-
-
             <div class="testimonial-card">
 
                 <div class="testimonial-stars">
                     ★★★★★
                 </div>
 
-                <p class="testimonial-text">
+                <p class="testimonial-text"
+                   data-en="The crochet circle was relaxing and creative. Perfect evening after a busy week."
+                   data-mk="Кругот за хеклање беше релаксирачки и креативен. Совршена вечер по напорна недела."
+                >
                     The crochet circle was relaxing and creative.
                     Perfect evening after a busy week.
                 </p>
@@ -410,11 +588,17 @@
 
                     <div>
 
-                        <div class="testimonial-name">
+                        <div class="testimonial-name"
+                             data-en="Tina Naumova"
+                             data-mk="Тина Наумова"
+                        >
                             Tina Naumova
                         </div>
 
-                        <div class="testimonial-workshop">
+                        <div class="testimonial-workshop"
+                             data-en="Crochet Circle"
+                             data-mk="Круг за хеклање"
+                        >
                             Crochet Circle
                         </div>
 
@@ -430,8 +614,6 @@
 
 
     </div>
-
-
 
 
     <div class="testimonial-controls">
@@ -454,13 +636,520 @@
 
     </div>
 
-
-
 </section>
 
+<!-- FAQ SECTION -->
+
+<div class="faq-section">
+
+    <!-- Горен дел -->
+    <div class="faq-header">
+
+        <div class="small-title"
+             data-en="GOOD TO KNOW"
+             data-mk="ДОБРО Е ДА ЗНАЕТЕ"
+        >
+            GOOD TO KNOW
+        </div>
+
+        <div class="faq-title"
+             data-en="Frequently asked questions"
+             data-mk="Често поставувани прашања"
+        >
+            Frequently asked questions
+        </div>
+
+
+        <div class="faq-description"
+             data-en="Tap a card to flip it over."
+             data-mk="Кликнете на картичка за да ја свртите."
+        >
+            Tap a card to flip it over.
+        </div>
+
+    </div>
+
+    <!-- Картички -->
+    <div class="faq-cards">
+
+        <!-- Картичка 1 -->
+        <div class="faq-card" onclick="flipCard(this)">
+
+            <div class="card-inner">
+
+                <div class="card-front">
+
+                    <div class="card-question"
+                         data-en="What’s included in the workshop?"
+                         data-mk="Што е вклучено во работилницата?"
+                    >
+                        What’s included in the workshop?
+                    </div>
+
+                    <div class="tap-text"
+                         data-en="TAP"
+                         data-mk="КЛИКНИ">
+                        TAP
+                    </div>
+
+                </div>
+
+                <div class="card-back">
+
+                    <div class="card-answer"
+                         data-en="The workshop includes all materials, tools and professional help needed to create your own product."
+                         data-mk="Работилницата ги вклучува сите материјали, алатки и професионална помош потребни за да создадете сопствен производ."
+                    >
+                        The workshop includes all materials, tools and professional
+                        guidance needed to create your own product.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Картичка 2 -->
+        <div class="faq-card" onclick="flipCard(this)">
+
+            <div class="card-inner">
+
+                <div class="card-front">
+
+                    <div class="card-question"
+                         data-en="Can I bring my own design?"
+                         data-mk="Може ли да донесам сопствен дизајн?"
+                    >
+                        Can I bring my own design?
+                    </div>
+
+                    <div class="tap-text"
+                         data-en="TAP"
+                         data-mk="КЛИКНИ">
+                        TAP
+                    </div>
+
+                </div>
+
+                <div class="card-back">
+
+                    <div class="card-answer"
+                         data-en="Yes! You can bring your own design or follow one of our templates. The goal is to have fun and help you bring your creative vision to life."
+                         data-mk="Да! Можете да донесете сопствен дизајн или да следите некој од нашите шаблони. Целта е да се забавувате и да ја претворите вашата креативна идеја во реалност."
+                    >
+                        Yes! You can bring your own design or follow one of our templates.
+                        The goal is to have fun and help you bring your creative vision to life.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Картичка 3 -->
+        <div class="faq-card" onclick="flipCard(this)">
+
+            <div class="card-inner">
+
+                <div class="card-front">
+
+                    <div class="card-question"
+                         data-en="What kind and how many drinks are included in the price?"
+                         data-mk="Какви и колку пијалаци се вклучени во цената?"
+                    >
+                        What kind and how many drinks are included in the price?
+                    </div>
+
+                    <div class="tap-text"
+                         data-en="TAP"
+                         data-mk="КЛИКНИ">
+                        TAP
+                    </div>
+
+                </div>
+
+                <div class="card-back">
+
+                    <div class="card-answer"
+                         data-en="The price includes unlimited drinks for the entire duration of the workshop. The main concept is based on wine, but we’ll soon introduce themed workshops featuring your favorite cocktails."
+                         data-mk="Цената вклучува неограничени пијалаци за целото времетраење на работилницата. Главниот концепт е базиран на вино, но наскоро ќе воведеме и тематски работилници со вашите омилени коктели."
+                    >
+                        The price includes unlimited drinks for the entire duration of the workshop.
+                        The main concept is based on wine, but we’ll soon introduce themed workshops featuring your favorite cocktails.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Картичка 4 -->
+        <div class="faq-card" onclick="flipCard(this)">
+
+            <div class="card-inner">
+
+                <div class="card-front">
+
+                    <div class="card-question"
+                         data-en="Can I organize a private event?"
+                         data-mk="Може ли да организирам приватен настан?"
+                    >
+                        Can I organize a private event?
+                    </div>
+
+                    <div class="tap-text"
+                         data-en="TAP"
+                         data-mk="КЛИКНИ">
+                        TAP
+                    </div>
+
+                </div>
+
+                <div class="card-back">
+
+                    <div class="card-answer"
+                         data-en="Absolutely! Sip & Create Skopje is the perfect place for private events. Contact us for details on organizing your creative gathering."
+                         data-mk="Секако! Sip & Create Skopje е совршеното место за приватни настани. Контактирајте нè за повеќе детали за организирање на вашето креативно дружење."
+                    >
+                        Absolutely! Sip & Create.Skopje is the perfect place for private events.
+                        Contact us for details on organizing your creative gathering.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Картичка 5 -->
+        <div class="faq-card" onclick="flipCard(this)">
+
+            <div class="card-inner">
+
+                <div class="card-front">
+
+                    <div class="card-question"
+                         data-en="What’s the price and duration of a workshop?"
+                         data-mk="Која е цената и времетраењето на работилницата?"
+                    >
+                        What’s the price and duration of a workshop?
+                    </div>
+
+                    <div class="tap-text"
+                         data-en="TAP"
+                         data-mk="КЛИКНИ"
+                    >
+                        TAP
+                    </div>
+
+                </div>
+
+                <div class="card-back">
+
+                    <div class="card-answer"
+                         data-en="Each workshop lasts 2–3 hours and the price depends on the workshop, including drinks and all necessary materials."
+                         data-mk="Секоја работилница трае 2–3 часа додека цената зависи од работилницата, вклучувајќи пијалаци и сите потребни материјали."
+                    >
+                        Each workshop lasts 2-3 hours and costs 1500 MKD, including drinks and all necessary materials
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Картичка 6 -->
+        <div class="faq-card" onclick="flipCard(this)">
+
+            <div class="card-inner">
+
+                <div class="card-front">
+
+                    <div class="card-question"
+                         data-en="Can I keep my creation?"
+                         data-mk="Може ли да ја задржам мојата креација?"
+                    >
+                        Can I keep my creation?
+                    </div>
+
+                    <div class="tap-text"
+                         data-en="TAP"
+                         data-mk="КЛИКНИ"
+                    >
+                        TAP
+                    </div>
+
+                </div>
+
+                <div class="card-back">
+
+                    <div class="card-answer"
+                         data-en="Yes! All participants can keep their creations and take them home as a memory from Sip & Create Skopje."
+                         data-mk="Да! Сите учесници можат да ги задржат своите креации и да ги однесат дома како спомен од Sip & Create Skopje."
+                    >
+                        Yes! All participants can keep their creations and take them home
+                        as a memory from Sip & Create.Skopje.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+
+    <div class="footer-container">
+
+
+        <!-- =================================================
+             FOOTER TOP
+        ================================================= -->
+
+        <div class="footer-top">
+
+
+            <!-- ================= BRAND ================= -->
+
+            <div class="footer-brand">
+
+                <a href="home.html" class="footer-logo">
+
+                    <img
+                            class="logo-light"
+                            src="images/logo-dark.png"
+                            alt="Sip & Create Logo"
+                    >
+
+                    <img
+                            class="logo-dark"
+                            src="images/logo-light.png"
+                            alt="Sip & Create Logo"
+                    >
+
+                </a>
+
+
+                <!-- DESCRIPTION -->
+
+                <p class="footer-description"
+                   data-en="Creative workshops, good company, and a little something to make."
+                   data-mk="Креативни работилници, добро друштво и нешто уникатно што ќе го создадете."
+                >
+
+                    Creative workshops, good company,
+                    and a little something to make.
+
+                </p>
+
+
+            </div>
+
+            <!-- ================= EXPLORE ================= -->
+
+            <div class="footer-column">
+
+                <p class="footer-title"
+                   data-en="EXPLORE"
+                   data-mk="ИСТРАЖИ"
+                >
+                    EXPLORE
+                </p>
+
+                <a href="home.html"
+                   data-en="Home"
+                   data-mk="Почетна"
+                >
+                    Home
+                </a>
+
+                <a href="#"
+                   data-en="Workshops"
+                   data-mk="Работилници"
+                >
+                    Workshops
+                </a>
+
+                <a href="#"
+                   data-en="About Us"
+                   data-mk="За нас"
+                >
+                    About Us
+                </a>
+
+                <a href="contact.html"
+                   data-en="Contact"
+                   data-mk="Контакт"
+                >
+                    Contact
+                </a>
+
+
+            </div>
+
+
+
+            <!-- ================= VISIT US ================= -->
+
+            <div class="footer-column">
+
+
+                <p class="footer-title"
+                   data-en="VISIT US"
+                   data-mk="ПОСЕТЕТЕ НÈ"
+                >
+                    VISIT US
+                </p>
+
+
+                <p>
+
+                    Partizanska 12A<br>
+
+                    1000 Skopje<br>
+
+                    North Macedonia
+
+                </p>
+
+
+                <a
+                        href="mailto:sipandcreate@gmail.mk"
+                >
+
+                    sipandcreate@gmail.mk
+
+                </a>
+
+
+                <a
+                        href="tel:+38970123456"
+                >
+
+                    +389 70 123 456
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- ================= SOCIAL ================= -->
+
+            <div class="footer-column">
+
+
+                <p class="footer-title"
+                   data-en="FOLLOW ALONG"
+                   data-mk="СЛЕДЕТЕ НÈ"
+                >
+                    FOLLOW ALONG
+                </p>
+
+
+                <div class="social-links">
+
+
+                    <!-- Instagram -->
+
+                    <a
+                            href="https://www.instagram.com/sipandcreate.skopje/"
+                            aria-label="Instagram"
+                    >
+
+                        <i class="bi bi-instagram"></i>
+
+                    </a>
+
+
+
+                    <!-- Facebook -->
+
+                    <a
+                            href="https://www.facebook.com"
+                            aria-label="Facebook"
+                    >
+
+                        <i class="bi bi-facebook"></i>
+
+                    </a>
+
+
+
+                    <!-- TikTok -->
+
+                    <a
+                            href="https://www.tiktok.com"
+                            aria-label="TikTok"
+                    >
+
+                        <i class="bi bi-tiktok"></i>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER BOTTOM
+        ================================================= -->
+
+        <div class="footer-bottom">
+
+
+            <p
+                    data-en="© 2026 Sip & Create. All rights reserved."
+                    data-mk="© 2026 Sip & Create. Сите права се задржани."
+            >
+
+                © 2026 Sip & Create.
+                All rights reserved.
+
+            </p>
+
+
+            <p
+                    data-en="Made for creative moments."
+                    data-mk="Создадено за креативни моменти."
+            >
+
+                Made for creative moments.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</footer>
 
 
 <script src="script.js"></script>
+<script src="language.js"></script>
 
 </body>
 

@@ -498,3 +498,4 @@ if(testimonialTrack) {
     alert("Cookie settings will open here.");
 
 });
+
