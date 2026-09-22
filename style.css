@@ -1358,3 +1358,161 @@ body.dark .logo-dark {
 
     object-fit:contain;
 }
+
+
+/* workshop dropdown */
+
+.nav-dropdown {
+    position: relative;
+}
+
+.workshops-link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.dropdown-icon {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+/* Dropdown */
+
+.workshops-menu {
+    position: absolute;
+    top: calc(100% + 18px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+
+    width: 210px;
+    padding: 10px 0;
+
+    background: #F5F3EF;
+    border: 1px solid #ddd3cc;
+
+    list-style: none;
+    margin: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+
+    box-shadow: 0 12px 30px rgba(43, 37, 32, 0.08);
+}
+
+/* Small line connecting navbar with dropdown */
+
+.workshops-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+
+    width: 210px;
+    padding: 10px 0;
+
+    background: #F5F3EF;
+    border: 1px solid #ddd3cc;
+
+    list-style: none;
+    margin: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+
+    box-shadow: 0 12px 30px rgba(43, 37, 32, 0.08);
+}
+
+/* Open on hover */
+
+.nav-dropdown:hover .workshops-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown:hover .dropdown-icon {
+    transform: rotate(45deg);
+}
+
+/* Dropdown items */
+
+.workshops-menu li {
+    margin: 0;
+}
+
+.workshops-menu a {
+    position: relative;
+
+    display: block;
+    padding: 13px 20px;
+
+    color: #2b2520;
+    text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+
+    transition:
+            color 0.25s ease,
+            background 0.25s ease,
+            padding-left 0.25s ease;
+}
+
+.workshops-menu a:hover {
+    color: #a66f79;
+    background: #ebe5de;
+    padding-left: 25px;
+}
+
+/* Thin separator */
+
+.workshops-menu li:not(:last-child) a::after {
+    content: "";
+
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+
+    height: 1px;
+    background: #e1d8d1;
+}
+
+/* workshops dropdown dark mode */
+
+body.dark .workshops-menu {
+    background: #242521;
+    border-color: rgba(255,255,255,.10);
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+body.dark .workshops-menu a {
+    color: #f5eee9;
+}
+
+body.dark .workshops-menu a:hover {
+    color: #d3a4ad;
+    background: #302d2f;
+}
+
+body.dark .workshops-menu li:not(:last-child) a::after {
+    background: rgba(255,255,255,.10);
+}

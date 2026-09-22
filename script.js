@@ -7,6 +7,11 @@ const wineOverlay = document.querySelector(".wine-overlay");
 const wineMessage = document.getElementById("wineMessage");
 const wineMessageText = document.getElementById("wineMessageText");
 
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme === "dark"){
+    document.body.classList.add("dark");
+}
 
 if(wineButton && wineOverlay){
 
@@ -51,6 +56,14 @@ if(wineButton && wineOverlay){
         setTimeout(function(){
 
             document.body.classList.toggle("dark");
+
+            /* SAVE THEME */
+            localStorage.setItem(
+                "theme",
+                document.body.classList.contains("dark")
+                    ? "dark"
+                    : "light"
+            );
 
         }, wineMessage ? 1200 : 900);
 
