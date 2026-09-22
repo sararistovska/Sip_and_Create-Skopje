@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complete Your Reservation | Sip & Create</title>
+    <link rel="stylesheet" href="reserve-form.css">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+<body>
+
+<!-- SIDE CONTROLS -->
+
+<div class="side-controls">
+
+    <!-- LANGUAGE -->
+
+    <div class="language-control">
+
+        <button
+                class="lang-button active"
+                data-lang="en"
+        >
+            EN
+        </button>
+
+        <div class="control-divider"></div>
+
+        <button
+                class="lang-button"
+                data-lang="mk"
+        >
+            MK
+        </button>
+
+    </div>
+
+
+    <!-- DARK MODE -->
+
+    <button
+            class="side-wine-button"
+            id="wineButton"
+            aria-label="Toggle dark mode"
+    >
+        <img
+                src="images/home/wine-glass.png"
+                alt="Wine glass"
+        >
+    </button>
+
+</div>
+
+<!-- WINE EFFECT -->
+
+<div class="wine-overlay"></div>
+
+<div class="wine-message" id="wineMessage">
+    <span id="wineMessageText"></span>
+</div>
+
+
+<main class="reservation-page">
+
+
+    <section class="reservation-visual">
+
+
+        <img
+                id="workshopImage"
+                class="reservation-image"
+                src="images/reservation/glass-painting.jpg"
+                alt="Sip & Create workshop"
+        >
+
+
+        <div class="visual-logo">
+            Sip & Create
+        </div>
+
+
+        <div class="visual-content">
+
+            <div
+                    id="visualSmallTitle"
+                    class="visual-small-title"
+                    data-en="Create Something Beautiful"
+                    data-mk="Создајте нешто прекрасно"
+            >
+                Create Something Beautiful
+            </div>
+
+
+            <h2
+                    id="visualTitle"
+                    class="visual-title"
+                    data-en="Choose Your Experience"
+                    data-mk="Изберете го вашето искуство"
+            >
+                Choose Your Experience
+            </h2>
+
+
+            <p
+                    id="visualDescription"
+                    class="visual-description"
+                    data-en="Select an experience and create something memorable with us."
+                    data-mk="Изберете искуство и создадете незаборавен спомен со нас."
+            >
+                Select an experience and create something
+                memorable with us.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="reservation-form-section">
+
+
+        <div class="reservation-container">
+
+
+            <div
+                    class="form-eyebrow"
+                    data-en="Sip & Create"
+                    data-mk="Sip & Create"
+            >
+                Sip & Create
+            </div>
+
+
+            <h1
+                    class="form-title"
+                    data-en="Reserve a Table"
+                    data-mk="Резервирајте маса"
+            >
+                Reserve a Table
+            </h1>
+
+
+            <p
+                    class="form-intro"
+                    data-en="Complete your reservation details and get ready for a creative experience."
+                    data-mk="Пополнете ги податоците за резервацијата и подгответе се за креативно искуство."
+            >
+                Complete your reservation details and
+                get ready for a creative experience.
+            </p>
+
+
+
+
+            <div
+                    id="selectedBooking"
+                    class="selected-booking"
+                    style="display: none;"
+            >
+
+                <div>
+
+                    <div
+                            class="selected-booking-label"
+                            data-en="Your selected experience"
+                            data-mk="Вашето избрано искуство"
+                    >
+                        Your selected experience
+                    </div>
+
+                    <div
+                            id="selectedBookingValue"
+                            class="selected-booking-value"
+                    ></div>
+
+                </div>
+
+
+                <div
+                        id="selectedBookingPrice"
+                        class="selected-booking-price"
+                ></div>
+
+            </div>
+
+
+
+            <!--  FORM   -->
+
+            <form
+                    id="reservationForm"
+                    class="reservation-form"
+            >
+
+
+                <!-- WORKSHOP -->
+
+                <div class="form-group">
+
+                    <label
+                            for="workshop"
+                            data-en="Choose your workshop"
+                            data-mk="Изберете работилница"
+                    >
+                        Choose your workshop
+                    </label>
+
+
+                    <select
+                            id="workshop"
+                            name="workshop"
+                            required
+                    >
+
+                        <option
+                                value=""
+                                selected
+                                disabled
+                                data-en="Select a workshop"
+                                data-mk="Изберете работилница"
+                        >
+                            Select a workshop
+                        </option>
+
+
+                        <option
+                                value="Glass Painting"
+                                data-en="Glass Painting — 1800 ден."
+                                data-mk="Сликање на стакло — 1800 ден."
+                        >
+                            Glass Painting — 1800 ден.
+                        </option>
+
+
+                        <option
+                                value="Pasta Making"
+                                data-en="Pasta Making — 1800 ден."
+                                data-mk="Правење паста — 1800 ден."
+                        >
+                            Pasta Making — 1800 ден.
+                        </option>
+
+
+                        <option
+                                value="Ceramics Decorating"
+                                data-en="Ceramics Decorating — 1800 ден."
+                                data-mk="Декорирање керамика — 1800 ден."
+                        >
+                            Ceramics Decorating — 1800 ден.
+                        </option>
+
+
+                        <option
+                                value="Crocheting"
+                                data-en="Crocheting — 2000 ден."
+                                data-mk="Хеклање — 2000 ден."
+                        >
+                            Crocheting — 2000 ден.
+                        </option>
+
+
+                        <option
+                                value="Private Event"
+                                data-en="My Private Event"
+                                data-mk="Мој приватен настан"
+                        >
+                            My Private Event
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- PRIVATE EVENT INFO -->
+
+                <div
+                        id="privateMessage"
+                        class="private-message"
+                        data-en="Private events are available for birthdays, celebrations, team events and other special occasions. Please tell us about your event in the Special Request field below."
+                        data-mk="Приватни настани се достапни за родендени, прослави, тимски настани и други посебни пригоди. Ве молиме кажете ни повеќе за вашиот настан во полето Специјално барање подолу."
+                >
+
+                    Private events are available for
+                    birthdays, celebrations, team events
+                    and other special occasions.
+
+                    Please tell us about your event in
+                    the <strong>Special Request</strong>
+                    field below.
+
+                </div>
+
+
+
+                <!-- DATE + TIME -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label
+                                for="date"
+                                data-en="Date"
+                                data-mk="Датум"
+                        >
+                            Date
+                        </label>
+
+
+                        <input
+                                type="date"
+                                id="date"
+                                name="date"
+                                required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label
+                                for="time"
+                                data-en="Preferred time"
+                                data-mk="Посакувано време"
+                        >
+                            Preferred time
+                        </label>
+
+
+                        <select
+                                id="time"
+                                name="time"
+                                required
+                        >
+
+                            <option
+                                    value=""
+                                    selected
+                                    disabled
+                                    data-en="Select time"
+                                    data-mk="Изберете време"
+                            >
+                                Select time
+                            </option>
+
+
+                            <option value="12:00">
+                                12:00
+                            </option>
+
+
+                            <option value="13:00">
+                                13:00
+                            </option>
+
+
+                            <option value="14:00">
+                                14:00
+                            </option>
+
+
+                            <option value="15:00">
+                                15:00
+                            </option>
+
+
+                            <option value="16:00">
+                                16:00
+                            </option>
+
+
+                            <option value="17:00">
+                                17:00
+                            </option>
+
+
+                            <option value="18:00">
+                                18:00
+                            </option>
+
+
+                            <option value="19:00">
+                                19:00
+                            </option>
+
+
+                            <option value="20:00">
+                                20:00
+                            </option>
+
+
+                            <option value="21:00">
+                                21:00
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="form-group">
+
+                    <label
+                            for="guests"
+                            data-en="Number of guests"
+                            data-mk="Број на гости"
+                    >
+                        Number of guests
+                    </label>
+
+
+                    <select
+                            id="guests"
+                            name="guests"
+                            required
+                    >
+
+                        <option
+                                value=""
+                                selected
+                                disabled
+                                data-en="Select number of guests"
+                                data-mk="Изберете број на гости"
+                        >
+                            Select number of guests
+                        </option>
+
+
+                        <option
+                                value="1"
+                                data-en="1 guest"
+                                data-mk="1 гостин"
+                        >
+                            1 guest
+                        </option>
+
+
+                        <option
+                                value="2"
+                                data-en="2 guests"
+                                data-mk="2 гости"
+                        >
+                            2 guests
+                        </option>
+
+
+                        <option
+                                value="3"
+                                data-en="3 guests"
+                                data-mk="3 гости"
+                        >
+                            3 guests
+                        </option>
+
+
+                        <option
+                                value="4"
+                                data-en="4 guests"
+                                data-mk="4 гости"
+                        >
+                            4 guests
+                        </option>
+
+
+                        <option
+                                value="5"
+                                data-en="5 guests"
+                                data-mk="5 гости"
+                        >
+                            5 guests
+                        </option>
+
+
+                        <option
+                                value="6"
+                                data-en="6 guests"
+                                data-mk="6 гости"
+                        >
+                            6 guests
+                        </option>
+
+
+                        <option
+                                value="7"
+                                data-en="7 guests"
+                                data-mk="7 гости"
+                        >
+                            7 guests
+                        </option>
+
+
+                        <option
+                                value="8"
+                                data-en="8 guests"
+                                data-mk="8 гости"
+                        >
+                            8 guests
+                        </option>
+
+
+                        <option
+                                value="9"
+                                data-en="9 guests"
+                                data-mk="9 гости"
+                        >
+                            9 guests
+                        </option>
+
+
+                        <option
+                                value="10"
+                                data-en="10 guests"
+                                data-mk="10 гости"
+                        >
+                            10 guests
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label
+                                for="name"
+                                data-en="Full name"
+                                data-mk="Име и презиме"
+                        >
+                            Full name
+                        </label>
+
+
+                        <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your name"
+                                required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label
+                                for="email"
+                                data-en="Email"
+                                data-mk="Е-пошта"
+                        >
+                            Email
+                        </label>
+
+
+                        <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="your@email.com"
+                                required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label
+                            for="phone"
+                            data-en="Phone number"
+                            data-mk="Телефонски број"
+                    >
+                        Phone number
+                    </label>
+
+
+                    <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+389 XX XXX XXX"
+                            required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label
+                            id="specialRequestLabel"
+                            for="message"
+                            data-en="Special Request"
+                            data-mk="Специјално барање"
+                    >
+                        Special Request
+                    </label>
+
+
+                    <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us anything we should know..."
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- CONFIRMATION -->
+
+                <label class="reservation-note">
+
+                    <input
+                            type="checkbox"
+                            required
+                    >
+
+
+                    <span
+                            data-en="I understand that this request is a reservation inquiry and that my reservation will be confirmed by our team."
+                            data-mk="Разбирам дека ова барање е само барање за резервација и дека мојата резервација ќе биде потврдена од нашиот тим."
+                    >
+                        I understand that this request is a
+                        reservation inquiry and that my
+                        reservation will be confirmed by
+                        our team.
+                    </span>
+
+                </label>
+
+
+
+                <button
+                        type="submit"
+                        class="reserve-button"
+                        data-en="Reserve My Table"
+                        data-mk="Резервирај маса"
+                >
+                    Reserve My Table
+                </button>
+
+
+
+                <div
+                        id="reservationMessage"
+                        class="reservation-message"
+                ></div>
+
+
+            </form>
+
+
+
+            <a
+                    href="reserve.html"
+                    class="back-calendar"
+                    data-en="← Back to calendar"
+                    data-mk="← Назад кон календарот"
+            >
+                ← Back to calendar
+            </a>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="reserve-form.js"></script>
+<script src="language.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

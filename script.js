@@ -397,105 +397,14 @@ if(testimonialTrack) {
     });
 }
 
-    // FAQ flipping
+
+
+
+// FAQ flipping
 
     function flipCard(card) {
         card.classList.toggle("flipped");
     }
 
 
-//------------FOOTER----------------
-
-    const newsletterForm =
-        document.getElementById("newsletterForm");
-
-    const newsletterEmail =
-        document.getElementById("newsletterEmail");
-
-    const newsletterMessage =
-        document.getElementById("newsletterMessage");
-
-    newsletterForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-        const email = newsletterEmail.value.trim();
-
-        const submitButton =
-            newsletterForm.querySelector("button");
-
-        newsletterMessage.textContent = "";
-        newsletterMessage.className = "newsletter-message";
-
-
-        // Проверка дали полето е празно
-        if (email === "") {
-
-            showNewsletterMessage(
-                "Please enter your email address.",
-                "error"
-            );
-
-            return;
-        }
-
-
-        // Проверка дали email адресата е валидна
-        if (!newsletterEmail.checkValidity()) {
-
-            showNewsletterMessage(
-                "Please enter a valid email address.",
-                "error"
-            );
-
-            return;
-        }
-
-
-        submitButton.disabled = true;
-        submitButton.textContent = "Joining...";
-
-
-        /*
-            Ова е привремена симулација.
-
-            Кога ќе ја поврзете страницата со база,
-            setTimeout делот ќе го замените со fetch()
-            барање до вашиот backend.
-        */
-
-        setTimeout(function () {
-
-            showNewsletterMessage(
-                "You're on the list! We will keep you updated.",
-                "success"
-            );
-
-            newsletterForm.reset();
-
-            submitButton.disabled = false;
-            submitButton.textContent = "Join";
-
-        }, 700);
-
-    });
-
-    function showNewsletterMessage(message, type) {
-
-    newsletterMessage.textContent = message;
-
-    newsletterMessage.className =
-    "newsletter-message " + type;
-}
-
-
-
-    const cookieSettingsButton =
-    document.getElementById("cookieSettingsButton");
-
-    cookieSettingsButton.addEventListener("click", function () {
-
-    alert("Cookie settings will open here.");
-
-});
 

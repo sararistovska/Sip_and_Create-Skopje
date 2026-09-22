@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reserve a Table | Sip & Create</title>
+    <link rel="stylesheet" href="reserve.css">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+<body>
+
+<!-- SIDE CONTROLS -->
+
+<div class="side-controls">
+
+    <!-- LANGUAGE -->
+
+    <div class="language-control">
+
+        <button
+                class="lang-button active"
+                data-lang="en"
+        >
+            EN
+        </button>
+
+        <div class="control-divider"></div>
+
+        <button
+                class="lang-button"
+                data-lang="mk"
+        >
+            MK
+        </button>
+
+    </div>
+
+
+    <!-- DARK MODE -->
+
+    <button
+            class="side-wine-button"
+            id="wineButton"
+            aria-label="Toggle dark mode"
+    >
+        <img
+                src="images/home/wine-glass.png"
+                alt="Wine glass"
+        >
+    </button>
+
+</div>
+
+<!-- WINE EFFECT -->
+
+<div class="wine-overlay"></div>
+
+<div class="wine-message" id="wineMessage">
+    <span id="wineMessageText"></span>
+</div>
+
+
+<div class="calendar-page">
+
+
+    <div class="calendar-box">
+
+
+
+        <div class="calendar-header">
+
+            <button
+                    class="month-button"
+                    id="previousMonth"
+                    aria-label="Previous month"
+            >
+                ‹
+            </button>
+
+
+            <h1
+                    class="month-title"
+                    id="monthTitle"
+            >
+                August 2026
+            </h1>
+
+
+            <button
+                    class="month-button"
+                    id="nextMonth"
+                    aria-label="Next month"
+            >
+                ›
+            </button>
+
+        </div>
+
+
+
+        <div class="calendar-legend">
+
+            <div class="legend-item">
+                <span class="legend-dot dot-glass"></span>
+                Glass Painting
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-dot dot-pasta"></span>
+                Pasta Making
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-dot dot-ceramics"></span>
+                Ceramics Decorating
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-dot dot-crochet"></span>
+                Crocheting
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-dot dot-private"></span>
+                Private Event
+            </div>
+
+        </div>
+
+
+        <div class="weekdays">
+
+            <div class="weekday">MON</div>
+            <div class="weekday">TUE</div>
+            <div class="weekday">WED</div>
+            <div class="weekday">THU</div>
+            <div class="weekday">FRI</div>
+            <div class="weekday">SAT</div>
+            <div class="weekday">SUN</div>
+
+        </div>
+
+
+        <div
+                class="calendar-grid"
+                id="calendarGrid"
+        ></div>
+
+
+        <p class="calendar-note">
+
+            Select a date to continue with your reservation.
+            <br>
+
+            <strong>
+                Monday – Wednesday are available for private events.
+            </strong>
+
+        </p>
+
+
+    </div>
+
+</div>
+
+
+<script src="reserve.js"></script>
+<script src="language.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

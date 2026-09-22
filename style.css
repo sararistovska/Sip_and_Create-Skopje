@@ -32,9 +32,8 @@ img{
 
 
 
-/* =========================================================
-   NAVBAR (shared across all pages)
-========================================================= */
+
+/* ------------------------NAVBAR--------------------------- */
 
 .navbar{
     position:absolute;
@@ -197,9 +196,9 @@ img{
 
 
 
-/* =========================================================
-   DARK MODE — shared
-========================================================= */
+
+
+/*------------------DARK MODE-------------------*/
 
 body.dark{
     background:#242521;
@@ -232,6 +231,8 @@ body.dark .book-btn{
 body.dark .book-btn:hover{
     background:#d3a4ad;
 }
+
+
 
 
 
@@ -694,9 +695,7 @@ body.dark .testimonial-arrow{
 }
 
 
-/***********************
------------FAQ----------
-************************/
+/*---------------------FAQ------------------------*/
 
 .faq-section {
     min-height: 100vh;
@@ -787,6 +786,7 @@ body.dark .testimonial-arrow{
 }
 
 
+
 @media (hover: hover) {
     .faq-card:hover .card-front,
     .faq-card:hover .card-back {
@@ -842,7 +842,9 @@ body.dark .testimonial-arrow{
     color: white;
 }
 
-/* phone */
+
+
+
 @media screen and (max-width: 600px) {
     .faq-section {
         padding: 25px 18px 45px;
@@ -865,26 +867,8 @@ body.dark .testimonial-arrow{
     }
 }
 
-/* =====================================================
-           GENERAL
-        ===================================================== */
-
-/** {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
 
-body {
-
-    background-color: #f8f6f2;
-
-    color: #2d2e2a;
-
-    font-family: "DM Sans", sans-serif;
-
-}*/
 
 
 
@@ -904,9 +888,6 @@ body {
 
 }
 
-/* =====================================================
-   FOOTER CONTAINER
-===================================================== */
 
 .footer-container {
 
@@ -914,10 +895,6 @@ body {
     margin: 0 auto;
 
 }
-
-/* =====================================================
-   FOOTER TOP
-===================================================== */
 
 .footer-top {
 
@@ -932,18 +909,12 @@ body {
     padding-bottom: 45px;
 }
 
-/* =====================================================
-   BRAND
-===================================================== */
 
 .footer-brand {
     max-width: 270px;
 
 }
 
-/* =====================================================
-   LOGO
-===================================================== */
 
 .footer-logo {
 
@@ -964,10 +935,6 @@ body {
 
 }
 
-/* =====================================================
-   DESCRIPTION
-===================================================== */
-
 
 .footer-description {
 
@@ -978,9 +945,6 @@ body {
 
 }
 
-/* =====================================================
-   FOOTER COLUMNS
-===================================================== */
 
 .footer-column {
 
@@ -990,12 +954,6 @@ body {
 
 }
 
-
-
-/* =====================================================
-   COLUMN TITLES
-===================================================== */
-
 .footer-title {
 
     font-size: 10px;
@@ -1004,11 +962,6 @@ body {
     margin-bottom: 20px;
 
 }
-
-
-/* =====================================================
-   LINKS
-===================================================== */
 
 .footer-column a {
 
@@ -1027,12 +980,6 @@ body {
 
 }
 
-
-
-/* =====================================================
-   TEXT
-===================================================== */
-
 .footer-column p {
 
     color: #77756f;
@@ -1041,12 +988,6 @@ body {
     margin-bottom: 12px;
 
 }
-
-
-
-/* =====================================================
-   SOCIAL ICONS
-===================================================== */
 
 .social-links {
 
@@ -1087,11 +1028,6 @@ body {
 }
 
 
-
-/* =====================================================
-   FOOTER BOTTOM
-===================================================== */
-
 .footer-bottom {
 
     border-top: 1px solid #d4d0c8;
@@ -1121,10 +1057,6 @@ body {
 
 
 
-/* =====================================================
-   TABLET
-===================================================== */
-
 @media (max-width: 900px) {
 
     .footer-top {
@@ -1144,11 +1076,6 @@ body {
 
 }
 
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
 
 @media (max-width: 600px) {
 
@@ -1187,12 +1114,6 @@ body {
 
 }
 
-
-
-
-/* ==================================
-           FAQ - DARK MODE
-======================================== */
 
         body.dark .faq-section {
             background-color: #151014;
@@ -1244,54 +1165,37 @@ body.dark .site-footer {
     */
 }
 
-
-/* Logo */
-
 body.dark .footer-logo {
     color: #eeeae2;
 }
-
-
-/* Text under logo */
 
 body.dark .footer-description {
     color: #aaa9a2;
 }
 
 
-/* Footer column titles */
-
 body.dark .footer-title {
     color: #aaa9a2;
 }
 
 
-/* Footer links */
-
 body.dark .footer-column a {
     color: #d8d5ce;
 }
 
-
 body.dark .footer-column a:hover {
     color: #ffffff;
 }
-
-
-/* Visit Us text */
 
 body.dark .footer-column p {
     color: #aaa9a2;
 }
 
 
-/* Social media icons */
-
 body.dark .social-links a {
     border-color: #5c5d57;
     color: #d8d5ce;
 }
-
 
 body.dark .social-links a:hover {
     background-color: #eeeae2;
@@ -1299,29 +1203,17 @@ body.dark .social-links a:hover {
     color: #242521;
 }
 
-
-/* Bottom line */
-
 body.dark .footer-bottom {
     border-top-color: #4b4c46;
 }
-
-
-/* Copyright text */
 
 body.dark .footer-bottom p {
     color: #85867f;
 }
 
-
-/* Light mode logo */
-
 .logo-dark {
     display: none;
 }
-
-
-/* Dark mode logo */
 
 body.dark .logo-light {
     display: none;
@@ -1414,8 +1306,6 @@ body.dark .logo-dark {
     color:#f5f3ef;
 }
 
-
-/* DIVIDER */
 
 .control-divider{
     width:18px;

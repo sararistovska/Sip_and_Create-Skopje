@@ -2,9 +2,633 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sip & Create</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+
+
+
+<!-- SIDE CONTROLS -->
+
+<div class="side-controls">
+
+    <!-- LANGUAGE -->
+
+    <div class="language-control">
+
+        <button
+                class="lang-button active"
+                data-lang="en"
+        >
+            EN
+        </button>
+
+        <div class="control-divider"></div>
+
+        <button
+                class="lang-button"
+                data-lang="mk"
+        >
+            MK
+        </button>
+
+    </div>
+
+
+    <!-- DARK MODE -->
+
+    <button
+            class="side-wine-button"
+            id="wineButton"
+            aria-label="Toggle dark mode"
+    >
+        <img
+                src="images/home/wine-glass.png"
+                alt="Wine glass"
+        >
+    </button>
+
+</div>
+
+
+
+
+<!-- WINE EFFECT -->
+
+<div class="wine-overlay"></div>
+
+<div class="wine-message" id="wineMessage">
+    <span id="wineMessageText"></span>
+</div>
+
+
+
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <a href="home.html" class="logo">
+        Sip & Create
+        <span>SKOPJE</span>
+    </a>
+
+
+    <ul class="nav-links">
+        <li>
+
+            <a
+                    href="#"
+                    data-en="About"
+                    data-mk="За нас"
+            >
+                About
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="#"
+                    data-en="Workshops"
+                    data-mk="Работилници"
+            >
+                Workshops
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="#"
+                    data-en="Gallery"
+                    data-mk="Галерија"
+            >
+                Gallery
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="#"
+                    data-en="Blog"
+                    data-mk="Блог"
+            >
+                Blog
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="contact.html"
+                    data-en="Contact"
+                    data-mk="Контакт"
+            >
+                Contact
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="reserve.html"
+                    class="book-btn"
+                    data-en="Book Now"
+                    data-mk="Резервирај"
+            >
+                Book Now
+            </a>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+
+
+
+
+
+<section class="contact-hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <h1
+                data-en="Contact Us"
+                data-mk="Контактирајте нè"
+        >
+            Contact Us
+        </h1>
+
+        <p class="hero-text"
+           data-en="We’d love to hear from you. Whether you have a question about our events, studio, or anything else — we’re here to help!"
+           data-mk="Би ни било драго доколку ни јавите. Без разлика дали имате прашање за нашите настани, студиото или нешто друго — тука сме да ви помогнеме!"
+        >
+            <strong>We’d love to hear from you.</strong>
+            Whether you have a question about our events, studio,
+            or anything else — we’re here to help!
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<section class="contact-section">
+
+    <div class="contact-container">
+
+        <!-- leva strana -->
+
+        <div class="contact-form-container">
+
+            <p class="section-label"
+               data-en="GET IN TOUCH"
+               data-mk="КОНТАКТИРАЈТЕ НÈ">
+                GET IN TOUCH
+            </p>
+
+            <h2
+                    data-en="Send us a message"
+                    data-mk="Испратете ни порака"
+            >
+                Send us a message
+            </h2>
+
+            <p class="form-intro"
+               data-en="Have a question or want to know more about our workshops? Fill out the form and we’ll get back to you soon."
+               data-mk="Имате прашање или сакате да дознаете повеќе за нашите работилници? Пополнете ја формата и ќе ви одговориме наскоро."
+            >
+                Have a question or want to know more about our workshops?
+                Fill out the form and we’ll get back to you soon.
+            </p>
+
+            <form id="contactForm">
+
+                <div class="form-group">
+                    <label for="name"
+                           data-en="FULL NAME"
+                           data-mk="ИМЕ И ПРЕЗИМЕ">
+                        FULL NAME
+                    </label>
+
+                    <input
+                            type="text"
+                            id="name"
+                            placeholder="Your name"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email"
+                           data-en="EMAIL"
+                           data-mk="Е-ПОШТА">
+                        EMAIL
+                    </label>
+
+                    <input
+                            type="email"
+                            id="email"
+                            placeholder="your@email.com"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="subject"
+                           data-en="SUBJECT"
+                           data-mk="НАСЛОВ">
+                        SUBJECT
+                    </label>
+
+                    <input
+                            type="text"
+                            id="subject"
+                            placeholder="How can we help?"
+                    >
+                </div>
+
+                <div class="form-group message-group">
+                    <label for="message"
+                           data-en="YOUR MESSAGE"
+                           data-mk="ВАШАТА ПОРАКА">
+                        YOUR MESSAGE
+                    </label>
+
+                    <textarea
+                            id="message"
+                            placeholder="Tell us how we can help..."
+                    ></textarea>
+                </div>
+
+                <button type="submit"
+                        class="send-button"
+                        data-en="SEND A MESSAGE"
+                        data-mk="ИСПРАТИ ПОРАКА">
+                    SEND A MESSAGE
+                </button>
+
+                <p id="formMessage" class="form-message"></p>
+
+            </form>
+
+        </div>
+
+
+        <!-- desna strana -->
+
+        <div class="contact-info-container">
+
+            <!-- info -->
+
+            <div class="studio-info">
+
+                <div class="info-block">
+                    <p class="info-label"
+                       data-en="OUR STUDIO"
+                       data-mk="НАШЕТО СТУДИО">
+                        OUR STUDIO
+                    </p>
+
+                    <p class="info-text"
+                       data-en="Partizanska 12A 1000 Skopje, North Macedonia"
+                       data-mk="Партизанска 12А 1000 Скопје, Северна Македонија">
+                        Partizanska 12A<br>
+                        1000 Skopje, North Macedonia
+                    </p>
+                </div>
+
+
+                <div class="info-block">
+                    <i class="bi bi-envelope"></i>
+
+                    <p class="info-label"
+                       data-en="EMAIL US"
+                       data-mk="ПИШЕТЕ НИ">
+                        EMAIL US
+                    </p>
+
+                    <p class="info-text">
+                        sipandcreate@gmail.mk
+                    </p>
+                </div>
+
+
+                <div class="info-block">
+                    <i class="bi bi-telephone"></i>
+
+                    <p class="info-label"
+                       data-en="CALL US"
+                       data-mk="ЈАВЕТЕ НИ СЕ">
+                        CALL US
+                    </p>
+
+                    <p class="info-text">
+                        +389 70 123 456
+                    </p>
+                </div>
+
+
+                <div class="info-block">
+                    <i class="bi bi-clock"></i>
+
+                    <p class="info-label"
+                       data-en="STUDIO HOURS"
+                       data-mk="РАБОТНО ВРЕМЕ">
+                        STUDIO HOURS
+                    </p>
+
+                    <p class="info-text"
+                       data-en="Mon - Fri: 10:00 - 20:00 Sat - Sun: 11:00 - 21:00"
+                       data-mk="Пон - Пет: 10:00 - 20:00 Саб - Нед: 11:00 - 21:00">
+                        Mon - Fri: 10:00 - 20:00<br>
+                        Sat - Sun: 11:00 - 21:00
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- mapa -->
+
+            <div class="map-container">
+
+                <iframe
+                        src="https://www.google.com/maps?q=Partizanska%2012A,%20Skopje,%20North%20Macedonia&output=embed"
+                        loading="lazy"
+                        allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!---------------------FOOTER------------------------>
+
+<footer class="site-footer">
+
+
+    <div class="footer-container">
+
+
+
+        <div class="footer-top">
+
+
+            <div class="footer-brand">
+
+                <a href="home.html" class="footer-logo">
+
+                    <img
+                            class="logo-light"
+                            src="images/home/logo-dark.png"
+                            alt="Sip & Create Logo"
+                    >
+
+                    <img
+                            class="logo-dark"
+                            src="images/home/logo-light.png"
+                            alt="Sip & Create Logo"
+                    >
+
+                </a>
+
+
+
+                <p class="footer-description"
+                   data-en="Creative workshops, good company, and a little something to make."
+                   data-mk="Креативни работилници, добро друштво и нешто уникатно што ќе го создадете."
+                >
+
+                    Creative workshops, good company,
+                    and a little something to make.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <p class="footer-title"
+                   data-en="EXPLORE"
+                   data-mk="ИСТРАЖИ"
+                >
+                    EXPLORE
+                </p>
+
+                <a href="home.html"
+                   data-en="Home"
+                   data-mk="Почетна"
+                >
+                    Home
+                </a>
+
+                <a href="#"
+                   data-en="Workshops"
+                   data-mk="Работилници"
+                >
+                    Workshops
+                </a>
+
+                <a href="#"
+                   data-en="About Us"
+                   data-mk="За нас"
+                >
+                    About Us
+                </a>
+
+                <a href="contact.html"
+                   data-en="Contact"
+                   data-mk="Контакт"
+                >
+                    Contact
+                </a>
+
+
+            </div>
+
+
+
+
+            <div class="footer-column">
+
+
+                <p class="footer-title"
+                   data-en="VISIT US"
+                   data-mk="ПОСЕТЕТЕ НÈ"
+                >
+                    VISIT US
+                </p>
+
+
+                <p>
+
+                    Partizanska 12A<br>
+
+                    1000 Skopje<br>
+
+                    North Macedonia
+
+                </p>
+
+
+                <a
+                        href="mailto:sipandcreate@gmail.mk"
+                >
+
+                    sipandcreate@gmail.mk
+
+                </a>
+
+
+                <a
+                        href="tel:+38970123456"
+                >
+
+                    +389 70 123 456
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- ================= social media  ================= -->
+
+            <div class="footer-column">
+
+
+                <p class="footer-title"
+                   data-en="FOLLOW ALONG"
+                   data-mk="СЛЕДЕТЕ НÈ"
+                >
+                    FOLLOW ALONG
+                </p>
+
+
+                <div class="social-links">
+
+
+                    <a
+                            href="https://www.instagram.com/sipandcreate.skopje/"
+                            aria-label="Instagram"
+                    >
+
+                        <i class="bi bi-instagram"></i>
+
+                    </a>
+
+
+
+                    <a
+                            href="https://www.facebook.com"
+                            aria-label="Facebook"
+                    >
+
+                        <i class="bi bi-facebook"></i>
+
+                    </a>
+
+
+
+                    <a
+                            href="https://www.tiktok.com"
+                            aria-label="TikTok"
+                    >
+
+                        <i class="bi bi-tiktok"></i>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+
+            <p
+                    data-en="© 2026 Sip & Create. All rights reserved."
+                    data-mk="© 2026 Sip & Create. Сите права се задржани."
+            >
+
+                © 2026 Sip & Create.
+                All rights reserved.
+
+            </p>
+
+
+            <p
+                    data-en="Made for creative moments."
+                    data-mk="Создадено за креативни моменти."
+            >
+
+                Made for creative moments.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</footer>
+
+<script src="contact.js"></script>
+<script src="script.js"></script>
+<script src="language.js"></script>
 
 </body>
 </html>
