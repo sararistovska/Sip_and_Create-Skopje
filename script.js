@@ -7,6 +7,11 @@ const wineOverlay = document.querySelector(".wine-overlay");
 const wineMessage = document.getElementById("wineMessage");
 const wineMessageText = document.getElementById("wineMessageText");
 
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme === "dark"){
+    document.body.classList.add("dark");
+}
 
 if(wineButton && wineOverlay){
 
@@ -51,6 +56,14 @@ if(wineButton && wineOverlay){
         setTimeout(function(){
 
             document.body.classList.toggle("dark");
+
+            /* SAVE THEME */
+            localStorage.setItem(
+                "theme",
+                document.body.classList.contains("dark")
+                    ? "dark"
+                    : "light"
+            );
 
         }, wineMessage ? 1200 : 900);
 
@@ -159,9 +172,6 @@ if(orbitScale){
 }
 
 
-
-
-
 /* =========================================================
    HOME — STORY IMAGE ZOOM ON SCROLL
 ========================================================= */
@@ -240,7 +250,7 @@ const testimonialTrack =
     document.getElementById("testimonialTrack");
 
 
-if(testimonialTrack){
+if(testimonialTrack) {
 
     const testimonialCards =
         document.querySelectorAll(".testimonial-card");
@@ -258,13 +268,13 @@ if(testimonialTrack){
     let testimonialIndex = 0;
 
 
-    function visibleTestimonials(){
+    function visibleTestimonials() {
 
-        if(window.innerWidth <= 900){
+        if (window.innerWidth <= 900) {
             return 1;
         }
 
-        if(window.innerWidth <= 1300){
+        if (window.innerWidth <= 1300) {
             return 2;
         }
 
@@ -273,7 +283,7 @@ if(testimonialTrack){
     }
 
 
-    function maxTestimonials(){
+    function maxTestimonials() {
 
         return Math.max(
             0,
@@ -284,22 +294,22 @@ if(testimonialTrack){
     }
 
 
-    function createDots(){
+    function createDots() {
 
-        testimonialDots.innerHTML="";
+        testimonialDots.innerHTML = "";
 
-        for(let i=0;i<=maxTestimonials();i++){
+        for (let i = 0; i <= maxTestimonials(); i++) {
 
             const dot =
                 document.createElement("div");
 
             dot.className = "testimonial-dot";
 
-            if(i === testimonialIndex){
+            if (i === testimonialIndex) {
                 dot.classList.add("active");
             }
 
-            dot.onclick = ()=>{
+            dot.onclick = () => {
                 moveTestimonials(i);
             };
 
@@ -310,7 +320,7 @@ if(testimonialTrack){
     }
 
 
-    function moveTestimonials(position){
+    function moveTestimonials(position) {
 
         testimonialIndex =
             Math.max(
@@ -332,7 +342,7 @@ if(testimonialTrack){
 
         document
             .querySelectorAll(".testimonial-dot")
-            .forEach((dot,index)=>{
+            .forEach((dot, index) => {
 
                 dot.classList.toggle(
                     "active",
@@ -344,11 +354,11 @@ if(testimonialTrack){
     }
 
 
-    testimonialPrev.onclick = ()=>{
+    testimonialPrev.onclick = () => {
         moveTestimonials(testimonialIndex - 1);
     };
 
-    testimonialNext.onclick = ()=>{
+    testimonialNext.onclick = () => {
         moveTestimonials(testimonialIndex + 1);
     };
 
@@ -359,46 +369,55 @@ if(testimonialTrack){
 
 
     let autoSlide =
-        setInterval(()=>{
+        setInterval(() => {
 
-            if(testimonialIndex >= maxTestimonials()){
+            if (testimonialIndex >= maxTestimonials()) {
                 moveTestimonials(0);
-            }
-            else{
+            } else {
                 moveTestimonials(testimonialIndex + 1);
             }
 
-        },5000);
+        }, 5000);
 
 
-    testimonialTrack.addEventListener("mouseenter",()=>{
+    testimonialTrack.addEventListener("mouseenter", () => {
         clearInterval(autoSlide);
     });
 
 
-    testimonialTrack.addEventListener("mouseleave",()=>{
+    testimonialTrack.addEventListener("mouseleave", () => {
 
         autoSlide =
-            setInterval(()=>{
+            setInterval(() => {
 
-                if(testimonialIndex >= maxTestimonials()){
+                if (testimonialIndex >= maxTestimonials()) {
                     moveTestimonials(0);
-                }
-                else{
+                } else {
                     moveTestimonials(testimonialIndex + 1);
                 }
 
-            },5000);
+            }, 5000);
 
     });
 
 
-    window.addEventListener("resize",()=>{
+    window.addEventListener("resize", () => {
 
         createDots();
 
         moveTestimonials(testimonialIndex);
 
     });
-
 }
+
+
+
+
+// FAQ flipping
+
+    function flipCard(card) {
+        card.classList.toggle("flipped");
+    }
+
+
+
