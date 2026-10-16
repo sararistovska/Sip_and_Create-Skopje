@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Sip &amp; Create Skopje</title>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about_us.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <a href="home.html" class="logo">
+        Sip &amp; Create
+        <span>SKOPJE</span>
+    </a>
+
+    <ul class="nav-links">
+        <li>
+            <a href="home.html" data-en="Home" data-mk="Дома">Home</a>
+        </li>
+
+        <li class="current">
+            <a href="about_us.html" data-en="About" data-mk="За нас">About</a>
+        </li>
+
+        <li class="nav-dropdown">
+            <a href="#" class="workshops-link">
+                <span data-en="Workshops" data-mk="Работилници">Workshops</span>
+                <span class="dropdown-icon">+</span>
+            </a>
+
+            <ul class="workshops-menu">
+                <li>
+                    <a href="pasta_workshop.html">
+                        <span data-en="Pasta Making" data-mk="Правење паста">Pasta Making</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="glass-painting.html">
+                        <span data-en="Glass Painting" data-mk="Сликање на стакло">Glass Painting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../Sip_and_create_full/ceramics_decoration.html">
+                        <span data-en="Ceramics Decoration" data-mk="Декорација на керамика">Ceramics Decoration</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="gallery.html" data-en="Gallery" data-mk="Галерија">Gallery</a>
+        </li>
+
+        <li>
+            <a href="contact.html" data-en="Contact" data-mk="Контакт">Contact</a>
+        </li>
+
+        <li>
+            <a href="reserve.html" class="book-btn" data-en="Book Now" data-mk="Резервирај">Book Now</a>
+        </li>
+    </ul>
+
+</nav>
+
+
+<!-- SIDE CONTROLS -->
+<div class="side-controls">
+
+    <div class="language-control lang-toggle">
+        <button class="lang-button active" data-lang="en">EN</button>
+        <div class="control-divider"></div>
+        <button class="lang-button" data-lang="mk">MK</button>
+    </div>
+
+    <button class="side-wine-button" id="wineButton" aria-label="Toggle dark mode">
+        <img src="images/home/wine-glass.png" alt="Wine glass">
+    </button>
+
+</div>
+
+
+<!-- WINE EFFECT -->
+<div class="wine-overlay"></div>
+
+<div class="wine-message" id="wineMessage">
+    <span id="wineMessageText"></span>
+</div>
+
+
+<!-- HERO -->
+<header class="about-hero">
+
+    <div class="about-text">
+        <div class="hero-kicker" data-en="About us" data-mk="За нас">About us</div>
+        <h1 data-en="A studio built around slow evenings and <em>messy hands.</em>" data-mk="Студио создадено околу бавни вечери и <em>валкани раце.</em>">A studio built around slow evenings and <em>messy hands.</em></h1>
+    </div>
+
+    <div class="img-cube-wrap">
+        <div class="img-cube">
+            <div class="img-cube-face img-cube-face--front">
+                <img src="images/about_us/tableview.jpg" alt="">
+                <span class="face-caption" data-en="Cozy feelings." data-mk="Пријатни чувства.">Cozy feelings.</span>
+            </div>
+            <div class="img-cube-face img-cube-face--right">
+                <img src="images/about_us/people.jpg" alt="">
+                <span class="face-caption" data-en="Creating memories." data-mk="Создаваме спомени.">Creating memories.</span>
+            </div>
+            <div class="img-cube-face img-cube-face--back">
+                <img src="images/about_us/red_pictute.jpg" alt="">
+                <span class="face-caption" data-en="Bound by sips and creativity." data-mk="Споени преку голтки и креативност.">Bound by sips and creativity.</span>
+            </div>
+            <div class="img-cube-face img-cube-face--left">
+                <img src="images/about_us/foundersjpg.jpg" alt="">
+                <span class="face-caption" data-en="Born from friendship." data-mk="Продукт на пријателство.">Born from friendship.</span>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+
+<!-- HOW WE WORK -->
+<section class="how">
+    <div class="container">
+
+        <div class="section-label reveal" data-en="How we work" data-mk="Како работиме">How we work</div>
+
+        <div class="section-head reveal">
+            <h2 data-en="Book, sit down, <br/><em>take it home.</em>" data-mk="Резервирај, седни, <br/><em>понеси дома.</em>">Book, sit down, <br/><em>take it home.</em></h2>
+            <p data-en="Three simple steps from the first click to a finished piece in your hands." data-mk="Три едноставни чекори од првиот клик до готово дело во твоите раце.">Three simple steps from the first click to a finished piece in your hands.</p>
+        </div>
+
+        <div class="path">
+
+            <svg class="path-svg" aria-hidden="true">
+                <path class="path-track"></path>
+                <path class="path-fill"></path>
+                <circle class="path-dot-halo" r="9"></circle>
+                <circle class="path-dot" r="6"></circle>
+            </svg>
+
+            <div class="path-step">
+                <div class="path-circle">
+                    <div class="path-photo"><img src="images/about_us/calendar_march.jpg" alt=""></div>
+                    <span class="path-num">1</span>
+                </div>
+                <div class="path-text">
+                    <span class="path-kicker" data-en="Step 1" data-mk="Чекор 1">Step 1</span>
+                    <h3 data-en="Book" data-mk="Резервирај">Book</h3>
+                    <p data-en="Pick a workshop and a date that suits your evening, online in under two minutes." data-mk="Избери работилница и термин што ти одговара, онлајн, за помалку од две минути.">Pick a workshop and a date that suits your evening, online in under two minutes.</p>
+                </div>
+            </div>
+
+            <div class="path-step">
+                <div class="path-circle">
+                    <div class="path-photo"><img src="images/about_us/workshop_inprogressjpg.jpg" alt=""></div>
+                    <span class="path-num">2</span>
+                </div>
+                <div class="path-text">
+                    <span class="path-kicker" data-en="Step 2" data-mk="Чекор 2">Step 2</span>
+                    <h3 data-en="Sip &amp; Create" data-mk="Сркни и создавај">Sip &amp; Create</h3>
+                    <p data-en="Settle in with a glass of wine while our hosts walk you through every brushstroke." data-mk="Седни удобно со чаша вино додека нашите домаќини те водат низ секој потег на четката.">Settle in with a glass of wine while our hosts walk you through every brushstroke.</p>
+                </div>
+            </div>
+
+            <div class="path-step">
+                <div class="path-circle">
+                    <div class="path-photo"><img src="images/ceramics_red.jpg" alt=""></div>
+                    <span class="path-num">3</span>
+                </div>
+                <div class="path-text">
+                    <span class="path-kicker" data-en="Step 3" data-mk="Чекор 3">Step 3</span>
+                    <h3 data-en="Take it home" data-mk="Понеси го дома">Take it home</h3>
+                    <p data-en="Your creation gets a quick seal and a box, ready to use or gift the very same night." data-mk="Твоето дело добива брзо запечатување и кутија, спремно за употреба или подарок уште истата вечер.">Your creation gets a quick seal and a box, ready to use or gift the very same night.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- WORKSHOPS -->
+<section class="workshops-section">
+    <div class="container">
+
+        <div class="section-label reveal" data-en="Our workshops" data-mk="Нашите работилници">Our workshops</div>
+
+        <div class="section-head reveal">
+            <h2 data-en="Three ways to <br/><em>spend an evening.</em>" data-mk="Три начини да ја <br/><em>поминеш вечерта.</em>">Three ways to <br/><em>spend an evening.</em></h2>
+        </div>
+
+        <div class="workshops-grid">
+            <div class="workshops-media">
+                <div class="workshops-frame">
+                    <div class="workshop-img active" data-index="0">
+                        <video autoplay playsinline loop muted>
+                            <source src="images/about_us/glass_video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="workshop-img" data-index="1">
+                        <video autoplay playsinline loop muted>
+                            <source src="images/about_us/pasta_video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="workshop-img" data-index="2">
+                        <video autoplay playsinline loop muted>
+                            <source src="images/about_us/ceramics_video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workshops-list">
+                <div class="workshop-item active" data-index="0">
+                    <h3 data-en="Glass Painting" data-mk="Сликање на чаши">Glass Painting</h3>
+                    <p data-en="Design and personalize two glasses and one candle under the guidance of our skilled instructors. All materials like glasses &amp; candles, brushes, paints, and templates are included."
+                       data-mk="Дизајнирај и персонализирај две чаши и една свеќа под водство на нашите обучени инструктори. Сите материјали како чаши, свеќи, четки, бои и шаблони се вклучени.">
+                        Design and personalize two glasses and one candle under the guidance of our skilled instructors. All materials like glasses &amp; candles, brushes, paints, and templates are included.
+                    </p>
+                </div>
+
+                <div class="workshop-item" data-index="1">
+                    <h3 data-en="Pasta Making" data-mk="Изработка на паста">Pasta Making</h3>
+                    <p data-en="Learn how to craft delicious homemade pasta from scratch under the guidance of our chefs, and enjoy tasting your creations."
+                       data-mk="Научи како да подготвиш вкусна домашна паста од почеток под водство на нашите готвачи и уживај во дегустацијата на твоите креации.">
+                        Learn how to craft delicious homemade pasta from scratch under the guidance of our chefs, and enjoy tasting your creations.
+                    </p>
+                </div>
+
+                <div class="workshop-item" data-index="2">
+                    <h3 data-en="Ceramics &amp; Wine" data-mk="Керамика и вино">Ceramics &amp; Wine</h3>
+                    <p data-en="Paint and decorate your own ceramic piece while enjoying a glass of fine wine under the guidance of our instructors."
+                       data-mk="Обој и украси свој керамички предмет додека уживаш во чаша добро вино под водство на нашите инструктори.">
+                        Paint and decorate your own ceramic piece while enjoying a glass of fine wine under the guidance of our instructors.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- TEAM -->
+<section class="team-section">
+    <div class="container">
+
+        <div class="section-label reveal" data-en="The team" data-mk="Тимот">The team</div>
+
+        <div class="section-head reveal">
+            <h2 data-en="The people <br/><em>behind the table.</em>" data-mk="Луѓето <br/><em>зад масата.</em>">The people <br/><em>behind the table.</em></h2>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-float reveal">
+                <div class="team-card" data-flip>
+                    <div class="team-card-inner">
+                        <div class="team-card-front">
+                            <div class="team-photo"><img src="images/about_us/ena_bendevska.jpeg"/></div>
+                            <div class="team-card-front-body">
+                                <h3 data-en="Ena Bendevska" data-mk="Ена Бендевска">Ena Bendevska</h3>
+                                <div class="team-role" data-en="Founder &amp; Lead Instructor" data-mk="Основач и главен инструктор">Founder &amp; Lead Instructor</div>
+                                <span class="flip-hint" data-en="Tap to flip" data-mk="Кликни за да се сврти">Tap to flip</span>
+                            </div>
+                        </div>
+                        <div class="team-card-back">
+                            <h4 data-en="Ena Bendevska" data-mk="Ена Бендевска">Ena Bendevska</h4>
+                            <div class="stat-row"><span data-en="Brush precision" data-mk="Прецизност на четка">Brush precision</span><span class="stars">★★★★★</span></div>
+                            <div class="stat-row"><span data-en="Hosting energy" data-mk="Енергија на домаќин">Hosting energy</span><span class="stars">★★★★★</span></div>
+                            <div class="stat-row"><span data-en="Wine pairing" data-mk="Спарување со вино">Wine pairing</span><span class="stars">★★★☆☆</span></div>
+                            <div class="stat-row"><span data-en="Playlist taste" data-mk="Плејлиста">Playlist taste</span><span class="stars">★★★★★</span></div>
+                            <p class="fun-fact" data-en="Fun fact: has a playlist for every kind of weather." data-mk="Занимливост: има плејлиста за секое време.">Fun fact: has a playlist for every kind of weather.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-float reveal">
+                <div class="team-card" data-flip>
+                    <div class="team-card-inner">
+                        <div class="team-card-front">
+                            <div class="team-photo"><img src="images/about_us/foundersjpg.jpg" height="1503" width="2048"/></div>
+                            <div class="team-card-front-body">
+                                <h3 data-en="Together" data-mk="Заедно">Together</h3>
+                                <div class="team-role" data-en="Dream team" data-mk="Тим од сништата">Dream team</div>
+                                <span class="flip-hint" data-en="Tap to flip" data-mk="Кликни за да се сврти">Tap to flip</span>
+                            </div>
+                        </div>
+                        <div class="team-card-back">
+                            <h4 data-en="Together" data-mk="Заедно" >Together</h4>
+                            <div class="stat-row"><span data-en="Vibes" data-mk="Атмосфера">Vibes</span><span class="stars">★★★★★</span></div>
+                            <p class="fun-fact" data-en="Fun fact: Together we try to make the evening as eventfull and as enjoyable as possible." data-mk="Занимливост: Заедно се трудиме да ја направиме вечерта што е можно повпечатлива.">Fun fact: Together we try to make the evening as eventfull and as enjoyable as possible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-float reveal">
+                <div class="team-card" data-flip>
+                    <div class="team-card-inner">
+                        <div class="team-card-front">
+                            <div class="team-photo"><img src="images/about_us/simona.jpg" height="1809" width="1200"/></div>
+                            <div class="team-card-front-body">
+                                <h3 data-en="Simona Georgievska" data-mk="Симона Георгиевска">Simona Georgievska</h3>
+                                <div class="team-role" data-en="Co-founder and wine curator" data-mk="Ко-основач и кураторка на вино">Co-founder and wine curator</div>
+                                <span class="flip-hint" data-en="Tap to flip" data-mk="Кликни за да се сврти">Tap to flip</span>
+                            </div>
+                        </div>
+                        <div class="team-card-back">
+                            <h4 data-en="Simona Georgievska" data-mk="Симона Георгиевска">Simona Georgievska</h4>
+                            <div class="stat-row"><span data-en="Wine pairing" data-mk="Спарување со вино">Wine pairing</span><span class="stars">★★★★★</span></div>
+                            <div class="stat-row"><span data-en="Brush precision" data-mk="Прецизност на четка">Brush precision</span><span class="stars">★★★☆☆</span></div>
+                            <div class="stat-row"><span data-en="Playlist taste" data-mk="Плејлиста">Playlist taste</span><span class="stars">★★★★★</span></div>
+                            <div class="stat-row"><span data-en="Hosting energy" data-mk="Енергија на домаќин">Hosting energy</span><span class="stars">★★★★★</span></div>
+                            <p class="fun-fact" data-en="Fun fact: can name the grape in a wine, most of the time." data-mk="Занимливост: најчесто погодува кое грозје е во вино на слепо.">Fun fact: can name the grape in a wine blind, most of the time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <a href="home.html" class="footer-logo">
+                    <img class="logo-light" src="images/home/logo-dark.png" alt="Sip & Create Logo">
+                    <img class="logo-dark" src="images/home/logo-light.png" alt="Sip & Create Logo">
+                </a>
+
+                <p class="footer-description"
+                   data-en="Creative workshops, good company, and a little something to make."
+                   data-mk="Креативни работилници, добро друштво и нешто уникатно што ќе го создадете."
+                >
+                    Creative workshops, good company,
+                    and a little something to make.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <p class="footer-title" data-en="EXPLORE" data-mk="ИСТРАЖИ">EXPLORE</p>
+
+                <a href="home.html" data-en="Home" data-mk="Почетна">Home</a>
+                <a href="#" data-en="About Us" data-mk="За нас">About Us</a>
+                <a href="pasta_workshop.html" data-en="Pasta making" data-mk="Правење тестенини">Pasta making</a>
+                <a href="glass-painting.html" data-en="Glass painting" data-mk="Сликање на стакло">Glass painting</a>
+                <a href="../Sip_and_create_full/ceramics_decoration.html" data-en="Ceramics decoration" data-mk="Декорација на керамика">Ceramics decoration</a>
+                <a href="gallery.html" data-en="Gallery" data-mk="Галерија">Gallery</a>
+                <a href="contact.html" data-en="Contact" data-mk="Контакт">Contact</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <p class="footer-title" data-en="VISIT US" data-mk="ПОСЕТЕТЕ НÈ">VISIT US</p>
+
+                <p>
+                    Partizanska 12A<br>
+                    1000 Skopje<br>
+                    North Macedonia
+                </p>
+
+                <a href="mailto:sipandcreate@gmail.mk">sipandcreate@gmail.mk</a>
+
+                <a href="tel:+38970123456">+389 70 123 456</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <p class="footer-title" data-en="FOLLOW ALONG" data-mk="СЛЕДЕТЕ НÈ">FOLLOW ALONG</p>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/sipandcreate.skopje/" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sipandcreate.skopje/" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@sipandcreate.skopje" aria-label="TikTok">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p data-en="© 2026 Sip & Create. All rights reserved."
+               data-mk="© 2026 Sip & Create. Сите права се задржани.">
+                © 2026 Sip & Create.
+                All rights reserved.
+            </p>
+
+            <p data-en="Made for creative moments."
+               data-mk="Создадено за креативни моменти.">
+                Made for creative moments.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- global script: wine button + dark mode (must come after the elements exist) -->
+<script src="script.js"></script>
+
+<script>
+    /* ---------- language ---------- */
+
+    let language = "en";
+
+    const buttons = document.querySelectorAll(".lang-toggle button");
+    const elements = document.querySelectorAll("[data-en]");
+
+    function changeLanguage() {
+
+        elements.forEach(function (element) {
+            // innerHTML, because some headings use <em> and <br/>
+            element.innerHTML = element.getAttribute("data-" + language);
+        });
+
+        buttons.forEach(function (button) {
+            button.classList.toggle("active", button.getAttribute("data-lang") === language);
+        });
+    }
+
+    buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            language = button.getAttribute("data-lang");
+            changeLanguage();
+        });
+    });
+
+    changeLanguage();
+
+
+    /* ---------- hero: the sticky title slides away after a while ---------- */
+
+    const aboutText = document.querySelector(".about-text");
+    const UNPIN_START = 450;
+    const SPEED = 0.8;
+
+    window.addEventListener("scroll", () => {
+        const scrolled = window.scrollY;
+        const offset = scrolled > UNPIN_START ? (scrolled - UNPIN_START) * SPEED : 0;
+        aboutText.style.transform = `translate3d(0, -${offset}px, 0)`;
+    }, { passive: true });
+
+
+    /* ---------- scroll reveal ---------- */
+
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+        revealObserver.observe(element);
+    });
+
+
+    /* ---------- workshops: sticky video + text follow the item closest to the screen center ---------- */
+
+    const workshopItems = document.querySelectorAll(".workshop-item");
+    const workshopImgs = document.querySelectorAll(".workshop-img");
+
+    function updateWorkshops() {
+        const viewportCenter = window.innerHeight / 2;
+        let closestIdx = workshopItems[0].dataset.index;
+        let closestDist = Infinity;
+
+        workshopItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            const dist = Math.abs(rect.top + rect.height / 2 - viewportCenter);
+            if (dist < closestDist) {
+                closestDist = dist;
+                closestIdx = item.dataset.index;
+            }
+        });
+
+        workshopItems.forEach(i => i.classList.toggle("active", i.dataset.index === closestIdx));
+        workshopImgs.forEach(im => im.classList.toggle("active", im.dataset.index === closestIdx));
+    }
+
+    window.addEventListener("scroll", updateWorkshops, { passive: true });
+    window.addEventListener("resize", updateWorkshops);
+    updateWorkshops();
+
+
+    /* ---------- team: click a card to flip it ---------- */
+
+    document.querySelectorAll(".team-card[data-flip]").forEach(card => {
+        card.addEventListener("click", () => {
+            card.classList.toggle("flipped");
+        });
+    });
+
+
+    /* ---------- how we work: scroll path ---------- */
+
+    const pathBox = document.querySelector(".path");
+    const pathSvg = pathBox.querySelector(".path-svg");
+    const pathTrack = pathBox.querySelector(".path-track");
+    const pathFill = pathBox.querySelector(".path-fill");
+    const pathDot = pathBox.querySelector(".path-dot");
+    const pathHalo = pathBox.querySelector(".path-dot-halo");
+    const pathSteps = pathBox.querySelectorAll(".path-step");
+
+    let pathLen = 0;
+    let pathPts = [];
+
+    // draws a curved line through the center of every circle
+    function buildPath() {
+        const w = pathBox.offsetWidth;
+        const h = pathBox.offsetHeight;
+
+        pathSvg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+
+        pathPts = Array.from(pathSteps).map(step => {
+            const c = step.querySelector(".path-circle");
+            return {
+                x: step.offsetLeft + c.offsetLeft + c.offsetWidth / 2,
+                y: step.offsetTop + c.offsetTop + c.offsetHeight / 2
+            };
+        });
+
+        let d = `M ${pathPts[0].x} 0 L ${pathPts[0].x} ${pathPts[0].y}`;
+
+        for (let i = 1; i < pathPts.length; i++) {
+            const a = pathPts[i - 1];
+            const b = pathPts[i];
+            const k = (b.y - a.y) * 0.6;
+            d += ` C ${a.x} ${a.y + k}, ${b.x} ${b.y - k}, ${b.x} ${b.y}`;
+        }
+
+        const last = pathPts[pathPts.length - 1];
+        d += ` L ${last.x} ${h}`;
+
+        pathTrack.setAttribute("d", d);
+        pathFill.setAttribute("d", d);
+
+        pathLen = pathFill.getTotalLength();
+        pathFill.style.strokeDasharray = pathLen;
+
+        updatePath();
+    }
+
+    // draws the line up to the middle of the screen and moves the glowing dot
+    function updatePath() {
+        if (!pathLen) return;
+
+        const rect = pathBox.getBoundingClientRect();
+        const line = window.innerHeight * 0.55 - rect.top;
+        const target = Math.max(0, Math.min(pathBox.offsetHeight, line));
+
+        // find the point on the path that sits at the "target" height
+        let lo = 0;
+        let hi = pathLen;
+        for (let i = 0; i < 18; i++) {
+            const mid = (lo + hi) / 2;
+            if (pathFill.getPointAtLength(mid).y < target) lo = mid;
+            else hi = mid;
+        }
+
+        pathFill.style.strokeDashoffset = pathLen - lo;
+
+        const p = pathFill.getPointAtLength(lo);
+        [pathDot, pathHalo].forEach(dot => {
+            dot.setAttribute("cx", p.x);
+            dot.setAttribute("cy", p.y);
+            dot.style.opacity = line > 0 && line < pathBox.offsetHeight ? 1 : 0;
+        });
+
+        pathSteps.forEach((step, i) => {
+            step.classList.toggle("active", line >= pathPts[i].y);
+        });
+    }
+
+    // steps pop in when they enter the screen
+    const stepObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("in");
+                stepObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    pathSteps.forEach(step => stepObserver.observe(step));
+
+    window.addEventListener("scroll", updatePath, { passive: true });
+
+    if (window.ResizeObserver) {
+        new ResizeObserver(buildPath).observe(pathBox);   // resize, images loading, language change
+    }
+    window.addEventListener("load", buildPath);
+    buildPath();
+</script>
+
+</body>
+</html>

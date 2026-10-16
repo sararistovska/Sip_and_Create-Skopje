@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Ceramics Decoration Workshop | Sip &amp; Create Skopje</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ceramics_decoration.css">
+
+    <!-- Bootstrap Icons -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+</head>
+<body>
+
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <a href="home.html" class="logo">
+        Sip & Create
+        <span>SKOPJE</span>
+    </a>
+
+    <ul class="nav-links">
+        <li>
+            <a href="home.html" data-en="Home" data-mk="Дома">Home</a>
+        </li>
+
+        <li>
+            <a href="#" data-en="About" data-mk="За нас">About</a>
+        </li>
+
+        <li class="nav-dropdown">
+            <a href="#" class="workshops-link">
+                <span data-en="Workshops" data-mk="Работилници">Workshops</span>
+                <span class="dropdown-icon">+</span>
+            </a>
+
+            <ul class="workshops-menu">
+                <li>
+                    <a href="pasta_workshop.html">
+                        <span data-en="Pasta Making" data-mk="Правење паста">Pasta Making</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="glass-painting.html">
+                        <span data-en="Glass Painting" data-mk="Сликање на стакло">Glass Painting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="ceramics_decoration.html">
+                        <span data-en="Ceramics Decoration" data-mk="Декорација на керамика">Ceramics Decoration</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="gallery.html" data-en="Gallery" data-mk="Галерија">Gallery</a>
+        </li>
+
+        <li>
+            <a href="contact.html" data-en="Contact" data-mk="Контакт">Contact</a>
+        </li>
+
+        <li>
+            <a href="reserve.html" class="book-btn" data-en="Book Now" data-mk="Резервирај">Book Now</a>
+        </li>
+    </ul>
+
+</nav>
+
+
+<!-- SIDE CONTROLS -->
+<div class="side-controls">
+
+    <div class="language-control lang-toggle">
+        <button class="lang-button active" data-lang="en">EN</button>
+        <div class="control-divider"></div>
+        <button class="lang-button" data-lang="mk">MK</button>
+    </div>
+
+    <button class="side-wine-button" id="wineButton" aria-label="Toggle dark mode">
+        <img src="images/home/wine-glass.png" alt="Wine glass">
+    </button>
+
+</div>
+
+
+<!-- WINE EFFECT -->
+<div class="wine-overlay"></div>
+
+<div class="wine-message" id="wineMessage">
+    <span id="wineMessageText"></span>
+</div>
+
+
+<!-- HERO (plate reveal) -->
+<section class="hero">
+
+    <div class="hero-content">
+        <div class="hero-kicker">
+            <span data-en="Ceramics Decoration Workshop · Skopje" data-mk="Работилница за декорација на керамика · Скопје">Ceramics Decoration Workshop · Skopje</span>
+        </div>
+
+        <h1 class="hero-title">
+            <span data-en="Make it <em>by hand.</em>" data-mk="Направи го <em>рачно.</em>">Make it <em> by hand. </em> </span>
+        </h1>
+    </div>
+
+
+    <!-- PLATE -->
+    <div class="plate-area" id="plateArea">
+
+        <div class="plate" id="plate" tabindex="0" role="img"
+             aria-label="An empty ceramic plate. Move your cursor across it to reveal a hand-painted Starry Night design.">
+
+            <div class="plate-disc">
+                <img class="plate-img plate-base" src="images/ceramics/empty_ceramic.png"
+                     alt="Empty white ceramic plate with a blue rim">
+
+                <img class="plate-img plate-painted" id="platePainted" src="images/ceramics/starrynight.png"
+                     alt="The same plate hand-painted with a Starry Night design">
+
+                <div class="splash-field" id="splashField" aria-hidden="true"></div>
+            </div>
+
+        </div>
+
+        <p class="plate-hint" id="plateHint">
+            <span data-en="move across the plate to reveal the painting" data-mk="помини преку чинијата за да ја откриеш сликата">move across the plate to reveal the painting</span>
+        </p>
+
+    </div>
+
+
+    <!-- TEXT -->
+    <div class="plate-info">
+        <p class="hero-description">
+            <span data-en="Shape, paint and create something that feels completely yours. Hover the plate above to see one of our finished pieces come to life." data-mk="Обликувај, сликај и создади нешто што е целосно твое. Помини преку чинијата погоре за да видиш како оживува едно од нашите готови парчиња.">Shape, paint and create something that feels completely yours. Hover the plate above to see one of our finished pieces come to life.</span>
+        </p>
+
+        <a href="reserve.html" class="btn-primary">
+            <span data-en="Book a Workshop →" data-mk="Резервирај работилница →">Book a Workshop →</span>
+        </a>
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+<section class="intro" id="intro">
+    <div class="container">
+
+        <div class="section-label reveal">
+            <span data-en="The Workshop" data-mk="Работилницата">The Workshop</span>
+        </div>
+
+        <div class="intro-grid">
+            <h2 class="reveal">
+                <span data-en="A few brushes.<br/> A little wine.<br/> <em>A lot of colour.</em>" data-mk="Малку четки.<br/> Малку вино.<br/> <em>Многу боја.</em>">A few brushes.<br/> A little wine.<br/> <em>A lot of colour.</em></span>
+            </h2>
+
+            <div class="intro-side reveal">
+                <p>
+                    <span data-en="You don't need to know how to draw. You choose a piece, pick your colours and paint it your way, and we take care of the glazing and firing." data-mk="Не мора да знаеш да црташ. Избираш парче, ги бираш боите и го сликаш на свој начин, а за глазирањето и печењето се грижиме ние.">You don't need to know how to draw. You choose a piece, pick your colours and paint it your way, and we take care of the glazing and firing.</span>
+                </p>
+
+                <dl class="spec">
+                    <div class="spec-row">
+                        <dt><span data-en="Duration" data-mk="Времетраење">Duration</span></dt>
+                        <dd><span data-en="90 min" data-mk="90 мин">90 min</span></dd>
+                    </div>
+                    <div class="spec-row">
+                        <dt><span data-en="Materials" data-mk="Материјали">Materials</span></dt>
+                        <dd><span data-en="All included" data-mk="Сè вклучено">All included</span></dd>
+                    </div>
+                    <div class="spec-row">
+                        <dt><span data-en="Level" data-mk="Ниво">Level</span></dt>
+                        <dd><span data-en="Beginner" data-mk="Почетник">Beginner</span></dd>
+                    </div>
+                    <div class="spec-row">
+                        <dt><span data-en="Price" data-mk="Цена">Price</span></dt>
+                        <dd><span data-en="1500 den" data-mk="1500 ден">1500 den</span></dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PROCESS -->
+<section class="process">
+    <div class="container">
+
+        <div class="section-label reveal">
+            <span data-en="The Process" data-mk="Процесот">The Process</span>
+        </div>
+
+        <div class="section-head reveal">
+            <h2>
+                <span data-en="Four steps to<br/> <em>a painted piece.</em>" data-mk="Четири чекори до<br/> <em>насликано парче.</em>">Four steps to<br/> <em>a painted piece.</em></span>
+            </h2>
+            <p>
+                <span data-en="The same steps we walk you through at the table. No rush. Each one takes as long as it takes." data-mk="Истите чекори низ кои те водиме на работилницата. Без брзање. Секој трае колку што треба.">The same steps we walk you through at the table. No rush. Each one takes as long as it takes.</span>
+            </p>
+        </div>
+
+        <!-- horizontal image accordion: the active panel is wide, the others are narrow -->
+        <div class="steps reveal" id="steps">
+
+            <button class="step active" type="button" data-step="1" aria-expanded="true" aria-controls="step-desc-1">
+                <img class="step-bg" alt="Choosing a ceramic piece" src="images/ceramics/step1.webp"/>
+                <span class="step-label-vertical" aria-hidden="true" data-en="The piece" data-mk="Парчето">The piece</span>
+                <span class="step-content">
+                    <span class="step-title" data-en="The piece" data-mk="Парчето">The piece</span>
+                    <span class="step-desc" id="step-desc-1" data-en="Pick your piece: a plate, a mug or a bowl, already shaped and fired once. Wipe it with a damp sponge to remove any dust, so the paint holds evenly." data-mk="Изберете го вашето парче: чинија, шолја или длабока чинија, веќе обликувано и еднаш печено. Пребришете го со влажен сунѓер за да ја отстраните прашината и бојата да се нанесе рамномерно.">Pick your piece: a plate, a mug or a bowl, already shaped and fired once. Wipe it with a damp sponge to remove any dust, so the paint holds evenly.</span>
+                </span>
+            </button>
+
+            <button class="step" type="button" data-step="2" aria-expanded="false" aria-controls="step-desc-2">
+                <img class="step-bg" alt="Sketching a design in pencil" src="images/ceramics/step2.png"/>
+                <span class="step-label-vertical" aria-hidden="true" data-en="The sketch" data-mk="Скицата">The sketch</span>
+                <span class="step-content">
+                    <span class="step-title" data-en="The sketch" data-mk="Скицата">The sketch</span>
+                    <span class="step-desc" id="step-desc-2" data-en="Sketch your idea lightly in pencil. Don't worry about mistakes, the pencil burns away in the kiln." data-mk="Скицирајте ја идејата нежно со молив. Не грижете се за грешките, моливот исчезнува при печењето.">Sketch your idea lightly in pencil. Don't worry about mistakes, the pencil burns away in the kiln.</span>
+                </span>
+            </button>
+
+            <button class="step" type="button" data-step="3" aria-expanded="false" aria-controls="step-desc-3">
+                <img class="step-bg" alt="Ceramic paints on the table" src="images/ceramics/step3.jpeg"/>
+                <span class="step-label-vertical" aria-hidden="true" data-en="The palette" data-mk="Палетата">The palette</span>
+                <span class="step-content">
+                    <span class="step-title" data-en="The palette" data-mk="Палетата">The palette</span>
+                    <span class="step-desc" id="step-desc-3" data-en="Pick your palette. The colours look pale and chalky now, but they turn deep and glossy after firing." data-mk="Изберете ја палетата. Боите сега изгледаат бледо и матно, но по печењето стануваат длабоки и сјајни.">Pick your palette. The colours look pale and chalky now, but they turn deep and glossy after firing.</span>
+                </span>
+            </button>
+
+            <button class="step" type="button" data-step="4" aria-expanded="false" aria-controls="step-desc-4">
+                <img class="step-bg" alt="Painting the base colour" src="images/ceramics/step4.jpg"/>
+                <span class="step-label-vertical" aria-hidden="true" data-en="The base coats" data-mk="Основните слоеви">The base coats</span>
+                <span class="step-content">
+                    <span class="step-title" data-en="The base coats" data-mk="Основните слоеви">The base coats</span>
+                    <span class="step-desc" id="step-desc-4" data-en="Lay down your base colours. Three thin coats give a rich, solid colour; a single coat stays soft and watery." data-mk="Нанесете ги основните бои. Три тенки слоја даваат богата, полна боја; еден слој останува нежен и проѕирен.">Lay down your base colours. Three thin coats give a rich, solid colour; a single coat stays soft and watery.</span>
+                </span>
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FINISH (two techniques side by side) -->
+<section class="finish">
+    <div class="container">
+
+        <div class="section-label reveal">
+            <span data-en="The Finish" data-mk="Завршницата">The Finish</span>
+        </div>
+
+        <div class="section-head reveal">
+            <h2>
+                <span data-en="One piece.<br/> <em>Two ways to glaze it.</em>" data-mk="Едно парче.<br/> <em>Два начина да се глазира.</em>">One piece.<br/> <em>Two ways to glaze it.</em></span>
+            </h2>
+            <p>
+                <span data-en="Once your piece is painted and dry, you choose how it gets its final shine. Pick one, or glaze two pieces differently." data-mk="Кога парчето е насликано и суво, избираш каков сјај ќе добие на крај. Одбери еден начин, или глазирај два различни парчиња.">Once your piece is painted and dry, you choose how it gets its final shine. Pick one, or glaze two pieces differently.</span>
+            </p>
+        </div>
+
+        <div class="finish-grid">
+
+            <!-- A -->
+            <article class="finish-option reveal">
+                <div class="finish-photo">
+                    <img alt="Dipping a ceramic piece into glossy glaze" src="images/ceramics/glossy_ceramic.jpg"/>
+                </div>
+
+                <div class="option-tag">
+                    <span data-en="Option A" data-mk="Опција А">Option A</span>
+                </div>
+                <h3><span data-en="Glossy" data-mk="Сјајна">Glossy</span></h3>
+                <p class="option-lead">
+                    <span data-en="A clear glaze that seals the colour and fires into a deep, reflective shine." data-mk="Безбојна глазура што ја запечатува бојата и по печењето добива длабок, сјаен блеск.">A clear glaze that seals the colour and fires into a deep, reflective shine.</span>
+                </p>
+
+                <ol class="option-steps">
+                    <li>
+                        <div>
+                            <strong><span data-en="Glazing" data-mk="Глазирање">Glazing</span></strong>
+                            <p>
+                                <span data-en="Dip the piece or brush on an even coat of clear glaze, covering it completely so no raw clay shows." data-mk="Натопете го парчето во глазура или нанесете рамномерен слој со четка, целосно прекривајќи го.">Dip the piece or brush on an even coat of clear glaze, covering it completely so no raw clay shows.</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong><span data-en="Firing" data-mk="Печење">Firing</span></strong>
+                            <p>
+                                <span data-en="In the kiln the glaze melts into a smooth, glassy layer that makes every colour underneath pop." data-mk="Во печката глазурата се стопува во мазен, стаклен слој што ги истакнува боите под неа.">In the kiln the glaze melts into a smooth, glassy layer that makes every colour underneath pop.</span>
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </article>
+
+            <!-- B -->
+            <article class="finish-option reveal">
+                <div class="finish-photo">
+                    <img alt="Brushing matte glaze onto a ceramic piece" src="images/ceramics/matt_ceramic.jpg"/>
+                </div>
+
+                <div class="option-tag">
+                    <span data-en="Option B" data-mk="Опција Б">Option B</span>
+                </div>
+                <h3><span data-en="Matte" data-mk="Мат">Matte</span></h3>
+                <p class="option-lead">
+                    <span data-en="A soft, non-reflective glaze that keeps the texture of your brushwork visible." data-mk="Мека, несјајна глазура што го чува видливиот текстура на твоите четкопотези.">A soft, non-reflective glaze that keeps the texture of your brushwork visible.</span>
+                </p>
+
+                <ol class="option-steps">
+                    <li>
+                        <div>
+                            <strong><span data-en="Glazing" data-mk="Глазирање">Glazing</span></strong>
+                            <p>
+                                <span data-en="Brush on a thin, even layer of matte glaze, taking care not to let it pool in the grooves." data-mk="Нанесете тенок, рамномерен слој мат глазура, внимавајќи да не се собира во браздите.">Brush on a thin, even layer of matte glaze, taking care not to let it pool in the grooves.</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong><span data-en="Firing" data-mk="Печење">Firing</span></strong>
+                            <p>
+                                <span data-en="The kiln sets it into a smooth, soft-touch surface with almost no shine." data-mk="Печката го цврсти во мазна, мека површина со речиси никаков сјај.">The kiln sets it into a smooth, soft-touch surface with almost no shine.</span>
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </article>
+
+        </div>
+
+        <p class="finish-note reveal">
+            <span data-en="Either way, your piece leaves the table ready for its final firing." data-mk="Во секој случај, твоето парче ја напушта масата подготвено за последното печење.">Either way, your piece leaves the table ready for its final firing.</span>
+        </p>
+
+    </div>
+</section>
+
+
+<!-- ATMOSPHERE (horizontal strip) -->
+<section class="atmosphere">
+    <div class="container">
+
+        <div class="section-label reveal">
+            <span data-en="The Atmosphere" data-mk="Атмосферата">The Atmosphere</span>
+        </div>
+
+        <div class="atmosphere-head reveal">
+            <div>
+                <h2>
+                    <span data-en="Come for the paint.<br/> Stay for the <em>evening.</em>" data-mk="Дојди за боите.<br/> Остани за <em>вечерта.</em>">Come for the paint.<br/> Stay for the <em>evening.</em></span>
+                </h2>
+                <p>
+                    <span data-en="Quiet tables, brushes in jars, music in the background and a glass of wine within reach. Less like a class, more like a slow night out." data-mk="Мирни маси, четки во тегли, музика во позадина и чаша вино на дофат. Помалку како час, повеќе како опуштена вечер.">Quiet tables, brushes in jars, music in the background and a glass of wine within reach. Less like a class, more like a slow night out.</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- infinite marquee: the photos are duplicated in JS and the track loops -->
+    <div class="strip" id="atmoStrip">
+        <div class="strip-track" id="atmoTrack">
+
+            <figure class="strip-item">
+                <img src="images/wine_cheers.jpg"/>
+                <figcaption>
+                    <span data-en="A glass makes every brushstroke braver." data-mk="Со чаша вино секој потез е похрабар.">A glass makes every brushstroke braver.</span>
+                </figcaption>
+            </figure>
+
+            <figure class="strip-item wide">
+                <img src="images/another_tableview.jpg" />
+                <figcaption>
+                    <span data-en="Everyone around the same table." data-mk="Сите околу истата маса.">Everyone around the same table.</span>
+                </figcaption>
+            </figure>
+
+            <figure class="strip-item">
+                <img src="images/plate_with_hearth.jpg"/>
+
+                <figcaption>
+                    <span data-en="More shades than you'll need." data-mk="Повеќе нијанси отколку што ќе ти требаат.">More shades than you'll need.</span>
+                </figcaption>
+            </figure>
+
+            <figure class="strip-item">
+                <img src="images/ceramics/fish.jpg"/>
+                <figcaption>
+                    <span data-en="Expect a little paint on your fingers." data-mk="Очекувај малку боја на прстите.">Expect a little paint on your fingers.</span>
+                </figcaption>
+            </figure>
+
+            <figure class="strip-item wide">
+                <img src="images/ceramics_over_face.jpg"/>
+                <figcaption>
+                    <span data-en="Strangers at the start, friends by the last coat." data-mk="На почеток странци, до последниот слој пријатели.">Strangers at the start, friends by the last coat.</span>
+                </figcaption>
+            </figure>
+
+            <figure class="strip-item">
+                <img src="images/ceramics_painting_up_close.jpg"/>
+
+                <figcaption>
+                    <span data-en="Slow down. That's the whole point." data-mk="Забави. Тоа е целата поента.">Slow down. That's the whole point.</span>
+                </figcaption>
+            </figure>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- AFTER THE KILN -->
+<section class="after">
+    <div class="container">
+
+        <div class="section-label reveal">
+            <span data-en="After the Kiln" data-mk="По печењето">After the Kiln</span>
+        </div>
+
+        <div class="after-grid">
+
+            <div class="after-visual reveal">
+                <div class="after-arch">
+                    <img alt="Finished glazed ceramic plate" src="images/ceramics/flowers_pot.jpg"/>
+                </div>
+                <div class="after-round">
+                    <img alt="Finished ceramics ready to take home" src="images/ceramics/bluberries_plate.jpg/"/>
+                </div>
+            </div>
+
+            <div class="after-copy reveal">
+                <h2>
+                    <span data-en="Painted by you.<br/> <em>Yours to keep.</em>" data-mk="Насликано од тебе.<br/> <em>Твое засекогаш.</em>">Painted by you.<br/> <em>Yours to keep.</em></span>
+                </h2>
+                <p>
+                    <span data-en="You don't take it home the same night. A painted piece still needs glaze and a kiln before it's finished. That part is on us." data-mk="Не го носиш дома истата вечер. На насликаното парче му треба глазура и печка за да биде готово. Тој дел е наш.">You don't take it home the same night. A painted piece still needs glaze and a kiln before it's finished. That part is on us.</span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="after-timeline">
+
+            <div class="after-stage reveal">
+                <small><span data-en="Tonight" data-mk="Вечерва">Tonight</span></small>
+                <strong><span data-en="You paint" data-mk="Ти сликаш">You paint</span></strong>
+                <p>
+                    <span data-en="You finish your piece and leave it with us, labelled with your name." data-mk="Го довршуваш парчето и го оставаш кај нас, означено со твоето име.">You finish your piece and leave it with us, labelled with your name.</span>
+                </p>
+            </div>
+
+            <div class="after-stage reveal">
+                <small><span data-en="The next days" data-mk="Следните денови">The next days</span></small>
+                <strong><span data-en="We glaze and fire" data-mk="Ние глазираме и печеме">We glaze and fire</span></strong>
+                <p>
+                    <span data-en="A clear glaze and a kiln firing make the colours glossy and food-safe." data-mk="Проѕирна глазура и печење во печка ги прават боите сјајни и безбедни за храна.">A clear glaze and a kiln firing make the colours glossy and food-safe.</span>
+                </p>
+            </div>
+
+            <div class="after-stage reveal">
+                <small><span data-en="About a week later" data-mk="По околу една недела">About a week later</span></small>
+                <strong><span data-en="You pick it up" data-mk="Го подигнуваш">You pick it up</span></strong>
+                <p>
+                    <span data-en="We let you know when it's ready, then it's yours to use every day." data-mk="Ти јавуваме кога е готово, а потоа е твое за секојдневна употреба.">We let you know when it's ready, then it's yours to use every day.</span>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FINAL -->
+<section class="final">
+    <div class="container">
+        <div class="final-inner">
+
+            <div class="final-copy">
+                <h2>
+                    <span data-en="Ready to pick up<br/> <em>a brush?</em>" data-mk="Подготвен/а да земеш<br/> <em>четка?</em>">Ready to pick up<br/> <em>a brush?</em></span>
+                </h2>
+                <p>
+                    <span data-en="Seats are limited to keep the workshop small, relaxed and personal. Bring a friend, come as a group, or simply come by yourself." data-mk="Бројот на места е ограничен за работилницата да остане мала, опуштена и лична. Дојди со пријател, со друштво, или едноставно дојди сам.">Seats are limited to keep the workshop small, relaxed and personal. Bring a friend, come as a group, or simply come by yourself.</span>
+                </p>
+            </div>
+
+            <a class="btn-light" href="reserve.html">
+                <span data-en="Book Your Seat" data-mk="Резервирај место">Book Your Seat</span>
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <a href="home.html" class="footer-logo">
+                    <img class="logo-light" src="images/home/logo-dark.png" alt="Sip & Create Logo">
+                    <img class="logo-dark" src="images/home/logo-light.png" alt="Sip & Create Logo">
+                </a>
+
+                <p class="footer-description"
+                   data-en="Creative workshops, good company, and a little something to make."
+                   data-mk="Креативни работилници, добро друштво и нешто уникатно што ќе го создадете."
+                >
+                    Creative workshops, good company,
+                    and a little something to make.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <p class="footer-title" data-en="EXPLORE" data-mk="ИСТРАЖИ">EXPLORE</p>
+
+                <a href="home.html" data-en="Home" data-mk="Почетна">Home</a>
+                <a href="#" data-en="About Us" data-mk="За нас">About Us</a>
+                <a href="pasta_workshop.html" data-en="Pasta making" data-mk="Правење тестенини">Pasta making</a>
+                <a href="glass-painting.html" data-en="Glass painting" data-mk="Сликање на стакло">Glass painting</a>
+                <a href="ceramics_decoration.html" data-en="Ceramics decoration" data-mk="Декорација на керамика">Ceramics decoration</a>
+                <a href="gallery.html" data-en="Gallery" data-mk="Галерија">Gallery</a>
+                <a href="contact.html" data-en="Contact" data-mk="Контакт">Contact</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <p class="footer-title" data-en="VISIT US" data-mk="ПОСЕТЕТЕ НÈ">VISIT US</p>
+
+                <p>
+                    Partizanska 12A<br>
+                    1000 Skopje<br>
+                    North Macedonia
+                </p>
+
+                <a href="mailto:sipandcreate@gmail.mk">sipandcreate@gmail.mk</a>
+
+                <a href="tel:+38970123456">+389 70 123 456</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <p class="footer-title" data-en="FOLLOW ALONG" data-mk="СЛЕДЕТЕ НÈ">FOLLOW ALONG</p>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/sipandcreate.skopje/" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sipandcreate.skopje/" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@sipandcreate.skopje" aria-label="TikTok">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p data-en="© 2026 Sip & Create. All rights reserved."
+               data-mk="© 2026 Sip & Create. Сите права се задржани.">
+                © 2026 Sip & Create.
+                All rights reserved.
+            </p>
+
+            <p data-en="Made for creative moments."
+               data-mk="Создадено за креативни моменти.">
+                Made for creative moments.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+<script src="ceramics_decoration.js"></script>
+<script src="language.js"></script>
+
+</body>
+</html>
