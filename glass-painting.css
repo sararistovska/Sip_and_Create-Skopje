@@ -1,0 +1,1528 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eee8de;
+    color: #30312c;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+
+
+/* -----------------general--------------- */
+
+.container {
+    width: min(1180px, 90%);
+    margin: auto;
+}
+
+.section-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #8a7059;
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5vw, 70px);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.section-text {
+    color: #6b665d;
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+
+
+
+
+
+/* --------------------HERO------------------------- */
+
+.hero {
+    min-height: 92vh;
+
+    display: grid;
+    grid-template-columns: 44% 56%;
+
+    background: #e4dbcf;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-decoration {
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    background: rgba(157, 120, 87, 0.12);
+
+    left: -190px;
+    bottom: -170px;
+
+    z-index: 0;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+
+    padding:
+            90px
+            55px
+            80px
+            clamp(35px, 5vw, 85px);
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero-small {
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    color: #80664f;
+
+    margin-bottom: 28px;
+}
+
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(58px, 6.8vw, 100px);
+
+    font-weight: 400;
+
+    line-height: 0.88;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 38px;
+
+    color: #30312c;
+}
+
+.hero-description {
+    max-width: 500px;
+
+    line-height: 1.85;
+
+    color: #625b51;
+
+    font-size: 15px;
+
+    margin-bottom: 35px;
+}
+
+
+.hero-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    padding: 17px 30px;
+
+    background: #342f29;
+
+    color: white;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    transition:
+            background 0.35s ease,
+            transform 0.35s ease;
+}
+
+.hero-button:hover {
+    background: #80664f;
+
+    transform: translateY(-4px);
+}
+
+
+.hero-image {
+    height: 92vh;
+
+    padding:
+            35px
+            35px
+            35px
+            0;
+
+    position: relative;
+
+    overflow: visible;
+}
+
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 3px;
+
+    animation:
+            heroZoom 1.4s ease forwards;
+
+    transition:
+            transform 1s ease;
+}
+
+
+/* Image overlay */
+
+.hero-image::after {
+    content: "";
+
+    position: absolute;
+
+    top: 35px;
+    right: 35px;
+    bottom: 35px;
+    left: 0;
+
+    border-radius: 3px;
+
+    background:
+            linear-gradient(
+                    180deg,
+                    rgba(30, 25, 20, 0.02),
+                    rgba(30, 25, 20, 0.18)
+            );
+
+    pointer-events: none;
+}
+
+
+/* the floating card */
+
+.hero-card {
+    position: absolute;
+
+    left: 35px;
+    bottom: 75px;
+
+    width: 225px;
+
+    padding: 27px 25px;
+
+    background: #f6f1e9;
+
+    box-shadow:
+            0 18px 40px rgba(0, 0, 0, 0.14);
+
+    z-index: 5;
+
+    animation:
+            floatCard 4s ease-in-out infinite;
+}
+
+
+.hero-card span {
+    display: block;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2.5px;
+
+    color: #8a7059;
+
+    margin-bottom: 12px;
+}
+
+
+.hero-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 23px;
+
+    line-height: 1.25;
+
+    font-weight: 400;
+
+    color: #34322d;
+}
+
+
+
+
+
+
+/* ----------------QUICK INFO-----------------------*/
+
+.quick-info {
+    padding: 35px 0;
+
+    background: #342f29;
+
+    color: white;
+}
+
+.quick-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+}
+
+.quick-item {
+    padding:
+            10px 35px;
+
+    border-right:
+            1px solid rgba(255, 255, 255, 0.2);
+}
+
+.quick-item:last-child {
+    border-right: none;
+}
+
+.quick-item span {
+    display: block;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #cfc4b7;
+
+    margin-bottom: 8px;
+}
+
+.quick-item strong {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+}
+
+
+
+
+
+
+/*  --------------ABOUT THE WORKSHOP----------------*/
+
+.about {
+    padding: 150px 0;
+}
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.about-images {
+    position: relative;
+
+    width: 100%;
+    min-height: 650px;
+}
+
+
+/* -------VIDEO BOX-------- */
+
+.about-main-image {
+    position: absolute;
+
+    overflow: hidden;
+
+    background: #ddd4c8;
+
+    box-shadow:
+            0 25px 50px rgba(48, 43, 37, 0.15);
+
+    transition:
+            transform 0.6s ease,
+            box-shadow 0.6s ease;
+
+    z-index: 1;
+}
+
+
+/* --------FIRST VIDEO top-left----------- */
+
+.about-main-image:nth-child(1) {
+
+    width: 68%;
+    height: 440px;
+
+    top: 0;
+    left: 0;
+
+    z-index: 2;
+
+    transform: rotate(-1deg);
+}
+
+
+/* -----SECOND VIDEO bottom-right-------*/
+
+.about-main-image:nth-child(2) {
+
+    width: 62%;
+    height: 380px;
+
+    right: 0;
+    bottom: -90px;
+
+    z-index: 3;
+
+    transform: rotate(1.2deg);
+}
+
+
+/* -------VIDEO--------- */
+
+.about-video {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+            transform 0.9s ease;
+}
+
+.about-main-image:hover {
+
+    z-index: 5;
+
+    box-shadow:
+            0 30px 60px rgba(48, 43, 37, 0.22);
+}
+
+
+.about-main-image:nth-child(1):hover {
+
+    transform:
+            rotate(0deg)
+            translateY(-5px);
+}
+
+
+.about-main-image:nth-child(2):hover {
+
+    transform:
+            rotate(0deg)
+            translateY(-5px);
+}
+
+
+.about-main-image:hover .about-video {
+
+    transform: scale(1.05);
+}
+
+.about-content {
+    padding-left: 20px;
+}
+
+.about-content .section-text {
+    margin-top: 30px;
+}
+
+.about-note {
+    margin-top: 35px;
+
+    padding-left: 25px;
+
+    border-left:
+            2px solid #a88b70;
+
+    font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+    font-size: 22px;
+
+    line-height: 1.5;
+
+    color: #735b45;
+}
+
+
+
+
+/* ---------------------STEP BY STEP----------------------- */
+
+.steps-section {
+    background: #e3dbd0;
+
+    padding: 150px 0;
+
+    position: relative;
+}
+
+.steps-header {
+    max-width: 650px;
+
+    margin-bottom: 80px;
+}
+
+.steps-wrapper {
+    position: relative;
+}
+
+
+/* vertical line */
+
+.steps-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    left: 39px;
+
+    top: 40px;
+    bottom: 40px;
+
+    width: 1px;
+
+    background: #a99682;
+}
+
+
+/* individual step */
+
+.step-item {
+    display: grid;
+
+    grid-template-columns:
+        80px 1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+    padding: 45px 0;
+
+    position: relative;
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: #eee8de;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+    font-size: 22px;
+
+    position: relative;
+
+    z-index: 2;
+
+    transition:
+            background 0.4s ease,
+            color 0.4s ease,
+            transform 0.4s ease;
+}
+
+.step-item:hover .step-number {
+    background: #342f29;
+
+    color: white;
+
+    transform: scale(1.1);
+}
+
+.step-text h3 {
+    font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+    margin-bottom: 12px;
+}
+
+.step-text p {
+    line-height: 1.8;
+
+    color: #625b51;
+}
+
+.step-image {
+    height: 340px;
+    width: 500px;
+
+    overflow: hidden;
+}
+
+.step-image img {
+    height: 100%;
+    width: 100%;
+
+    object-fit: scale-down;
+
+    transition:
+            transform 1s ease;
+}
+
+.step-item:hover .step-image img {
+    transform: scale(1.07);
+}
+
+
+/* -------------- WHAT'S INCLUDED ----------------- */
+
+.included {
+    padding: 150px 0;
+}
+
+.included-heading {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin:
+            0 auto 80px;
+}
+
+.included-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.included-card {
+    min-height: 330px;
+
+    padding: 40px;
+
+    background: #e5ddd2;
+
+    position: relative;
+
+    transition:
+            transform 0.4s ease,
+            box-shadow 0.4s ease;
+}
+
+.included-card:hover {
+    transform:
+            translateY(-10px);
+
+    box-shadow:
+            0 20px 35px
+            rgba(0, 0, 0, 0.08);
+}
+
+.card-number {
+    font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+    font-size: 18px;
+
+    color: #a88b70;
+
+    margin-bottom: 70px;
+}
+
+
+.included-card h3 {
+    font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+    font-size: 28px;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+.included-card p {
+    line-height: 1.8;
+
+    color: #686158;
+
+    font-size: 15px;
+}
+
+
+/* ---------------- GALLERY------------------ */
+
+.gallery {
+    padding:
+            40px 0 150px;
+}
+
+.gallery-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 45px;
+}
+
+.gallery-header p {
+    max-width: 350px;
+}
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.3fr 1fr;
+
+    gap: 20px;
+
+    align-items: center;
+}
+
+.gallery-image {
+    overflow: hidden;
+}
+
+.gallery-image img {
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+            transform 0.8s ease;
+}
+
+.gallery-image:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-image:nth-child(1) {
+    height: 360px;
+}
+
+.gallery-image:nth-child(2) {
+    height: 570px;
+}
+
+.gallery-image:nth-child(3) {
+    height: 360px;
+}
+
+
+
+/* ---------------- cta ------------------- */
+
+.cta {
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+            linear-gradient(
+                    rgba(35, 30, 25, 0.62),
+                    rgba(35, 30, 25, 0.62)
+            ),
+            url("images/glass-painting/gp-hero.png")
+            center / cover no-repeat;
+}
+
+
+.cta-content {
+    max-width: 800px;
+
+    padding:
+            50px 20px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.cta h2 {
+    font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+    font-size:
+            clamp(50px, 7vw, 95px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin-bottom: 30px;
+}
+
+
+.cta p {
+    max-width: 550px;
+
+    margin:
+            0 auto 40px;
+
+    line-height: 1.8;
+
+    color:
+            rgba(255, 255, 255, 0.85);
+}
+
+
+.cta-button {
+    display: inline-flex;
+
+    padding:
+            18px 35px;
+
+    background: #eee8de;
+
+    color: #342f29;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    font-size: 12px;
+
+    transition:
+            transform 0.35s ease,
+            background 0.35s ease;
+}
+
+
+.cta-button:hover {
+    transform:
+            translateY(-5px);
+
+    background: white;
+}
+
+
+
+
+
+/* ------------ animations for the page ------------ */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+            translateY(50px);
+
+    transition:
+            opacity 0.9s ease,
+            transform 0.9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform:
+            translateY(0);
+}
+
+
+.zoom {
+    opacity: 0;
+
+    transform:
+            scale(0.92);
+
+    transition:
+            opacity 1s ease,
+            transform 1s ease;
+}
+
+.zoom.active {
+    opacity: 1;
+
+    transform:
+            scale(1);
+}
+
+
+/* hero animations */
+
+@keyframes heroZoom {
+
+    from {
+        transform: scale(1.08);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes floatCard {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+
+}
+
+
+
+
+@media (max-width: 950px) {
+
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding:
+                120px
+                8vw
+                80px;
+    }
+
+    .hero h1 {
+        font-size:
+                clamp(65px, 13vw, 100px);
+    }
+
+    .hero-image {
+        height: 70vh;
+
+        padding:
+                0
+                8vw
+                50px;
+    }
+
+    .hero-image::after {
+        top: 0;
+        right: 8vw;
+        bottom: 50px;
+        left: 0;
+    }
+
+    .hero-card {
+        left: 8vw;
+
+        bottom: 85px;
+    }
+
+    .quick-info-grid {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 20px;
+    }
+
+
+    .quick-item {
+        border: none;
+    }
+
+    .about-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 70px;
+    }
+
+    .included-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .step-item {
+        grid-template-columns:
+            80px 1fr;
+    }
+
+
+    .step-image {
+        grid-column:
+                2;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .gallery-image:nth-child(2) {
+        height: 400px;
+    }
+
+}
+
+
+
+
+@media (max-width: 600px) {
+
+
+    .hero-content {
+        padding:
+                100px
+                25px
+                60px;
+    }
+
+    .hero h1 {
+        font-size: 68px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-image {
+        height: 520px;
+
+        padding:
+                0
+                20px
+                30px;
+    }
+
+    .hero-image::after {
+        top: 0;
+        right: 20px;
+        bottom: 30px;
+        left: 0;
+    }
+
+    .hero-card {
+        left: 25px;
+
+        bottom: 55px;
+
+        width: 205px;
+
+        padding: 23px;
+    }
+
+    .quick-info-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .quick-item {
+        padding:
+                10px 0;
+    }
+
+    .about {
+        padding:
+                90px 0;
+    }
+
+    .about-images {
+        min-height: 500px;
+    }
+
+    .about-main-image {
+        height: 420px;
+    }
+
+    .about-small-image {
+        height: 220px;
+    }
+
+    .about-content {
+        padding-left: 0;
+    }
+
+    .steps-section {
+        padding:
+                90px 0;
+    }
+
+    .step-item {
+        grid-template-columns:
+            65px 1fr;
+
+        gap: 25px;
+    }
+
+    .step-number {
+        width: 65px;
+        height: 65px;
+    }
+
+    .steps-wrapper::before {
+        left: 32px;
+    }
+
+    .step-text h3 {
+        font-size: 27px;
+    }
+
+    .step-image {
+        grid-column:
+                1 / -1;
+
+        height: 220px;
+    }
+
+    .included {
+        padding:
+                90px 0;
+    }
+
+
+    .included-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .included-card {
+        min-height: 280px;
+    }
+
+    .gallery {
+        padding:
+                30px 0 90px;
+    }
+
+
+    .gallery-header {
+        flex-direction:
+                column;
+
+        align-items:
+                flex-start;
+
+        gap: 25px;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .gallery-image:nth-child(1),
+    .gallery-image:nth-child(2),
+    .gallery-image:nth-child(3) {
+        height: 350px;
+    }
+
+    .cta {
+        min-height: 550px;
+    }
+
+
+    .cta h2 {
+        font-size:
+                clamp(45px, 13vw, 70px);
+    }
+
+}
+
+/* --------------- DARK MODE for the whole page ----------------- */
+
+body.dark {
+    background: #24231f;
+    color: #eeeae2;
+}
+
+
+body.dark .section-label {
+    color: #b79b7d;
+}
+
+body.dark .section-text {
+    color: #b8b1a7;
+}
+
+body.dark .section-title {
+    color: #eeeae2;
+}
+
+
+
+
+
+
+/* ---------------------dark mode hero ------------------ */
+
+body.dark .hero {
+    background: #2b2925;
+}
+
+body.dark .hero-decoration {
+    background: rgba(183, 155, 125, 0.10);
+}
+
+body.dark .hero-small {
+    color: #b79b7d;
+}
+
+body.dark .hero h1 {
+    color: #eeeae2;
+}
+
+body.dark .hero-description {
+    color: #bcb5aa;
+}
+
+body.dark .hero-button {
+    background: #eeeae2;
+    color: #302e29;
+}
+
+body.dark .hero-button:hover {
+    background: #b79b7d;
+    color: #24231f;
+}
+
+
+/* img in hero  */
+
+body.dark .hero-image::after {
+    background:
+            linear-gradient(
+                    180deg,
+                    rgba(20, 18, 15, 0.05),
+                    rgba(20, 18, 15, 0.30)
+            );
+}
+
+
+/* dark mode hero card */
+
+body.dark .hero-card {
+    background: #eee8de;
+
+    box-shadow:
+            0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+body.dark .hero-card span {
+    color: #8a7059;
+}
+
+body.dark .hero-card h3 {
+    color: #34322d;
+}
+
+
+/* dark mode quick info  */
+
+body.dark .quick-info {
+    background: #1f1e1b;
+    color: #eeeae2;
+}
+
+body.dark .quick-item {
+    border-right-color:
+            rgba(238, 234, 226, 0.16);
+}
+
+body.dark .quick-item span {
+    color: #aaa197;
+}
+
+body.dark .quick-item strong {
+    color: #eeeae2;
+}
+
+
+/* dark mode about */
+
+body.dark .about {
+    background: #24231f;
+}
+
+body.dark .about-content {
+    color: #eeeae2;
+}
+
+body.dark .about-small-image {
+    border-color: #24231f;
+}
+
+body.dark .about-note {
+    color: #bda487;
+
+    border-left-color: #9d8062;
+}
+
+
+
+
+
+/* -------------step by step part------------ */
+
+body.dark .steps-section {
+    background: #302d28;
+}
+
+body.dark .steps-wrapper::before {
+    background: #62594f;
+}
+
+
+body.dark .step-number {
+    background: #24231f;
+    color: #eeeae2;
+}
+
+body.dark .step-item:hover .step-number {
+    background: #eeeae2;
+    color: #302e29;
+}
+
+
+body.dark .step-text h3 {
+    color: #eeeae2;
+}
+
+body.dark .step-text p {
+    color: #b8b1a7;
+}
+
+
+/* ---------- included part ---------- */
+
+body.dark .included {
+    background: #24231f;
+}
+
+body.dark .included-card {
+    background: #302e29;
+}
+
+
+body.dark .included-card:hover {
+    box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.30);
+}
+
+
+body.dark .card-number {
+    color: #aa8b6d;
+}
+
+body.dark .included-card h3 {
+    color: #eeeae2;
+}
+
+body.dark .included-card p {
+    color: #b8b1a7;
+}
+
+
+
+
+/*-----------------small gallery---------------- */
+
+body.dark .gallery {
+    background: #24231f;
+}
+
+body.dark .gallery-header .section-text {
+    color: #b8b1a7;
+}
+
+
+
+
+
+/* ------------- cta part before footer----------- */
+
+body.dark .cta {
+    background:
+            linear-gradient(
+                    rgba(20, 18, 15, 0.68),
+                    rgba(20, 18, 15, 0.68)
+            ),
+            url("images/glass-painting/gp-hero.png")
+            center / cover no-repeat;
+}
+
+
+body.dark .cta h2 {
+    color: #eeeae2;
+}
+
+body.dark .cta p {
+    color:
+            rgba(238, 234, 226, 0.78);
+}
+
+
+body.dark .cta-button {
+    background: #eee8de;
+    color: #302e29;
+}
+
+body.dark .cta-button:hover {
+    background: #b79b7d;
+    color: #24231f;
+}
+
+
+/* dark mode for side controls */
+
+body.dark .side-controls .language-control {
+    background:
+            rgba(42, 40, 35, 0.82);
+
+    border-color:
+            rgba(238, 234, 226, 0.12);
+
+    box-shadow:
+            0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+body.dark .side-controls .lang-button {
+    color: #aaa49b;
+}
+
+
+body.dark .side-controls .lang-button.active {
+    background: #eeeae2;
+    color: #302e29;
+}
+
+
+body.dark .side-controls .control-divider {
+    background:
+            rgba(238, 234, 226, 0.15);
+}
+
+
+/* Wine button */
+
+body.dark .side-controls .side-wine-button {
+    background:
+            rgba(42, 40, 35, 0.82);
+
+    border-color:
+            rgba(238, 234, 226, 0.12);
+
+    box-shadow:
+            0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+@media (max-width: 600px) {
+
+    body.dark .hero {
+        background: #2b2925;
+    }
+
+    body.dark .steps-section {
+        background: #302d28;
+    }
+
+    body.dark .included-card {
+        background: #302e29;
+    }
+
+}
+
