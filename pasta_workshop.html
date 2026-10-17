@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Pasta Making Workshop — Sip &amp; Create Skopje</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pasta_workshop.css">
+
+    <!-- Bootstrap Icons -->
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+</head>
+<body>
+
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <a href="home.html" class="logo">
+        Sip & Create
+        <span>SKOPJE</span>
+    </a>
+
+
+    <ul class="nav-links">
+        <li>
+
+            <a
+                    href="home.html"
+                    data-en="Home"
+                    data-mk="Дома"
+            >
+                About
+            </a>
+
+        </li>
+        <li>
+
+            <a
+                    href="#"
+                    data-en="About"
+                    data-mk="За нас"
+            >
+                About
+            </a>
+
+        </li>
+
+
+        <li class="nav-dropdown">
+            <a href="#" class="workshops-link">
+                <span data-en="Workshops" data-mk="Работилници">Workshops</span>
+                <span class="dropdown-icon">+</span>
+            </a>
+
+            <ul class="workshops-menu">
+                <li>
+                    <a href="pasta_workshop.html">
+                <span data-en="Pasta Making" data-mk="Правење паста">
+                    Pasta Making
+                </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="glass-painting.html">
+                <span data-en="Glass Painting" data-mk="Сликање на стакло">
+                    Glass Painting
+                </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ceramics_decoration.html">
+                <span data-en="Ceramics Decoration" data-mk="Декорација на керамика">
+                    Ceramics Decoration
+                </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li>
+
+            <a
+                    href="gallery.html"
+                    data-en="Gallery"
+                    data-mk="Галерија"
+            >
+                Gallery
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="contact.html"
+                    data-en="Contact"
+                    data-mk="Контакт"
+            >
+                Contact
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="reserve.html"
+                    class="book-btn"
+                    data-en="Book Now"
+                    data-mk="Резервирај"
+            >
+                Book Now
+            </a>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- SIDE CONTROLS -->
+
+<div class="side-controls">
+
+    <!-- LANGUAGE -->
+
+    <div class="language-control">
+
+        <button
+                class="lang-button active"
+                data-lang="en"
+        >
+            EN
+        </button>
+
+        <div class="control-divider"></div>
+
+        <button
+                class="lang-button"
+                data-lang="mk"
+        >
+            MK
+        </button>
+
+    </div>
+
+
+    <!-- DARK MODE -->
+
+    <button
+            class="side-wine-button"
+            id="wineButton"
+            aria-label="Toggle dark mode"
+    >
+        <img
+                src="images/home/wine-glass.png"
+                alt="Wine glass"
+        >
+    </button>
+
+</div>
+
+
+
+
+<!-- WINE EFFECT -->
+
+<div class="wine-overlay"></div>
+
+<div class="wine-message" id="wineMessage">
+    <span id="wineMessageText"></span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="fork-animation">
+        <img alt="Fork twirling handmade tagliatelle" class="fork-img-pasta" src="images/pasta_workshop/tagliatelle_fork_nobg.png"/>
+        <img alt="A glass of white wine" class="fork-img-wine" src="images/pasta_workshop/wine_cheers.png"/>
+    </div>
+    <div class="hero-content">
+        <div class="hero-kicker">
+            <span data-en="Pasta Making Workshop · Skopje" data-mk="Работилница за подготовка на паста · Скопје">Pasta Making Workshop · Skopje</span>
+
+        </div>
+        <h1 class="hero-title">
+            <span data-en="Make pasta.<br/> Make it </em>together.</em>" data-mk="Направи паста.<br/> Направи ја </em>заедно.</em>">Make pasta.<br/> Make it <em>together.</em></span>
+
+        </h1>
+        <p class="hero-description">
+            <span data-en="Fresh dough, good wine and a table full of people. Learn the art of handmade pasta from scratch." data-mk="Свежо тесто, добро вино и маса полна со луѓе. Научи ја уметноста на рачно подготвена паста од корен.">Fresh dough, good wine and a table full of people. Learn the art of handmade pasta from scratch.</span>
+
+        </p>
+    </div>
+    <div class="hero-scroll">
+        <span data-en="Scroll to explore" data-mk="Скролај за да истражиш">Scroll to explore</span>
+
+        <span class="hero-scroll-line"></span>
+    </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+    <div class="container">
+        <div class="intro-grid">
+            <div class="reveal">
+                <div class="eyebrow">
+                    <span data-en="The Workshop" data-mk="Работилницата">The Workshop</span>
+
+                </div>
+                <h2>
+                    <span data-en="A little flour.<br/> A little wine.<br/> </em>A lot of pasta.</em>" data-mk="Малку брашно.<br/> Малку вино.<br/> </em>Многу паста.</em>">A little flour.<br/> A little wine.<br/> <em>A lot of pasta.</em></span>
+
+                </h2>
+            </div>
+            <div class="intro-copy reveal">
+                <p>
+                    <span data-en="This isn't a cooking class where you sit and watch. You get your hands in the dough, learn the techniques, shape your own pasta and enjoy the evening around the table." data-mk="Ова не е час по готвење каде што само седиш и гледаш. Го месиш сам тестото, ги учиш техниките, ја обликуваш сопствената паста и уживаш во вечерта со пријателите.">This isn't a cooking class where you sit and watch. You get your hands in the dough, learn the techniques, shape your own pasta and enjoy the evening around the table.</span>
+
+                </p>
+                <div class="info-row">
+                    <div class="info-item">
+                        <small>
+                            <span data-en="Duration" data-mk="Времетраење">Duration</span>
+
+                        </small>
+                        <strong>
+                            <span data-en="3 hrs" data-mk="3 часа">3 hrs</span>
+
+                        </strong>
+                    </div>
+                    <div class="info-item">
+                        <small>
+                            <span data-en="Group" data-mk="Група">Group</span>
+
+                        </small>
+                        <strong>
+                            <span data-en="8–12 guests" data-mk="8–12 гости">8–12 guests</span>
+
+                        </strong>
+                    </div>
+                    <div class="info-item">
+                        <small>
+                            <span data-en="Level" data-mk="Ниво">Level</span>
+
+                        </small>
+                        <strong>
+                            <span data-en="Beginner" data-mk="Почетник">Beginner</span>
+
+                        </strong>
+                    </div>
+                    <div class="info-item">
+                        <small>
+                            <span data-en="Price" data-mk="Цена">Price</span>
+
+                        </small>
+                        <strong>
+                            <span data-en="1800 den" data-mk="1800 ден">1800 den</span>
+
+                        </strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- RECIPE -->
+<section class="recipe">
+    <div class="container">
+        <div class="recipe-head reveal">
+            <div class="eyebrow">
+                <span data-en="The Recipe Card" data-mk="Рецептот">The Recipe Card</span>
+
+            </div>
+            <h2>
+                <span data-en="Fresh pasta,<br/> </em>then you choose the shape.</em>" data-mk="Свежа паста,<br/> </em>а потоа ти ја избираш формата.</em>">Fresh pasta,<br/> <em>then you choose the shape.</em></span>
+
+            </h2>
+            <p>
+                <span data-en="The same guide we hand you at the table. Every guest rolls the same dough — then the road splits: tagliatelle one way, ravioli the other." data-mk="Истиот водич што го добиваш на самата работилница. Секој гостин го развлекува истото тесто — а потоа патот се дели: на едната страна tagliatelle, на другата ravioli.">The same guide we hand you at the table. Every guest rolls the same dough — then the road splits: tagliatelle one way, ravioli the other.</span>
+
+            </p>
+        </div>
+        <div class="recipe-timeline">
+            <!-- 01 -->
+            <div class="recipe-step reveal">
+                <div class="recipe-photo">
+                    <div class="frame">
+                        <img alt="Preparing pasta" src="images/pasta_workshop/brasno.jpg"/>
+                    </div>
+                </div>
+                <div class="recipe-dot">
+                    01
+                </div>
+                <div class="recipe-text">
+                    <small>
+                        <span data-en="Step 1" data-mk="Чекор 1">Step 1</span>
+
+                    </small>
+                    <p>
+                        <span data-en="Place the flour on a clean work surface, make a well in the middle and add the eggs." data-mk="Ставете го брашното на чиста работна површина, направете вдлабнатина во средината и додадете ги јајцата.">Place the flour on a clean work surface, make a well in the middle and add the eggs.</span>
+
+                    </p>
+                </div>
+            </div>
+            <!-- 02 -->
+            <div class="recipe-step flip reveal">
+                <div class="recipe-photo">
+                    <div class="frame">
+                        <img alt="Flour and eggs" src="images/pasta_workshop/step2.jpg"/>
+                    </div>
+                </div>
+                <div class="recipe-dot">
+                    02
+                </div>
+                <div class="recipe-text">
+                    <small>
+                        <span data-en="Step 2" data-mk="Чекор 2">Step 2</span>
+
+                    </small>
+                    <p>
+                        <span data-en="The general rule is 1 large egg to every 100g of flour." data-mk="Основното правило е едно големо јајце на секои 100 грама брашно.">The general rule is 1 large egg to every 100g of flour.</span>
+
+                    </p>
+                </div>
+            </div>
+            <!-- 03 -->
+            <div class="recipe-step reveal">
+                <div class="recipe-photo">
+                    <div class="frame">
+                        <img alt="Mixing pasta dough" src="images/pasta_workshop/step3.jpg"/>
+                    </div>
+                </div>
+                <div class="recipe-dot">
+                    03
+                </div>
+                <div class="recipe-text">
+                    <small>
+                        <span data-en="Step 3" data-mk="Чекор 3">Step 3</span>
+
+                    </small>
+                    <p>
+                        <span data-en="Using a fork, whisk the eggs while slowly incorporating the flour until combined, and it looks like a very rough dough." data-mk="Со вилушка изматете ги јајцата и постепено додавајте го брашното додека не се соединат и не добиете многу грубо тесто.">Using a fork, whisk the eggs while slowly incorporating the flour until combined, and it looks like a very rough dough.</span>
+
+                    </p>
+                </div>
+            </div>
+            <!-- 04 -->
+            <div class="recipe-step flip reveal">
+                <div class="recipe-photo">
+                    <div class="frame">
+                        <img alt="Working with pasta dough" src="images/pasta_workshop/step4.jpg"/>
+                    </div>
+                </div>
+                <div class="recipe-dot">
+                    04
+                </div>
+                <div class="recipe-text">
+                    <small>
+                        <span data-en="Step 4" data-mk="Чекор 4">Step 4</span>
+
+                    </small>
+                    <p>
+                        <span data-en="You may need to wet your hands once most of the egg is incorporated to help it along." data-mk="Можеби ќе треба да ги извалкате рацете откако поголемиот дел од јајцето ќе се соедини со брашното за полесно да го обработите тестото.">You may need to wet your hands once most of the egg is incorporated to help it along.</span>
+
+                    </p>
+                </div>
+            </div>
+            <!-- 05 -->
+            <div class="recipe-step flip reveal">
+                <div class="recipe-photo">
+                    <div class="frame">
+                        <img alt="Kneading pasta dough" src="images/pasta_workshop/step5.png"/>
+                    </div>
+                </div>
+                <div class="recipe-dot">
+                    05
+                </div>
+                <div class="recipe-text">
+                    <small>
+                        <span data-en="Step 5" data-mk="Чекор 5">Step 5</span>
+
+                    </small>
+                    <p>
+                        <span data-en="Form а ball. Knead the dough for 10 minutes until smooth and pliable." data-mk="Формирајте топка. Месете го тестото 10 минути додека не стане мазно и еластично.">Form а ball. Knead the dough for 10 minutes until smooth and pliable.</span>
+
+                    </p>
+                </div>
+            </div>
+            <!-- 06 -->
+            <div class="recipe-step reveal">
+                <div class="recipe-photo">
+                    <div class="frame">
+                        <img alt="Resting pasta dough" src="images/pasta_workshop/step6.png"/>
+                    </div>
+                </div>
+                <div class="recipe-dot">
+                    06
+                </div>
+                <div class="recipe-text">
+                    <small>
+                        <span data-en="Step 6" data-mk="Чекор 6">Step 6</span>
+
+                    </small>
+                    <p>
+                        <span data-en="Wrap the dough in cling film or cover with a towel and leave to rest for 30 minutes, out of the fridge." data-mk="Завиткајте го тестото во проѕирна фолија или покријте го со крпа и оставете го да одмори 30 минути надвор од фрижидер.">Wrap the dough in cling film or cover with a towel and leave to rest for 30 minutes, out of the fridge.</span>
+
+                    </p>
+                </div>
+            </div>
+            <!-- 07 -->
+            <div class="recipe-step flip reveal">
+                <div class="recipe-photo">
+                    <div class="frame">
+                        <img alt="Dividing pasta dough" src="images/pasta_workshop/step7.jpg"/>
+                    </div>
+                </div>
+                <div class="recipe-dot">
+                    07
+                </div>
+                <div class="recipe-text">
+                    <small>
+                        <span data-en="Step 7" data-mk="Чекор 7">Step 7</span>
+
+                    </small>
+                    <p>
+                        <span data-en="Divide the dough into softer portions, gently pressing and shaping each piece before rolling further." data-mk="Поделете го тестото на помали делови, нежно притискајќи и обликувајќи го секој дел пред понатамошното развлекување.">Divide the dough into softer portions, gently pressing and shaping each piece before rolling further.</span>
+
+                    </p>
+                </div>
+            </div>
+            <!-- 08 -->
+            <div class="recipe-step flip reveal">
+                <div class="recipe-photo">
+                    <div class="frame">
+                        <img alt="Rolling pasta dough" src="images/pasta_workshop/step8.jpg"/>
+                    </div>
+                </div>
+                <div class="recipe-dot">
+                    08
+                </div>
+                <div class="recipe-text">
+                    <small>
+                        <span data-en="Step 8" data-mk="Чекор 8">Step 8</span>
+
+                    </small>
+                    <p>
+                        <span data-en="Run the dough through the pasta machine, notch by notch, until it's rolled thin into long, even sheets." data-mk="Провлечете го тестото низ машината за тестенини, степен по степен, додека не стане тенко и рамномерно.">Run the dough through the pasta machine, notch by notch, until it's rolled thin into long, even sheets.</span>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPLIT -->
+        <div class="recipe-fork reveal">
+            <svg preserveaspectratio="none" viewbox="0 0 340 130">
+                <path d="M170,0 L170,35 C170,55 30,55 30,80 L30,130"></path>
+                <path d="M170,35 C170,55 310,55 310,80 L310,130"></path>
+            </svg>
+            <div class="recipe-fork-label">
+                <span data-en="Two sheets. Two directions." data-mk="Два листа. Две насоки.">Two sheets. Two directions.</span>
+
+            </div>
+        </div>
+
+        <!-- PASTA CHOICE -->
+        <div class="pasta-choice">
+            <div class="pasta-switch reveal">
+                <button class="pasta-tab active" data-pasta="tagliatelle">
+
+                    Tagliatelle
+
+                </button>
+                <button class="pasta-tab" data-pasta="ravioli">
+
+                    Ravioli
+
+                </button>
+            </div>
+
+            <!-- TAGLIATELLE -->
+            <div class="pasta-panel active" id="tagliatelle">
+                <div class="pasta-panel-header reveal">
+                    <h3>
+                        <span data-en="The </em>long</em> way." data-mk="</em>Долгиот</em> пат.">The <em>long</em> way.</span>
+
+                    </h3>
+                    <p>
+                        <span data-en="Simple, silky ribbons made for twirling around your fork and finishing with your favourite sauce." data-mk="Едноставни, свиленкасти ленти создадени за вртење околу вилушката и комбинирање со омилениот сос.">Simple, silky ribbons made for twirling around your fork and finishing with your favourite sauce.</span>
+
+                    </p>
+                </div>
+                <div class="branch-step reveal">
+                    <div class="branch-photo">
+                        <div class="frame">
+                            <img alt="Cutting tagliatelle" src="images/pasta_workshop/cutting_tagliatelle.jpg"/>
+                        </div>
+                    </div>
+                    <div class="branch-dot">
+                        9a
+                    </div>
+                    <div>
+                        <small>
+                            <span data-en="Cutting" data-mk="Сечење">Cutting</span>
+
+                        </small>
+                        <p>
+                            <span data-en="Dust the sheet with flour, fold it loosely, then slice it into ribbons." data-mk="Посипете го тестото со брашно, лабаво свиткајте го, а потоа исечете го на ленти.">Dust the sheet with flour, fold it loosely, then slice it into ribbons.</span>
+
+                        </p>
+                    </div>
+                </div>
+                <div class="branch-step reveal">
+                    <div class="branch-photo">
+                        <div class="frame">
+                            <img alt="Drying tagliatelle" src="images/pasta_workshop/drying_tagliatelle.jpg"/>
+                        </div>
+                    </div>
+                    <div class="branch-dot">
+                        9b
+                    </div>
+                    <div>
+                        <small>
+                            <span data-en="Drying" data-mk="Сушење">Drying</span>
+
+                        </small>
+                        <p>
+                            <span data-en="Nest the ribbons on a floured rack to dry." data-mk="Наредете ги лентите на набрашнета решетка за да се исушат.">Nest the ribbons on a floured rack to dry.</span>
+
+                        </p>
+                    </div>
+                </div>
+                <div class="branch-video-wrap reveal">
+                    <div class="recipe-video-frame">
+                        <div class="recipe-video-circle">
+                            <video muted="" playsinline="" poster="images/pasta_workshop/final_tagliatelle.jpg" preload="metadata">
+                                <source src="images/pasta_workshop/videoT.mp4" type="video/mp4"/>
+                            </video>
+                            <div class="recipe-video-play"></div>
+                            <span class="recipe-video-name">
+<span data-en="Tagliatelle" data-mk="Талијатели">Tagliatelle</span>
+
+</span>
+                        </div>
+                    </div>
+                    <div class="branch-done">
+                        <span data-en="Ready to plate" data-mk="Подготвено за сервирање">Ready to plate</span>
+
+                    </div>
+                </div>
+            </div>
+            <!-- RAVIOLI -->
+            <div class="pasta-panel" id="ravioli">
+                <div class="pasta-panel-header reveal">
+                    <h3>
+                        <span data-en="The </em>filled</em> way." data-mk="</em>Полнетиот</em> пат.">The <em>filled</em> way.</span>
+
+                    </h3>
+                    <p>
+                        <span data-en="Delicate little pockets filled, sealed and ready to hold all the flavor inside." data-mk="Нежни мали џепчиња, наполнети и затворени, подготвени да го задржат целиот вкус внатре.">Delicate little pockets filled, sealed and ready to hold all the flavor inside.</span>
+
+                    </p>
+                </div>
+                <div class="branch-step reveal">
+                    <div class="branch-photo">
+                        <div class="frame">
+                            <img alt="Filling ravioli" src="images/pasta_workshop/filling_ravioli.jpg"/>
+                        </div>
+                    </div>
+                    <div class="branch-dot">
+                        9a
+                    </div>
+                    <div>
+                        <small>
+                            <span data-en="Filling" data-mk="Полнење">Filling</span>
+
+                        </small>
+                        <p>
+                            <span data-en="Spoon small mounds of filling across one sheet, spaced evenly apart." data-mk="Ставете мали количества од филот врз едниот лист, рамномерно распоредени.">Spoon small mounds of filling across one sheet, spaced evenly apart.</span>
+
+                        </p>
+                    </div>
+                </div>
+                <div class="branch-step reveal">
+                    <div class="branch-photo">
+                        <div class="frame">
+                            <img alt="Shaping ravioli" src="images/pasta_workshop/shaping_ravioli.jpg"/>
+                        </div>
+                    </div>
+                    <div class="branch-dot">
+                        9b
+                    </div>
+                    <div>
+                        <small>
+                            <span data-en="Shaping" data-mk="Обликување">Shaping</span>
+
+                        </small>
+                        <p>
+                            <span data-en="Lay a second sheet on top, press out the air around each mound, then cut and seal the edges." data-mk="Ставете втор лист одозгора, истиснете го воздухот околу секое парче, потоа исечете и затворете ги рабовите.">Lay a second sheet on top, press out the air around each mound, then cut and seal the edges.</span>
+
+                        </p>
+                    </div>
+                </div>
+                <div class="branch-video-wrap reveal">
+                    <div class="recipe-video-frame">
+                        <div class="recipe-video-circle">
+                            <video muted="" playsinline="" poster="images/pasta_workshop/final_ravioli.jpg" preload="metadata">
+                                <source src="images/pasta_workshop/videoR.mp4" type="video/mp4"/>
+                            </video>
+                            <div class="recipe-video-play"></div>
+                            <span class="recipe-video-name">
+<span data-en="Ravioli" data-mk="Равиоли">Ravioli</span>
+
+</span>
+                        </div>
+                    </div>
+                    <div class="branch-done">
+                        <span data-en="Ready to plate" data-mk="Подготвено за сервирање">Ready to plate</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-footer">
+            Sip &amp; Create Skopje
+        </div>
+    </div>
+</section>
+<!--  ATMOSPHERE -->
+<section class="atmosphere">
+    <div class="container">
+        <div class="atmosphere-head">
+            <div class="reveal">
+                <div class="eyebrow">
+                    <span data-en="The Atmosphere" data-mk="Атмосферата">The Atmosphere</span>
+
+                </div>
+                <h2>
+                    <span data-en="Come for the pasta.<br/> Stay for the </em>evening.</em>" data-mk="Дојди за пастата.<br/> Остани за </em>вечерта.</em>">Come for the pasta.<br/> Stay for the <em>evening.</em></span>
+
+                </h2>
+            </div>
+            <p class="reveal">
+                <span data-en="Warm tables, flour-covered hands, music in the background and a glass of wine within reach. The workshop is designed to feel less like a class and more like a night out." data-mk="Топли маси, раце прекриени со брашно, музика во позадина и чаша вино на дофат. Работилницата е создадена да се чувствува помалку како час, а повеќе како убаво вечерно излегување.">Warm tables, flour-covered hands, music in the background and a glass of wine within reach. The workshop is designed to feel less like a class and more like a night out.</span>
+
+            </p>
+        </div>
+        <div class="atmosphere-grid">
+            <div class="atmo-photo reveal">
+                <img alt="Wine at the workshop" src="images/pasta_workshop/a1.jpg"/>
+                <div class="atmo-caption">
+<span>
+<span data-en="01 · The Wine" data-mk="01 · Виното">01 · The Wine</span>
+
+</span>
+                    <p>
+                        <span data-en="A glass makes everything easier." data-mk="Со чаша вино сè е полесно.">A glass makes everything easier.</span>
+
+                    </p>
+                </div>
+            </div>
+            <div class="atmo-photo reveal">
+                <img alt="People making pasta together" src="images/pasta_workshop/gall3.jpg"/>
+            </div>
+            <div class="atmo-photo reveal">
+                <img alt="Workshop atmosphere" src="images/pasta_workshop/gall2.jpg"/>
+                <div class="atmo-caption">
+<span>
+<span data-en="02 · Details" data-mk="02 · Детали">02 · Details</span>
+
+</span>
+                    <p>
+                        <span data-en="Everyone around the same table." data-mk="Сите околу истата маса.">Everyone around the same table.</span>
+
+                    </p>
+                </div>
+            </div>
+            <div class="atmo-photo reveal">
+                <img alt="Hands making pasta" src="images/pasta_workshop/pasta%204.jpg"/>
+                <div class="atmo-caption">
+<span>
+<span data-en="03 · Hands On" data-mk="03 · Рацете во тестото">03 · Hands On</span>
+
+</span>
+                    <p>
+                        <span data-en="Expect a little flour everywhere." data-mk="Очекувај малку брашно насекаде.">Expect a little flour everywhere.</span>
+
+                    </p>
+                </div>
+            </div>
+            <div class="atmo-photo reveal">
+                <img alt="Guests laughing around the table" src="images/pasta_workshop/gall4p.jpg"/>
+                <div class="atmo-caption">
+<span>
+<span data-en="04 · The Company" data-mk="04 · Друштвото">04 · The Company</span>
+
+</span>
+                    <p>
+                        <span data-en="Strangers at the start, friends by dessert." data-mk="На почеток странци, до десерт пријатели.">Strangers at the start, friends by dessert.</span>
+
+                    </p>
+                </div>
+            </div>
+            <div class="atmo-photo reveal">
+                <img alt="Making pasta" src="images/pasta_workshop/gall5m.jpg"/>
+                <div class="atmo-caption">
+<span>
+<span data-en="05 · The Machine" data-mk="05 · Машината">05 · The Machine</span>
+
+</span>
+                    <p>
+                        <span data-en="Use the machine like a pro." data-mk="Користи ја машината како професионалец.">Use the machine like a pro.</span>
+
+                    </p>
+                </div>
+            </div>
+            <div class="atmo-photo reveal">
+                <img alt="Ravioli" src="images/pasta_workshop/gall6r.jpg"/>
+                <div class="atmo-caption">
+<span>
+<span data-en="06 · Ravioli" data-mk="06 · Равиоли">06 · Ravioli</span>
+
+</span>
+                    <p>
+                        <span data-en="Cutting the ravioli." data-mk="Сецкање на равиолите.">Cutting the ravioli.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="atmo-photo reveal">
+                <img alt="Flour" src="images/pasta_workshop/gall8f.jpg"/>
+            </div>
+            <div class="atmo-photo reveal">
+                <img alt="Team work" src="images/pasta_workshop/gall9.jpg"/>
+                <div class="atmo-caption">
+<span>
+<span data-en="08 · Team Work" data-mk="08 · Тимска работа">08 · Team Work</span>
+
+</span>
+                    <p>
+                        <span data-en="Team work makes the dream work." data-mk="Заедно е секогаш позабавно.">Team work makes the dream work.</span>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- TAKE HOME -->
+<section class="take-home">
+    <div class="container">
+        <div class="take-home-inner">
+            <div class="take-home-gallery reveal">
+                <a class="th-photo" href="images/pasta_workshop/pasta%20doma1.jpg">
+                    <img alt="Boxed pasta to take home" src="images/pasta_workshop/pasta%20doma1.jpg"/>
+                </a>
+                <a class="th-photo" href="images/pasta_workshop/pasta%20doma2.png">
+                    <img alt="Pasta packed to take home" src="images/pasta_workshop/pasta%20doma2.png"/>
+                </a>
+            </div>
+            <div class="take-home-copy reveal">
+                <div class="eyebrow">
+                    <span data-en="Before You Leave" data-mk="Пред да си заминете">Before You Leave</span>
+
+                </div>
+                <h2>
+                    <span data-en="Made by you.<br/> </em>Yours to keep.</em>" data-mk="Направено од тебе.<br/> </em>Твое за дома.</em>">Made by you.<br/> <em>Yours to keep.</em></span>
+
+                </h2>
+                <p>
+                    <span data-en="The evening ends with your own handmade pasta packed and ready to go. You made the dough, shaped every piece and now you get to decide what happens next." data-mk="Вечерта завршува со твојата рачно направена паста, спакувана и подготвена да ја понесеш дома. Ти го направи тестото, го обликуваше секое парче и сега ти одлучуваш што следно.">The evening ends with your own handmade pasta packed and ready to go. You made the dough, shaped every piece and now you get to decide what happens next.</span>
+
+                </p>
+                <div class="take-home-note">
+                    <span data-en="Handmade · Packed · Yours" data-mk="Рачно направено · Спакувано · Твое">Handmade · Packed · Yours</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FINAL -->
+<section class="final">
+    <div class="container">
+        <div class="eyebrow">
+            <span data-en="Your Seat at the Table" data-mk="Твоето место на масата">Your Seat at the Table</span>
+
+        </div>
+        <h2>
+            <span data-en="Ready to roll <br/> </em>some pasta?</em>" data-mk="Подготвен/а да<br/> </em>направиме паста?</em>">Ready to roll<br/> <em>some pasta?</em></span>
+
+        </h2>
+        <p>
+            <span data-en="Seats are limited to keep the workshop small, relaxed and personal. Bring a friend, come as a group, or simply come by yourself." data-mk="Бројот на места е ограничен за работилницата да остане мала, опуштена и лична. Дојди со пријател, со друштво, или едноставно дојди сам.">Seats are limited to keep the workshop small, relaxed and personal. Bring a friend, come as a group, or simply come by yourself.</span>
+
+        </p>
+        <div class="final-actions">
+            <a class="btn-primary" href="reserve.html">
+                <span data-en="Book Your Seat" data-mk="Резервирај место">Book Your Seat</span>
+
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<!---------------------FOOTER------------------------>
+
+<footer class="site-footer">
+
+
+    <div class="footer-container">
+
+
+
+        <div class="footer-top">
+
+
+            <div class="footer-brand">
+
+                <a href="home.html" class="footer-logo">
+
+                    <img
+                            class="logo-light"
+                            src="images/home/logo-dark.png"
+                            alt="Sip & Create Logo"
+                    >
+
+                    <img
+                            class="logo-dark"
+                            src="images/home/logo-light.png"
+                            alt="Sip & Create Logo"
+                    >
+
+                </a>
+
+
+
+                <p class="footer-description"
+                   data-en="Creative workshops, good company, and a little something to make."
+                   data-mk="Креативни работилници, добро друштво и нешто уникатно што ќе го создадете."
+                >
+
+                    Creative workshops, good company,
+                    and a little something to make.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <p class="footer-title"
+                   data-en="EXPLORE"
+                   data-mk="ИСТРАЖИ"
+                >
+                    EXPLORE
+                </p>
+
+                <a href="home.html"
+                   data-en="Home"
+                   data-mk="Почетна"
+                >
+                    Home
+                </a>
+                <a href="#"
+                   data-en="About Us"
+                   data-mk="За нас"
+                >
+                    About Us
+                </a>
+
+                <a href="pasta_workshop.html"
+                   data-en="Pasta making"
+                   data-mk="Правење тестенини"
+                >
+                    Pasta making
+                </a>
+
+                <a href="glass-painting.html"
+                   data-en="Glass painting"
+                   data-mk="Сликање на стакло"
+                >
+                    Glass Painting
+                </a>
+
+                <a href="#"
+                   data-en="Ceramics decoration"
+                   data-mk="Декорација на керамика"
+                >
+                    Ceramics decoration
+                </a>
+
+                <a href="gallery.html"
+                   data-en="Gallery"
+                   data-mk="Галерија"
+                >
+                    Gallery
+                </a>
+
+                <a href="contact.html"
+                   data-en="Contact"
+                   data-mk="Контакт"
+                >
+                    Contact
+                </a>
+
+
+            </div>
+
+
+            <div class="footer-column">
+
+
+                <p class="footer-title"
+                   data-en="VISIT US"
+                   data-mk="ПОСЕТЕТЕ НÈ"
+                >
+                    VISIT US
+                </p>
+
+
+                <p>
+
+                    Partizanska 12A<br>
+
+                    1000 Skopje<br>
+
+                    North Macedonia
+
+                </p>
+
+
+                <a
+                        href="mailto:sipandcreate@gmail.mk"
+                >
+
+                    sipandcreate@gmail.mk
+
+                </a>
+
+
+                <a
+                        href="tel:+38970123456"
+                >
+
+                    +389 70 123 456
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- ================= social media  ================= -->
+
+            <div class="footer-column">
+
+
+                <p class="footer-title"
+                   data-en="FOLLOW ALONG"
+                   data-mk="СЛЕДЕТЕ НÈ"
+                >
+                    FOLLOW ALONG
+                </p>
+
+
+                <div class="social-links">
+
+
+                    <a
+                            href="https://www.instagram.com/sipandcreate.skopje/"
+                            aria-label="Instagram"
+                    >
+
+                        <i class="bi bi-instagram"></i>
+
+                    </a>
+
+
+
+                    <a
+                            href="https://www.facebook.com/sipandcreate.skopje/"
+                            aria-label="Facebook"
+                    >
+
+                        <i class="bi bi-facebook"></i>
+
+                    </a>
+
+
+
+                    <a
+                            href="https://www.tiktok.com/@sipandcreate.skopje"
+                            aria-label="TikTok"
+                    >
+
+                        <i class="bi bi-tiktok"></i>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+
+            <p
+                    data-en="© 2026 Sip & Create. All rights reserved."
+                    data-mk="© 2026 Sip & Create. Сите права се задржани."
+            >
+
+                © 2026 Sip & Create.
+                All rights reserved.
+
+            </p>
+
+
+            <p
+                    data-en="Made for creative moments."
+                    data-mk="Создадено за креативни моменти."
+            >
+
+                Made for creative moments.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</footer>
+
+
+<script src="script.js"></script>
+<script src="pasta_workshop.js"></script>
+<script src="language.js"></script>
+
+</body>
+</html>

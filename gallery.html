@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sip & Create — Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+
+<!-- SIDE CONTROLS -->
+
+<div class="side-controls">
+
+    <!-- LANGUAGE -->
+
+    <div class="language-control">
+
+        <button
+                class="lang-button active"
+                data-lang="en"
+        >
+            EN
+        </button>
+
+        <div class="control-divider"></div>
+
+        <button
+                class="lang-button"
+                data-lang="mk"
+        >
+            MK
+        </button>
+
+    </div>
+
+
+    <!-- DARK MODE -->
+
+    <button
+            class="side-wine-button"
+            id="wineButton"
+            aria-label="Toggle dark mode"
+    >
+        <img
+                src="images/home/wine-glass.png"
+                alt="Wine glass"
+        >
+    </button>
+
+</div>
+
+
+
+
+<!-- WINE EFFECT -->
+
+<div class="wine-overlay"></div>
+
+<div class="wine-message" id="wineMessage">
+    <span id="wineMessageText"></span>
+</div>
+
+
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <a href="home.html" class="logo">
+        Sip & Create
+        <span>SKOPJE</span>
+    </a>
+
+
+    <ul class="nav-links">
+        <li>
+
+            <a
+                    href="home.html"
+                    data-en="Home"
+                    data-mk="Дома"
+            >
+                About
+            </a>
+
+        </li>
+        <li>
+
+            <a
+                    href="#"
+                    data-en="About"
+                    data-mk="За нас"
+            >
+                About
+            </a>
+
+        </li>
+
+
+        <li class="nav-dropdown">
+            <a href="#" class="workshops-link">
+                <span data-en="Workshops" data-mk="Работилници">Workshops</span>
+                <span class="dropdown-icon">+</span>
+            </a>
+
+            <ul class="workshops-menu">
+                <li>
+                    <a href="pasta_workshop.html">
+                <span data-en="Pasta Making" data-mk="Правење паста">
+                    Pasta Making
+                </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="glass-painting.html">
+                <span data-en="Glass Painting" data-mk="Сликање на стакло">
+                    Glass Painting
+                </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ceramics_decoration.html">
+                <span data-en="Ceramics Decoration" data-mk="Декорација на керамика">
+                    Ceramics Decoration
+                </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li>
+
+            <a
+                    href="gallery.html"
+                    data-en="Gallery"
+                    data-mk="Галерија"
+            >
+                Gallery
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="contact.html"
+                    data-en="Contact"
+                    data-mk="Контакт"
+            >
+                Contact
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a
+                    href="reserve.html"
+                    class="book-btn"
+                    data-en="Book Now"
+                    data-mk="Резервирај"
+            >
+                Book Now
+            </a>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="intro">
+
+    <div class="intro-content">
+
+        <div class="intro-text">
+            <span data-en="The Sip &amp; Create Archive" data-mk="Архивата на Sip &amp; Create">The Sip & Create Archive</span>
+        </div>
+
+        <h1>
+            <span data-en="Made <em>together.</em>" data-mk="Направено <em>заедно.</em>">Made <em>together.</em></span>
+        </h1>
+
+        <p>
+            <span data-en="A visual collection of workshops, celebrations, creations and the little moments in between." data-mk="Визуелна колекција од работилници, прослави, творби и малите моменти помеѓу нив.">
+                A visual collection of workshops, celebrations,
+                creations and the little moments in between.
+            </span>
+        </p>
+
+    </div>
+
+
+    <div class="scroll-note">
+
+        <span data-en="Discover" data-mk="Откриј">Discover</span>
+
+        <div class="scroll-line"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- GALLERY -->
+
+<section class="gallery-stack">
+
+
+    <!-- 01 -->
+
+    <div class="gallery-card">
+
+        <div class="gallery-images">
+
+            <div class="image-wrap">
+                <img src="images/gallery/pasta 2.jpg"/>
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/pasta 5.jpg"/>
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/pasta 6.jpg"/>
+            </div>
+
+        </div>
+
+
+        <div class="gallery-info">
+
+            <div class="number">
+                01 / 10<br>
+                12.03.26
+            </div>
+
+            <div class="text">
+
+                <h2>
+                    <span data-en="Pasta Making Workshop" data-mk="Работилница за паста">Pasta Making Workshop</span>
+                </h2>
+
+                <p>
+                    <span data-en="An evening of fresh pasta, good company, and unlimited wine — just how we like it." data-mk="Вечер со свежа паста, добро друштво и неограничено вино — токму како што сакаме.">
+                        An evening of fresh pasta, good company,
+                        and unlimited wine — just how we like it.
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="tags">
+                <span>
+                    <span data-en="Pasta" data-mk="Паста">Pasta</span>
+                </span>
+                <span>
+                    <span data-en="Friends" data-mk="Пријатели">Friends</span>
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 02 -->
+
+    <div class="gallery-card">
+
+        <div class="gallery-images">
+
+            <div class="image-wrap">
+                <img src="images/gallery/cro1.png">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/cro2.png">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/cro3.png">
+            </div>
+
+        </div>
+
+
+        <div class="gallery-info">
+
+            <div class="number">
+                02 / 10<br>
+                02.03.25
+            </div>
+
+            <div class="text">
+
+                <h2>
+                    OVA × Sip & Create
+                </h2>
+
+                <p>
+                    <span data-en="Create your own handmade bag charm in a cozy and creative atmosphere." data-mk="Направи сопствен рачно изработен приврзок за торба во пријатна и креативна атмосфера.">
+                        Create your own handmade bag charm
+                        in a cozy and creative atmosphere.
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="tags">
+                <span>
+                    <span data-en="Crocheting" data-mk="Плетење">Crocheting</span>
+                </span>
+                <span>
+                    <span data-en="Creative" data-mk="Креативно">Creative</span>
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 03 -->
+
+    <div class="gallery-card">
+
+        <div class="gallery-images">
+
+            <div class="image-wrap">
+                <img src="images/gallery/pasta%20proc.jpg">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/pasta%20polnenje.jpg">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/pasta%20susenje.jpg">
+            </div>
+
+        </div>
+
+
+        <div class="gallery-info">
+
+            <div class="number">
+                03 / 10<br>
+                09.06.25
+            </div>
+
+            <div class="text">
+
+                <h2>
+                    <span data-en="Pasta &amp; Wine" data-mk="Паста и вино">Pasta & Wine</span>
+                </h2>
+
+                <p>
+                    <span data-en="Good food, good wine, good company." data-mk="Добра храна, добро вино, добро друштво.">Good food, good wine, good company.</span>
+                </p>
+
+            </div>
+
+            <div class="tags">
+                <span>
+                    <span data-en="Cooking" data-mk="Готвење">Cooking</span>
+                </span>
+                <span>
+                    <span data-en="Events" data-mk="Настани">Events</span>
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 04 -->
+
+    <div class="gallery-card">
+
+        <div class="gallery-images">
+
+            <div class="image-wrap">
+                <img src="images/gallery/b3.png">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/b1.png">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/b2.png">
+            </div>
+
+        </div>
+
+
+        <div class="gallery-info">
+
+            <div class="number">
+                04 / 10<br>
+                01.03.25
+            </div>
+
+            <div class="text">
+
+                <h2>
+                    <span data-en="Birthday Night" data-mk="Роденденска вечер">Birthday Night</span>
+                </h2>
+
+                <p>
+                    <span data-en="Celebrate your special moments with Sip &amp; Create Skopje." data-mk="Прославете ги вашите специјални моменти со Sip &amp; Create Скопје.">
+                        Celebrate your special moments
+                        with Sip & Create Skopje.
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="tags">
+                <span>
+                    <span data-en="Birthday" data-mk="Роденден">Birthday</span>
+                </span>
+                <span>
+                    <span data-en="Celebration" data-mk="Прослава">Celebration</span>
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 05 -->
+
+    <div class="gallery-card">
+
+        <div class="gallery-images">
+
+            <div class="image-wrap">
+                <img src="images/gallery/v1.png">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/v2.png">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/v3.png">
+            </div>
+
+        </div>
+
+
+        <div class="gallery-info">
+
+            <div class="number">
+                05 / 10<br>
+                14.02.25
+            </div>
+
+            <div class="text">
+
+                <h2>
+                    <span data-en="Valentine's Day" data-mk="Денот на вљубените">Valentine's Day</span>
+                </h2>
+
+                <p>
+                    <span data-en="Paint Your Love — Create Memories That Shine." data-mk="Насликај ја својата љубов — создади спомени што сјаат.">
+                        Paint Your Love — Create Memories
+                        That Shine.
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="tags">
+                <span>
+                    <span data-en="Love" data-mk="Љубов">Love</span>
+                </span>
+                <span>
+                    <span data-en="Red" data-mk="Црвено">Red</span>
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 06 -->
+
+    <div class="gallery-card">
+
+        <div class="gallery-images">
+
+            <div class="image-wrap">
+                <img src="images/gallery/cer5.jpg">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/cer1.jpg">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/cer10.jpg">
+            </div>
+
+        </div>
+
+
+        <div class="gallery-info">
+
+            <div class="number">
+                06 / 10<br>
+                01.04.24
+            </div>
+
+            <div class="text">
+
+                <h2>
+                    <span data-en="Ceramics Decoration" data-mk="Декорирање керамика">Ceramics Decoration</span>
+                </h2>
+
+                <p>
+                    <span data-en="An evening of clay, color, and creativity — sip, decorate, and make every piece uniquely yours." data-mk="Вечер со глина, боја и креативност — пијте, декорирајте и направете го секое парче уникатно ваше.">
+                        An evening of clay, color, and creativity —
+                        sip, decorate, and make every piece uniquely yours.
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="tags">
+                <span>
+                    <span data-en="Ceramics" data-mk="Керамика">Ceramics</span>
+                </span>
+                <span>
+                    <span data-en="Creativity" data-mk="Креативност">Creativity</span>
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 07 -->
+
+    <div class="gallery-card">
+
+        <div class="gallery-images">
+
+            <div class="image-wrap">
+                <img src="images/gallery/c1.jpg">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/c2.jpg">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/c3.png">
+            </div>
+
+        </div>
+
+
+        <div class="gallery-info">
+
+            <div class="number">
+                07 / 10<br>
+                25.01.24
+            </div>
+
+            <div class="text">
+
+                <h2>
+                    <span data-en="Candle Painting" data-mk="Сликање свеќи">Candle Painting</span>
+                </h2>
+
+                <p>
+                    <span data-en="From plain wax to glowing art — an evening of candle painting and creativity." data-mk="Од обичен восок до светкаво уметничко дело — вечер со сликање свеќи и креативност.">
+                        From plain wax to glowing art —
+                        an evening of candle painting and creativity.
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="tags">
+                <span>
+                    <span data-en="Candles" data-mk="Свеќи">Candles</span>
+                </span>
+                <span>
+                    <span data-en="Friends" data-mk="Пријатели">Friends</span>
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 08 -->
+
+    <div class="gallery-card">
+
+        <div class="gallery-images">
+
+            <div class="image-wrap">
+                <img src="images/gallery/s1.png">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/s2.png">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/s3.png">
+            </div>
+
+        </div>
+
+
+        <div class="gallery-info">
+
+            <div class="number">
+                08 / 10<br>
+                10.01.24
+            </div>
+
+            <div class="text">
+
+                <h2>
+                    <span data-en="Bachelorette Party" data-mk="Моминска вечер">Bachelorette Party</span>
+                </h2>
+
+                <p>
+                    <span data-en="Cheers to a fabulous night filled with laughter, creativity, and unforgettable memories." data-mk="Да наздравиме за фантастична вечер исполнета со смеа, креативност и незаборавни спомени.">
+                        Cheers to a fabulous night filled with laughter,
+                        creativity, and unforgettable memories.
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="tags">
+                <span>
+                    <span data-en="Bachelorette" data-mk="Моминска вечер">Bachelorette</span>
+                </span>
+                <span>
+                    <span data-en="Painting" data-mk="Сликање">Painting</span>
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 09 -->
+
+    <div class="gallery-card">
+
+        <div class="gallery-images">
+
+            <div class="image-wrap">
+                <img src="images/gallery/ch1.png">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/ch2.png">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/ch3.png">
+            </div>
+
+        </div>
+
+
+        <div class="gallery-info">
+
+            <div class="number">
+                09 / 10<br>
+                25.12.23
+            </div>
+
+            <div class="text">
+
+                <h2>
+                    <span data-en="Christmas Event" data-mk="Божиќен настан">Christmas Event</span>
+                </h2>
+
+                <p>
+                    <span data-en="Current obsession: the holiday season at our studio." data-mk="Моменталната опсесија: празничниот период во нашето студио.">
+                        Current obsession: the holiday season
+                        at our studio.
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="tags">
+                <span>
+                    <span data-en="Christmas" data-mk="Божиќ">Christmas</span>
+                </span>
+                <span>
+                    <span data-en="Painting" data-mk="Сликање">Painting</span>
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 10 -->
+
+    <div class="gallery-card">
+
+        <div class="gallery-images">
+
+            <div class="image-wrap">
+                <img src="images/gallery/fam1.jpg">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/fam2.jpg">
+            </div>
+
+            <div class="image-wrap">
+                <img src="images/gallery/fam3.jpg">
+            </div>
+
+        </div>
+
+
+        <div class="gallery-info">
+
+            <div class="number">
+                10 / 10<br>
+                14.06.24
+            </div>
+
+            <div class="text">
+
+                <h2>
+                    <span data-en="Telekom Family Day" data-mk="Телеком Семеен ден">Telekom Family Day</span>
+                </h2>
+
+                <p>
+                    <span data-en="From tiny hands to big hearts — a Family Day full of art, fun, and unforgettable moments." data-mk="Од мали раце до големи срца — Семеен ден исполнет со уметност, забава и незаборавни моменти.">
+                        From tiny hands to big hearts —
+                        a Family Day full of art, fun,
+                        and unforgettable moments.
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="tags">
+                <span>
+                    <span data-en="Family" data-mk="Семејство">Family</span>
+                </span>
+                <span>
+                    <span data-en="Painting" data-mk="Сликање">Painting</span>
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<div class="photo-credit">
+    <p>
+        <span data-en="See more photos on" data-mk="Погледнете повеќе слики на">See more photos on</span>
+        <a href="https://www.instagram.com/sipandcreate.skopje/" target="_blank">@sipandcreate.skopje</a>
+    </p>
+</div>
+
+<!-- JOURNAL -->
+
+<section class="journal">
+
+    <div class="journal-header">
+
+        <div>
+
+            <div class="journal-kicker">
+                <span data-en="From the studio" data-mk="Од студиото">From the studio</span>
+            </div>
+
+            <h2 class="journal-title">
+                <span data-en="The Journal" data-mk="Дневникот">The Journal</span>
+            </h2>
+
+        </div>
+
+
+        <p class="journal-intro">
+            <span data-en="Stories, ideas and little glimpses behind the creative experiences at Sip &amp; Create." data-mk="Приказни, идеи и мал поглед зад креативните искуства во Sip &amp; Create.">
+                Stories, ideas and little glimpses behind
+                the creative experiences at Sip & Create.
+            </span>
+        </p>
+
+    </div>
+
+
+
+    <div class="article-grid">
+
+
+        <!-- REAL ARTICLE -->
+
+        <article class="article-card">
+
+            <div class="article-image">
+
+                <img
+                        src="images/gallery/pasta%205.jpg"
+                        alt="Sip & Create workshop">
+
+            </div>
+
+
+            <div class="article-content">
+
+                <div class="article-meta">
+
+                    <span>
+                        <span data-en="Press" data-mk="Печат">Press</span>
+                    </span>
+
+                    <span>21.11.23</span>
+
+                </div>
+
+
+                <h3>
+                    <span data-en="Sip &amp; Create: Where Creativity Meets Fun" data-mk="Sip &amp; Create: Каде креативноста се среќава со забавата">Sip & Create: Where Creativity Meets Fun</span>
+                </h3>
+
+
+                <p>
+                    <span data-en="Discover the Skopje creative space where art, drinks and unforgettable experiences come together around the table." data-mk="Откријте го креативниот простор во Скопје каде уметноста, пијалоците и незаборавните искуства се среќаваат околу масата.">
+                        Discover the Skopje creative space where
+                        art, drinks and unforgettable experiences
+                        come together around the table.
+                    </span>
+                </p>
+
+
+                <a
+                        href="https://www.skopje.in/post/sip-create-new-places-in-skopje"
+                        target="_blank"
+                        class="article-link">
+
+                    <span data-en="Read article" data-mk="Прочитај статија">Read article</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- DEMO ARTICLE -->
+
+        <article class="article-card">
+
+            <div class="article-image">
+
+                <img
+                        src="images/gallery/cer5.jpg"
+                        alt="Creative workshop">
+
+            </div>
+
+
+            <div class="article-content">
+
+                <div class="article-meta">
+
+                    <span>
+                        <span data-en="Studio Notes" data-mk="Белешки од студиото">Studio Notes</span>
+                    </span>
+
+                    <span>
+                        <span data-en="Journal" data-mk="Дневник">Journal</span>
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    <span data-en="Why We Believe Everyone Can Create" data-mk="Зошто веруваме дека секој може да создава">Why We Believe Everyone Can Create</span>
+                </h3>
+
+
+                <p>
+                    <span data-en="You don't need to be an artist to make something beautiful. Sometimes all you need is a blank canvas and a little courage." data-mk="Не треба да бидеш уметник за да направиш нешто убаво. Понекогаш сè што ти треба е празно платно и малку храброст.">
+                        You don't need to be an artist to make
+                        something beautiful. Sometimes all you
+                        need is a blank canvas and a little courage.
+                    </span>
+                </p>
+
+
+                <a
+                        href="https://www.skopje.in/post/sip-create-new-places-in-skopje"
+                        class="article-link">
+
+                    <span data-en="Read story" data-mk="Прочитај приказна">Read story</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- DEMO ARTICLE -->
+
+        <article class="article-card">
+
+            <div class="article-image">
+
+                <img
+                        src="images/gallery/gall4.jpg"
+                        alt="Sip & Create creative evening">
+
+            </div>
+
+
+            <div class="article-content">
+
+                <div class="article-meta">
+
+                    <span>
+                        <span data-en="Behind the scenes" data-mk="Зад сцената">Behind the scenes</span>
+                    </span>
+
+                    <span>
+                        <span data-en="Journal" data-mk="Дневник">Journal</span>
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    <span data-en="More Than a Workshop: Creating Moments Together" data-mk="Повеќе од работилница: Создавање моменти заедно">More Than a Workshop: Creating Moments Together</span>
+                </h3>
+
+
+                <p>
+                    <span data-en="From the first brushstroke to the last glass of wine, it's the little moments that make every evening memorable." data-mk="Од првиот потег на четката до последната чаша вино, малите моменти се тие што ја прават секоја вечер незаборавна.">
+                        From the first brushstroke to the last
+                        glass of wine, it's the little moments
+                        that make every evening memorable.
+                    </span>
+                </p>
+
+
+                <a
+                        href="https://www.skopje.in/post/sip-create-new-places-in-skopje"
+                        class="article-link">
+
+                    <span data-en="Read story" data-mk="Прочитај приказна">Read story</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+
+    <div class="footer-container">
+
+
+        <!-- FOOTER TOP -->
+
+        <div class="footer-top">
+
+
+            <!-- BRAND  -->
+
+            <div class="footer-brand">
+
+                <a href="home.html" class="footer-logo">
+
+                    <img
+                            class="logo-light"
+                            src="images/home/logo-dark.png"
+                            alt="Sip & Create Logo"
+                    >
+
+                    <img
+                            class="logo-dark"
+                            src="images/home/logo-light.png"
+                            alt="Sip & Create Logo"
+                    >
+
+                </a>
+
+
+                <!-- DESCRIPTION -->
+
+                <p class="footer-description"
+                   data-en="Creative workshops, good company, and a little something to make."
+                   data-mk="Креативни работилници, добро друштво и нешто уникатно што ќе го создадете."
+                >
+
+                    Creative workshops, good company,
+                    and a little something to make.
+
+                </p>
+
+
+            </div>
+
+            <!-- EXPLORE  -->
+
+            <div class="footer-column">
+
+                <p class="footer-title"
+                   data-en="EXPLORE"
+                   data-mk="ИСТРАЖИ"
+                >
+                    EXPLORE
+                </p>
+
+                <a href="home.html"
+                   data-en="Home"
+                   data-mk="Почетна"
+                >
+                    Home
+                </a>
+
+                <a href="#"
+                   data-en="Workshops"
+                   data-mk="Работилници"
+                >
+                    Workshops
+                </a>
+
+                <a href="#"
+                   data-en="About Us"
+                   data-mk="За нас"
+                >
+                    About Us
+                </a>
+
+                <a href="contact.html"
+                   data-en="Contact"
+                   data-mk="Контакт"
+                >
+                    Contact
+                </a>
+
+
+            </div>
+
+
+
+            <!-- VISIT US  -->
+
+            <div class="footer-column">
+
+
+                <p class="footer-title"
+                   data-en="VISIT US"
+                   data-mk="ПОСЕТЕТЕ НÈ"
+                >
+                    VISIT US
+                </p>
+
+
+                <p>
+
+                    Partizanska 12A<br>
+
+                    1000 Skopje<br>
+
+                    North Macedonia
+
+                </p>
+
+
+                <a
+                        href="mailto:sipandcreate@gmail.mk"
+                >
+
+                    sipandcreate@gmail.mk
+
+                </a>
+
+
+                <a
+                        href="tel:+38970123456"
+                >
+
+                    +389 70 123 456
+
+                </a>
+
+
+            </div>
+
+
+
+            <!--  SOCIAL -->
+
+            <div class="footer-column">
+
+
+                <p class="footer-title"
+                   data-en="FOLLOW ALONG"
+                   data-mk="СЛЕДЕТЕ НÈ"
+                >
+                    FOLLOW ALONG
+                </p>
+
+
+                <div class="social-links">
+
+
+                    <!-- Instagram -->
+
+                    <a
+                            href="https://www.instagram.com/sipandcreate.skopje/"
+                            aria-label="Instagram"
+                    >
+
+                        <i class="bi bi-instagram"></i>
+
+                    </a>
+
+
+
+                    <!-- Facebook -->
+
+                    <a
+                            href="https://www.facebook.com/sipandcreate.skopje/"
+                            aria-label="Facebook"
+                    >
+
+                        <i class="bi bi-facebook"></i>
+
+                    </a>
+
+
+
+                    <!-- TikTok -->
+
+                    <a
+                            href="https://www.tiktok.com/@sipandcreate.skopje"
+                            aria-label="TikTok"
+                    >
+
+                        <i class="bi bi-tiktok"></i>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+
+            <p
+                    data-en="© 2026 Sip & Create. All rights reserved."
+                    data-mk="© 2026 Sip & Create. Сите права се задржани."
+            >
+
+                © 2026 Sip & Create.
+                All rights reserved.
+
+            </p>
+
+
+            <p
+                    data-en="Made for creative moments."
+                    data-mk="Создадено за креативни моменти."
+            >
+
+                Made for creative moments.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</footer>
+
+
+
+<script src="script.js"></script>
+<script src="language.js"></script>
+
+
+
+</body>
+
+</html>
