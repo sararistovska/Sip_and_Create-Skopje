@@ -96,6 +96,7 @@ body.dark .lang-btn.active {
 
 /* hero */
 
+
 .hero {
     min-height: 100vh;
     position: relative;
@@ -110,7 +111,7 @@ body.dark .lang-btn.active {
     align-items: center;
     justify-content: center;
 
-    padding: 150px 20px 90px;
+    padding: 150px 20px 170px;
 
     background:
             radial-gradient(
@@ -251,6 +252,70 @@ body.dark .hero-description {
     color: #b8aaa4;
 }
 
+.hero-scroll {
+
+    padding-top:4px;
+    position: absolute;
+
+    bottom: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+
+    z-index: 5;
+
+    color: #a18b81;
+
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.hero-scroll-line {
+    width: 1px;
+    height: 42px;
+
+    background: #c9b5ac;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-scroll-line::after {
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #2b2520;
+
+    animation:
+            scrollLine
+            1.8s
+            ease-in-out
+            infinite;
+}
+
+body.dark .hero-scroll-line {
+    background: #655a56;
+}
+
+body.dark .hero-scroll-line::after {
+    background: #d3a4ad;
+}
 
 /* prostor za chinijata */
 
@@ -300,10 +365,8 @@ body.dark .hero-description {
 
 .plate {
     position: relative;
-
     width: 390px;
     height: 390px;
-
     border-radius: 50%;
 
     box-shadow:
@@ -313,10 +376,8 @@ body.dark .hero-description {
 
     transform: rotateX(12deg);
 
-    animation: plateFloat 6s ease-in-out infinite;
 
     cursor: pointer;
-
     outline: none;
 }
 
@@ -390,51 +451,6 @@ body.dark .plate {
     pointer-events: none;
 
     z-index: 3;
-}
-
-.splash-dot {
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    border-radius: 50%;
-
-    transform: translate(-50%, -50%) scale(0);
-
-    opacity: 0;
-
-    filter: blur(.15px);
-
-    animation: splashPop 620ms cubic-bezier(.16, .86, .28, 1) forwards;
-}
-
-.splash-dot.big {
-    border-radius: 42% 58% 55% 45%;
-}
-
-.paint-flash {
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    width: 34px;
-    height: 34px;
-
-    border-radius: 50%;
-
-    transform: translate(-50%, -50%) scale(.25);
-
-    opacity: 0;
-
-    border: 2px solid rgba(255, 255, 255, .55);
-
-    box-shadow: 0 0 0 7px rgba(212, 119, 82, .10);
-
-    animation: paintFlash 480ms ease-out forwards;
-
-    pointer-events: none;
 }
 
 
@@ -1382,6 +1398,21 @@ body.dark .final {
     }
 }
 
+@keyframes scrollLine {
+
+    0% {
+        top: -100%;
+    }
+
+    50% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
 @keyframes plateFloat {
 
     0%, 100% {
@@ -1598,7 +1629,7 @@ body.dark .final {
     .hero {
         min-height: 100svh;
 
-        padding: 115px 18px 70px;
+        padding: 115px 18px 150px;
     }
 
     .hero::before {

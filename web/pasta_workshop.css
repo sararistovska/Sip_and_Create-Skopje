@@ -2403,3 +2403,32 @@ body.dark .branch-dot {
 body.dark .th-photo:last-child {
     border-color: #151014;
 }
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    width: min(1000px, 90%);
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: center;
+
+    padding: 140px 0 110px;
+}
+
+.hero-kicker {
+    margin-bottom: 0;
+}
+
+.hero-title {
+    margin: auto 0;
+}
+
+.hero-description {
+    margin: 0 auto;
+}

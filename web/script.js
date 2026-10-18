@@ -11,6 +11,50 @@ if(savedTheme === "dark"){
     document.body.classList.add("dark");
 }
 
+const wineMessages = {
+    en: {
+        dark: "Oops, you spilled the wine! Dark mode unlocked.",
+        light: "All cleaned up! Back to daylight."
+    },
+    mk: {
+        dark: "Упс, го истури виното! Темниот режим е отклучен.",
+        light: "Исчистено! Назад на дневна светлина."
+    }
+};
+
+function wineSplash(x, y){
+
+    // ripple ring
+    const ring = document.createElement("div");
+    ring.className = "wine-ring";
+    ring.style.left = x + "px";
+    ring.style.top = y + "px";
+    document.body.appendChild(ring);
+    setTimeout(() => ring.remove(), 1000);
+
+    // droplets
+    for(let i = 0; i < 18; i++){
+
+        const drop = document.createElement("div");
+        drop.className = "wine-drop";
+
+        const size = 6 + Math.random() * 14;
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 70 + Math.random() * 190;
+
+        drop.style.width = size + "px";
+        drop.style.height = size + "px";
+        drop.style.left = (x - size / 2) + "px";
+        drop.style.top = (y - size / 2) + "px";
+        drop.style.setProperty("--dx", Math.cos(angle) * distance + "px");
+        drop.style.setProperty("--dy", Math.sin(angle) * distance + "px");
+        drop.style.animationDelay = (Math.random() * 0.15) + "s";
+
+        document.body.appendChild(drop);
+        setTimeout(() => drop.remove(), 1400);
+    }
+}
+
 if(wineButton && wineOverlay){
 
     wineButton.addEventListener("click", function(e){
@@ -24,17 +68,24 @@ if(wineButton && wineOverlay){
 
         if(wineMessage && wineMessageText){
 
-            wineMessageText.textContent =
-                dark
-                    ? "Oops, you spilled the wine! Dark mode unlocked."
-                    : "All cleaned up! Back to daylight.";
+            const lang = localStorage.getItem("selectedLanguage") === "mk" ? "mk" : "en";
+
+            wineMessageText.textContent = wineMessages[lang][dark ? "dark" : "light"];
 
         }
 
 
-        wineButton.classList.add("active");
+        const rect = wineButton.getBoundingClientRect();
+        const splashX = rect.left + rect.width / 2;
+        const splashY = rect.top + rect.height / 2;
 
+        wineOverlay.style.setProperty("--splash-x", splashX + "px");
+        wineOverlay.style.setProperty("--splash-y", splashY + "px");
+
+        wineButton.classList.add("active");
         wineOverlay.classList.add("active");
+
+        wineSplash(splashX, splashY);
 
 
         if(wineMessage){

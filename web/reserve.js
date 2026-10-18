@@ -83,7 +83,7 @@ const monthNames = {
 
 
 
-let calendarLanguage = "en";
+let calendarLanguage = localStorage.getItem("selectedLanguage") === "mk" ? "mk" : "en";
 
 function getCalendarLanguage() {
     return calendarLanguage;

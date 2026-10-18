@@ -1,32 +1,3 @@
-/* jazik */
-
-let language = "en";
-
-const buttons = document.querySelectorAll(".lang-toggle button");
-const elements = document.querySelectorAll("[data-en]");
-
-function changeLanguage() {
-
-    elements.forEach(function (element) {
-        // innerHTML, bidejki nekoi naslovi imaat <em> i <br/>
-        element.innerHTML = element.getAttribute("data-" + language);
-    });
-
-    buttons.forEach(function (button) {
-        button.classList.toggle("active", button.getAttribute("data-lang") === language);
-    });
-}
-
-buttons.forEach(function (button) {
-    button.addEventListener("click", function () {
-        language = button.getAttribute("data-lang");
-        changeLanguage();
-    });
-});
-
-changeLanguage();
-
-
 /* hero naslovot se trga*/
 
 const aboutText = document.querySelector(".about-text");

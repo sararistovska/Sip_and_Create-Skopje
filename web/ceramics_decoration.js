@@ -115,7 +115,6 @@ const plateArea   = document.getElementById("plateArea");
 const plate       = document.getElementById("plate");
 const disc        = document.querySelector(".plate-disc");
 const painted     = document.getElementById("platePainted");
-const splashField = document.getElementById("splashField");
 
 //se otkriva preku maska
 const paintCanvas = document.createElement("canvas");
@@ -231,59 +230,14 @@ function distance(a,b){
     return Math.hypot(a.x - b.x, a.y - b.y);
 }
 
-function spawnSplashes(x, y){
-    const count = 5 + Math.floor(Math.random() * 4);
-
-    for(let i = 0; i < count; i++){
-        const dot = document.createElement("span");
-        dot.className = "splash-dot" + (Math.random() > .72 ? " big" : "");
-
-        const angle = Math.random() * Math.PI * 2;
-        const dist = 20 + Math.random() * 62;
-        const size = 3 + Math.random() * 8;
-
-        dot.style.left = x + "px";
-        dot.style.top = y + "px";
-        dot.style.width = size + "px";
-        dot.style.height = size * (.65 + Math.random() * .7) + "px";
-        dot.style.background =
-            SPLASH_COLORS[Math.floor(Math.random() * SPLASH_COLORS.length)];
-
-        dot.style.setProperty("--dx", Math.cos(angle) * dist + "px");
-        dot.style.setProperty("--dy", Math.sin(angle) * dist + "px");
-        dot.style.setProperty("--rot", (Math.random() * 120 - 60) + "deg");
-
-        splashField.appendChild(dot);
-        dot.addEventListener("animationend", () => dot.remove());
-    }
-}
-
-function addPaintFlash(x, y){
-    const flash = document.createElement("span");
-    flash.className = "paint-flash";
-    flash.style.left = x + "px";
-    flash.style.top = y + "px";
-    splashField.appendChild(flash);
-    flash.addEventListener("animationend", () => flash.remove());
-}
-
-function handleMove(){
+function handleMove() {
     rafQueued = false;
-    if(!pendingPoint) return;
+    if (!pendingPoint) return;
 
     const p = pendingPoint;
 
-    if(!lastPoint || distance(lastPoint, p) >= MIN_BRUSH_GAP){
+    if (!lastPoint || distance(lastPoint, p) >= MIN_BRUSH_GAP) {
         paintStroke(p.x, p.y, lastPoint);
-
-        if(!lastPoint || distance(lastPoint, p) > 16){
-            spawnSplashes(p.x, p.y);
-        }
-
-        if(!lastPoint){
-            addPaintFlash(p.x, p.y);
-        }
-
         lastPoint = p;
     }
 }
@@ -358,3 +312,4 @@ plate.addEventListener("touchend", onPointerLeave);
 window.addEventListener("resize", resizeCanvases);
 painted.addEventListener("load", resizeCanvases);
 resizeCanvases();
+
