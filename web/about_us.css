@@ -867,13 +867,6 @@ body.dark .team-card-back .fun-fact {
         width: calc(100% - 50px);
     }
 
-    .side-controls {
-        top: auto;
-        bottom: 20px;
-        left: 16px;
-        transform: none;
-    }
-
     .how,
     .workshops-section,
     .team-section {

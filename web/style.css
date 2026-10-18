@@ -1742,3 +1742,69 @@ body.dark .site-footer {
         gap: 8px;
     }
 }
+
+
+/* mobile text sizes */
+@media (max-width: 700px) {
+
+    .center {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .center h1 {
+        font-size: clamp(38px, 12vw, 64px);
+        letter-spacing: -2px;
+    }
+
+    .center p {
+        margin-top: 22px;
+        font-size: 16px;
+    }
+
+    .story-content {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .story-content h2 {
+        font-size: clamp(20px, 6vw, 30px);
+        letter-spacing: 5px;
+    }
+
+    .story-content h1 {
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: clamp(38px, 11vw, 64px);
+        letter-spacing: -2px;
+    }
+
+    .story-image-space,
+    .story-image {
+        width: 90px;
+        height: 58px;
+    }
+
+    .cheers-text {
+        font-size: clamp(44px, 14vw, 70px);
+        letter-spacing: 4px;
+    }
+
+    .testimonials-section {
+        padding: 80px 18px;
+    }
+
+    .testimonials-section h3 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .testimonial-card {
+        padding: 30px 24px;
+    }
+
+    .testimonial-text {
+        font-size: 15px;
+        min-height: 0;
+    }
+}

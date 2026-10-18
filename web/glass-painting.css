@@ -1030,15 +1030,7 @@ body.dark .hero {
 
 /* responsive */
 @media (max-width:900px) {
-    .navbar {
-        padding:0 28px;
-    }
-    .nav-links {
-        gap:15px;
-    }
-    .nav-links li:nth-child(2),.nav-links li:nth-child(3),.nav-links li:nth-child(4) {
-        display:none;
-    }
+
     .hero {
         padding:90px 18px 65px;
     }
@@ -1153,19 +1145,11 @@ body.dark .hero {
     .container {
         width:calc(100% - 38px);
     }
-    .navbar {
-        height:78px;
-        padding:0 19px;
-    }
+
     .logo {
         font-size:21px;
     }
-    .nav-links {
-        gap:0;
-    }
-    .nav-links li:not(:last-child) {
-        display:none;
-    }
+
     .book-btn {
         padding:11px 15px;
         font-size:10px;

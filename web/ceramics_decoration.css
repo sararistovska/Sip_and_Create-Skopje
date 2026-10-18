@@ -1,3 +1,10 @@
+:root {
+    --dx: 0px;
+    --dy: 0px;
+    --rot: 0deg;
+    --strip-duration: 60s;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +13,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
@@ -13,6 +22,9 @@ body {
     color: #2b2520;
     font-family: "Manrope", serif;
     overflow-x: hidden;
+    max-width: 100%;
+    position: relative;
+    overscroll-behavior-x: none;
     transition: background .8s ease, color .8s ease;
 }
 
@@ -53,15 +65,6 @@ body.dark .logo span {
     color: #8db6e8;
 }
 
-body.dark .nav-links {
-    background: rgba(28, 22, 26, .82);
-    border-color: rgba(255, 255, 255, .08);
-    box-shadow: 0 10px 35px rgba(0, 0, 0, .25);
-}
-
-body.dark .nav-links a {
-    color: #f7f1ed;
-}
 
 body.dark .book-btn {
     background: #f5eee9;
@@ -99,7 +102,8 @@ body.dark .lang-btn.active {
     /*
     overflow: hidden;
     */
-    overflow: visible;
+    overflow-x: clip;
+    overflow-y: visible;
 
     display: flex;
     flex-direction: column;
@@ -538,6 +542,8 @@ body.dark {
 .atmosphere,
 .after {
     padding: 120px 0 140px;
+
+    overflow-x: clip;
 
     color: var(--ink);
 
@@ -1450,19 +1456,19 @@ body.dark .final {
 
 @media (max-width: 900px) {
 
-    .navbar {
-        height: 90px;
-        padding: 0 25px;
-    }
+    /*.navbar {*/
+    /*    height: 90px;*/
+    /*    padding: 0 25px;*/
+    /*}*/
 
-    .nav-links {
-        gap: 16px;
-        padding: 14px 18px;
-    }
+    /*.nav-links {*/
+    /*    gap: 16px;*/
+    /*    padding: 14px 18px;*/
+    /*}*/
 
-    .nav-links li:not(.nav-cta):not(.nav-toggle):not(.nav-lang) {
-        display: none;
-    }
+    /*.nav-links li:not(.nav-cta):not(.nav-toggle):not(.nav-lang) {*/
+    /*    display: none;*/
+    /*}*/
 
     .container {
         width: calc(100% - 50px);
@@ -1557,7 +1563,7 @@ body.dark .final {
     }
 
     .after-round {
-        right: -40px;
+        right: -20px;
     }
 
     .after-timeline {
@@ -1575,15 +1581,15 @@ body.dark .final {
 
 @media (max-width: 650px) {
 
-    .navbar {
-        height: 80px;
-        padding: 0 18px;
-    }
+    /*.navbar {*/
+    /*    height: 80px;*/
+    /*    padding: 0 18px;*/
+    /*}*/
 
-    .nav-links {
-        padding: 11px 14px;
-        gap: 12px;
-    }
+    /*.nav-links {*/
+    /*    padding: 11px 14px;*/
+    /*    gap: 12px;*/
+    /*}*/
 
     .book-btn {
         padding: 11px 18px;
@@ -1709,7 +1715,7 @@ body.dark .final {
     }
 
     .after-round {
-        right: -22%;
+        right: -8%;
         bottom: -30px;
     }
 
