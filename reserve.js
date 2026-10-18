@@ -31,7 +31,6 @@ const workshops = {
 };
 
 
-
 const calendarGrid =
     document.getElementById("calendarGrid");
 
@@ -45,30 +44,65 @@ const nextMonth =
     document.getElementById("nextMonth");
 
 
-
 let currentDate = new Date();
 
 currentDate.setHours(0, 0, 0, 0);
 
 
+const monthNames = {
+    en: [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ],
 
-const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-];
+    mk: [
+        "Јануари",
+        "Февруари",
+        "Март",
+        "Април",
+        "Мај",
+        "Јуни",
+        "Јули",
+        "Август",
+        "Септември",
+        "Октомври",
+        "Ноември",
+        "Декември"
+    ]
+};
 
 
-/* RENDER CALENDAR */
+
+let calendarLanguage = "en";
+
+function getCalendarLanguage() {
+    return calendarLanguage;
+}
+
+
+/* UPDATE CALENDAR WHEN LANGUAGE CHANGES */
+
+document.querySelectorAll(".lang-button").forEach(button => {
+    button.addEventListener("click", function () {
+        calendarLanguage = this.dataset.lang === "mk" ? "mk" : "en";
+        renderCalendar();
+    });
+});
+
+
+
+
+
 
 function renderCalendar() {
 
@@ -82,22 +116,19 @@ function renderCalendar() {
         currentDate.getMonth();
 
 
+    const language = getCalendarLanguage();
+
     monthTitle.textContent =
-        `${monthNames[month]} ${year}`;
-
-
+        `${monthNames[language][month]} ${year}`;
 
 
     const firstDay =
         new Date(year, month, 1);
 
 
-
-
     const numberOfDays =
         new Date(year, month + 1, 0)
             .getDate();
-
 
 
     let startingDay =
@@ -127,14 +158,12 @@ function renderCalendar() {
     }
 
 
-
     const today =
         new Date();
 
     today.setHours(
         0, 0, 0, 0
     );
-
 
 
     for (
@@ -174,6 +203,7 @@ function renderCalendar() {
             );
         }
 
+
         if (
             date < today
         ) {
@@ -212,7 +242,6 @@ function renderCalendar() {
             );
 
 
-
             const dot =
                 document.createElement("div");
 
@@ -223,7 +252,6 @@ function renderCalendar() {
             dayElement.appendChild(
                 dot
             );
-
 
 
             const eventName =
@@ -243,7 +271,7 @@ function renderCalendar() {
 
         } else {
 
-            /*Monday-Wednesday are private-event days.*/
+
 
             dayElement.classList.add(
                 "private"
@@ -252,19 +280,33 @@ function renderCalendar() {
         }
 
 
-        dayElement.addEventListener(
-            "click",
-            function () {
+        if (date < today) {
 
-                openReservation(
-                    year,
-                    month,
-                    dayNumber,
-                    weekday
-                );
 
-            }
-        );
+
+            dayElement.setAttribute("aria-disabled", "true");
+
+            dayElement.style.pointerEvents = "none";
+
+            dayElement.style.cursor = "default";
+
+        } else {
+
+            dayElement.addEventListener(
+                "click",
+                function () {
+
+                    openReservation(
+                        year,
+                        month,
+                        dayNumber,
+                        weekday
+                    );
+
+                }
+            );
+
+        }
 
 
         calendarGrid.appendChild(
@@ -284,22 +326,8 @@ function openReservation(
     weekday
 ) {
 
-    const date =
-        new Date(
-            year,
-            month,
-            day
-        );
-
-
-    /*
-     * YYYY-MM-DD
-     */
-
     const formattedDate =
         `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-
-
 
 
     const workshop =
@@ -320,7 +348,6 @@ function openReservation(
 
     }
 
-
     else {
 
         url +=
@@ -334,10 +361,11 @@ function openReservation(
 
 
 
-
 previousMonth.addEventListener(
     "click",
     function () {
+
+        currentDate.setDate(1);
 
         currentDate.setMonth(
             currentDate.getMonth() - 1
@@ -349,9 +377,12 @@ previousMonth.addEventListener(
 );
 
 
+
 nextMonth.addEventListener(
     "click",
     function () {
+
+        currentDate.setDate(1);
 
         currentDate.setMonth(
             currentDate.getMonth() + 1
@@ -359,6 +390,16 @@ nextMonth.addEventListener(
 
         renderCalendar();
 
+    }
+);
+
+
+
+document.querySelectorAll(".lang-button").forEach(
+    button => {
+        button.addEventListener("click", function () {
+            renderCalendar();
+        });
     }
 );
 

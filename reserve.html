@@ -7,64 +7,28 @@
     <title>Reserve a Table | Sip & Create</title>
     <link rel="stylesheet" href="reserve.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cookies.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 
 
 </head>
 
-
 <body>
 
-<!-- SIDE CONTROLS -->
 
-<div class="side-controls">
-
-    <!-- LANGUAGE -->
-
-    <div class="language-control">
-
-        <button
-                class="lang-button active"
-                data-lang="en"
-        >
-            EN
-        </button>
-
-        <div class="control-divider"></div>
-
-        <button
-                class="lang-button"
-                data-lang="mk"
-        >
-            MK
-        </button>
-
-    </div>
-
-
-    <!-- DARK MODE -->
-
-    <button
-            class="side-wine-button"
-            id="wineButton"
-            aria-label="Toggle dark mode"
-    >
-        <img
-                src="images/home/wine-glass.png"
-                alt="Wine glass"
-        >
-    </button>
-
-</div>
-
-<!-- WINE EFFECT -->
-
+<!-- wine effect -->
 <div class="wine-overlay"></div>
 
 <div class="wine-message" id="wineMessage">
     <span id="wineMessageText"></span>
 </div>
 
-<!-- NAVBAR -->
+<!-- navbar -->
 <nav class="navbar">
 
     <a href="home.html" class="logo">
@@ -72,8 +36,37 @@
         <span>SKOPJE</span>
     </a>
 
+    <!-- side controls -->
+    <div class="side-controls">
 
-    <ul class="nav-links">
+        <div class="language-control lang-toggle">
+            <button class="lang-button active" data-lang="en">EN</button>
+            <div class="control-divider"></div>
+            <button class="lang-button" data-lang="mk">MK</button>
+        </div>
+
+        <button class="side-wine-button" id="wineButton" aria-label="Toggle dark mode">
+            <img src="images/home/wine-glass.png" alt="Wine glass">
+        </button>
+
+    </div>
+
+
+    <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+
+    <ul class="nav-links" id="primary-navigation">
         <li>
 
             <a
@@ -88,7 +81,7 @@
         <li>
 
             <a
-                    href="#"
+                    href="about_us.html"
                     data-en="About"
                     data-mk="За нас"
             >
@@ -175,13 +168,9 @@
 
 </nav>
 
-
 <div class="calendar-page">
 
-
     <div class="calendar-box">
-
-
 
         <div class="calendar-header">
 
@@ -193,14 +182,12 @@
                 ‹
             </button>
 
-
             <h1
                     class="month-title"
                     id="monthTitle"
             >
                 August 2026
             </h1>
-
 
             <button
                     class="month-button"
@@ -212,77 +199,81 @@
 
         </div>
 
-
-
         <div class="calendar-legend">
 
             <div class="legend-item">
                 <span class="legend-dot dot-glass"></span>
-                Glass Painting
+                <span data-en="Glass Painting" data-mk="Сликање на стакло">Glass Painting</span>
             </div>
 
             <div class="legend-item">
                 <span class="legend-dot dot-pasta"></span>
-                Pasta Making
+                <span data-en="Pasta Making" data-mk="Правење паста">Pasta Making</span>
             </div>
 
             <div class="legend-item">
                 <span class="legend-dot dot-ceramics"></span>
-                Ceramics Decorating
+                <span data-en="Ceramics Decorating" data-mk="Декорација на керамика">Ceramics Decorating</span>
             </div>
 
             <div class="legend-item">
                 <span class="legend-dot dot-crochet"></span>
-                Crocheting
+                <span data-en="Crocheting" data-mk="Хеклање">Crocheting</span>
             </div>
 
             <div class="legend-item">
                 <span class="legend-dot dot-private"></span>
-                Private Event
+                <span data-en="Private Event" data-mk="Приватен настан">Private Event</span>
             </div>
 
         </div>
 
-
         <div class="weekdays">
 
-            <div class="weekday">MON</div>
-            <div class="weekday">TUE</div>
-            <div class="weekday">WED</div>
-            <div class="weekday">THU</div>
-            <div class="weekday">FRI</div>
-            <div class="weekday">SAT</div>
-            <div class="weekday">SUN</div>
+            <div class="weekday" data-en="MON" data-mk="ПОН">MON</div>
+            <div class="weekday" data-en="TUE" data-mk="ВТО">TUE</div>
+            <div class="weekday" data-en="WED" data-mk="СРЕ">WED</div>
+            <div class="weekday" data-en="THU" data-mk="ЧЕТ">THU</div>
+            <div class="weekday" data-en="FRI" data-mk="ПЕТ">FRI</div>
+            <div class="weekday" data-en="SAT" data-mk="САБ">SAT</div>
+            <div class="weekday" data-en="SUN" data-mk="НЕД">SUN</div>
 
         </div>
-
 
         <div
                 class="calendar-grid"
                 id="calendarGrid"
         ></div>
 
-
         <p class="calendar-note">
 
-            Select a date to continue with your reservation.
+            <span
+                    data-en="Select a date to continue with your reservation."
+                    data-mk="Изберете датум за да продолжите со резервацијата."
+            >
+                Select a date to continue with your reservation.
+            </span>
+
             <br>
 
-            <strong>
+            <strong
+                    data-en="Monday – Wednesday are available for private events."
+                    data-mk="Понеделник – среда се достапни за приватни настани."
+            >
                 Monday – Wednesday are available for private events.
             </strong>
 
         </p>
 
-
     </div>
 
 </div>
 
-
 <script src="reserve.js"></script>
 <script src="language.js"></script>
 <script src="script.js"></script>
+<script src="cookies.js"></script>
+
 
 </body>
 </html>

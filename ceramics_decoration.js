@@ -1,5 +1,3 @@
-/* scroll reveal */
-
 const revealElements =
     document.querySelectorAll(".reveal");
 
@@ -27,7 +25,7 @@ revealElements.forEach(element => {
 });
 
 
-/* process steps: horizontal accordion, hover / click / focus opens a panel */
+/*  horizontalen akordeon*/
 
 const steps =
     document.querySelectorAll(".step");
@@ -46,7 +44,6 @@ function setStep(activeStep) {
 
 steps.forEach(step => {
 
-    /* hover only with a real mouse, so a tap on touch screens counts as a click */
     step.addEventListener("pointerenter", event => {
 
         if (event.pointerType === "mouse") {
@@ -64,7 +61,7 @@ steps.forEach(step => {
 });
 
 
-/* atmosphere strip: infinite marquee, always moving */
+/* infinite lenta  */
 
 const atmoStrip =
     document.getElementById("atmoStrip");
@@ -74,9 +71,9 @@ const atmoTrack =
 
 if (atmoStrip && atmoTrack) {
 
-    const STRIP_SPEED = 60; // pixels per second
+    const STRIP_SPEED = 60; // pikseli vo sekunda
 
-    /* second copy of the photos, so the loop has no gap */
+    /* vtora kopija na slikite za da nema prekin vo krugot */
     Array.from(atmoTrack.children).forEach(item => {
 
         const clone = item.cloneNode(true);
@@ -88,7 +85,7 @@ if (atmoStrip && atmoTrack) {
         atmoTrack.appendChild(clone);
     });
 
-    /* same speed on every screen size: duration follows the track width */
+    /* ista brzina na sekoj ekran: traenjeto zavisi od shirinata na lentata */
     function setStripDuration() {
 
         const loopWidth = atmoTrack.scrollWidth / 2;
@@ -104,7 +101,7 @@ if (atmoStrip && atmoTrack) {
     window.addEventListener("load", setStripDuration);
     window.addEventListener("resize", setStripDuration);
 
-    /* don't animate while the strip is off screen */
+    /* bez animacija koga lentata ne se gleda */
     new IntersectionObserver(entries => {
         atmoTrack.style.animationPlayState =
             entries[0].isIntersecting ? "" : "paused";
@@ -112,7 +109,7 @@ if (atmoStrip && atmoTrack) {
 }
 
 
-/* plate paint reveal */
+/* otkrivanje na chinijata so boja */
 
 const plateArea   = document.getElementById("plateArea");
 const plate       = document.getElementById("plate");
@@ -120,7 +117,7 @@ const disc        = document.querySelector(".plate-disc");
 const painted     = document.getElementById("platePainted");
 const splashField = document.getElementById("splashField");
 
-// The finished plate is revealed through an accumulated paint mask.
+//se otkriva preku maska
 const paintCanvas = document.createElement("canvas");
 paintCanvas.className = "paint-canvas";
 disc.appendChild(paintCanvas);
@@ -174,9 +171,6 @@ function getPoint(e){
     };
 }
 
-/*
- * One continuous, irregular brush mask.
- */
 function paintStroke(x, y, previous){
     const brush = BRUSH_SIZE + Math.random() * 18 - 9;
 
@@ -186,7 +180,7 @@ function paintStroke(x, y, previous){
     maskCtx.lineCap = "round";
     maskCtx.lineJoin = "round";
 
-    // Connect the previous point so the reveal feels like a real brush stroke.
+    // ja povrzuva prethodnata tochka za da izgleda kako vistinski potez na chetka
     if(previous){
         maskCtx.lineWidth = brush;
         maskCtx.beginPath();
@@ -195,7 +189,7 @@ function paintStroke(x, y, previous){
         maskCtx.stroke();
     }
 
-    // Uneven brush edges: several overlapping soft-ish paint shapes.
+    // neramni rabovi na chetkata
     for(let i = 0; i < 8; i++){
         const angle = Math.random() * Math.PI * 2;
         const distance = Math.random() * brush * .30;
@@ -220,7 +214,7 @@ function paintStroke(x, y, previous){
 
     maskCtx.restore();
 
-    // Put the painted image on top, then keep only the painted mask area.
+    // ja stava obojenata slika odgore i go ostava samo delot pod maskata
     const rect = disc.getBoundingClientRect();
 
     paintCtx.clearRect(0, 0, rect.width, rect.height);
@@ -348,7 +342,7 @@ plate.addEventListener("pointermove", onPointerMove);
 plate.addEventListener("pointerleave", onPointerLeave);
 plate.addEventListener("pointercancel", onPointerLeave);
 
-// Touch support
+// poddrshka za dopir
 plate.addEventListener("touchmove", (e) => {
     const t = e.touches[0];
     if(t){

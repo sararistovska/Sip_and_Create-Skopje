@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,28 +9,82 @@
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="about_us.css">
+    <link rel="stylesheet" href="cookies.css">
+
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- navbar -->
 <nav class="navbar">
 
     <a href="home.html" class="logo">
-        Sip &amp; Create
+        Sip & Create
         <span>SKOPJE</span>
     </a>
 
-    <ul class="nav-links">
+    <!-- side controls -->
+    <div class="side-controls">
+
+        <div class="language-control lang-toggle">
+            <button class="lang-button active" data-lang="en">EN</button>
+            <div class="control-divider"></div>
+            <button class="lang-button" data-lang="mk">MK</button>
+        </div>
+
+        <button class="side-wine-button" id="wineButton" aria-label="Toggle dark mode">
+            <img src="images/home/wine-glass.png" alt="Wine glass">
+        </button>
+
+    </div>
+
+
+    <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+
+    <ul class="nav-links" id="primary-navigation">
         <li>
-            <a href="home.html" data-en="Home" data-mk="Дома">Home</a>
+
+            <a
+                    href="home.html"
+                    data-en="Home"
+                    data-mk="Дома"
+            >
+                Home
+            </a>
+
+        </li>
+        <li>
+
+            <a
+                    href="about_us.html"
+                    data-en="About"
+                    data-mk="За нас"
+            >
+                About
+            </a>
+
         </li>
 
-        <li class="current">
-            <a href="about_us.html" data-en="About" data-mk="За нас">About</a>
-        </li>
 
         <li class="nav-dropdown">
             <a href="#" class="workshops-link">
@@ -40,55 +95,76 @@
             <ul class="workshops-menu">
                 <li>
                     <a href="pasta_workshop.html">
-                        <span data-en="Pasta Making" data-mk="Правење паста">Pasta Making</span>
+                <span data-en="Pasta Making" data-mk="Правење паста">
+                    Pasta Making
+                </span>
                     </a>
                 </li>
+
                 <li>
                     <a href="glass-painting.html">
-                        <span data-en="Glass Painting" data-mk="Сликање на стакло">Glass Painting</span>
+                <span data-en="Glass Painting" data-mk="Сликање на стакло">
+                    Glass Painting
+                </span>
                     </a>
                 </li>
+
                 <li>
-                    <a href="../Sip_and_create_full/ceramics_decoration.html">
-                        <span data-en="Ceramics Decoration" data-mk="Декорација на керамика">Ceramics Decoration</span>
+                    <a href="ceramics_decoration.html">
+                <span data-en="Ceramics Decoration" data-mk="Декорација на керамика">
+                    Ceramics Decoration
+                </span>
                     </a>
                 </li>
             </ul>
         </li>
 
-        <li>
-            <a href="gallery.html" data-en="Gallery" data-mk="Галерија">Gallery</a>
-        </li>
 
         <li>
-            <a href="contact.html" data-en="Contact" data-mk="Контакт">Contact</a>
+
+            <a
+                    href="gallery.html"
+                    data-en="Gallery"
+                    data-mk="Галерија"
+            >
+                Gallery
+            </a>
+
         </li>
 
+
         <li>
-            <a href="reserve.html" class="book-btn" data-en="Book Now" data-mk="Резервирај">Book Now</a>
+
+            <a
+                    href="contact.html"
+                    data-en="Contact"
+                    data-mk="Контакт"
+            >
+                Contact
+            </a>
+
         </li>
+
+
+        <li>
+
+            <a
+                    href="reserve.html"
+                    class="book-btn"
+                    data-en="Book Now"
+                    data-mk="Резервирај"
+            >
+                Book Now
+            </a>
+
+        </li>
+
     </ul>
 
 </nav>
 
 
-<!-- SIDE CONTROLS -->
-<div class="side-controls">
-
-    <div class="language-control lang-toggle">
-        <button class="lang-button active" data-lang="en">EN</button>
-        <div class="control-divider"></div>
-        <button class="lang-button" data-lang="mk">MK</button>
-    </div>
-
-    <button class="side-wine-button" id="wineButton" aria-label="Toggle dark mode">
-        <img src="images/home/wine-glass.png" alt="Wine glass">
-    </button>
-
-</div>
-
-
-<!-- WINE EFFECT -->
+<!-- wine effect -->
 <div class="wine-overlay"></div>
 
 <div class="wine-message" id="wineMessage">
@@ -96,7 +172,7 @@
 </div>
 
 
-<!-- HERO -->
+<!-- hero -->
 <header class="about-hero">
 
     <div class="about-text">
@@ -128,7 +204,7 @@
 </header>
 
 
-<!-- HOW WE WORK -->
+<!-- how we work -->
 <section class="how">
     <div class="container">
 
@@ -190,7 +266,7 @@
 </section>
 
 
-<!-- WORKSHOPS -->
+<!-- workshops -->
 <section class="workshops-section">
     <div class="container">
 
@@ -254,7 +330,7 @@
 </section>
 
 
-<!-- TEAM -->
+<!-- team -->
 <section class="team-section">
     <div class="container">
 
@@ -302,7 +378,7 @@
                         <div class="team-card-back">
                             <h4 data-en="Together" data-mk="Заедно" >Together</h4>
                             <div class="stat-row"><span data-en="Vibes" data-mk="Атмосфера">Vibes</span><span class="stars">★★★★★</span></div>
-                            <p class="fun-fact" data-en="Fun fact: Together we try to make the evening as eventfull and as enjoyable as possible." data-mk="Занимливост: Заедно се трудиме да ја направиме вечерта што е можно повпечатлива.">Fun fact: Together we try to make the evening as eventfull and as enjoyable as possible.</p>
+                            <p class="fun-fact" data-en="Fun fact: Together we try to make the evening as eventful and as enjoyable as possible." data-mk="Занимливост: Заедно се трудиме да ја направиме вечерта што е можно повпечатлива.">Fun fact: Together we try to make the evening as eventful and as enjoyable as possible.</p>
                         </div>
                     </div>
                 </div>
@@ -325,7 +401,7 @@
                             <div class="stat-row"><span data-en="Brush precision" data-mk="Прецизност на четка">Brush precision</span><span class="stars">★★★☆☆</span></div>
                             <div class="stat-row"><span data-en="Playlist taste" data-mk="Плејлиста">Playlist taste</span><span class="stars">★★★★★</span></div>
                             <div class="stat-row"><span data-en="Hosting energy" data-mk="Енергија на домаќин">Hosting energy</span><span class="stars">★★★★★</span></div>
-                            <p class="fun-fact" data-en="Fun fact: can name the grape in a wine, most of the time." data-mk="Занимливост: најчесто погодува кое грозје е во вино на слепо.">Fun fact: can name the grape in a wine blind, most of the time.</p>
+                            <p class="fun-fact" data-en="Fun fact: can name the grape in a wine blind, most of the time." data-mk="Занимливост: најчесто погодува кое грозје е во вино на слепо.">Fun fact: can name the grape in a wine blind, most of the time.</p>
                         </div>
                     </div>
                 </div>
@@ -335,299 +411,131 @@
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- footer -->
+
+
 <footer class="site-footer">
-
     <div class="footer-container">
-
         <div class="footer-top">
 
+            <!-- brand -->
             <div class="footer-brand">
-
                 <a href="home.html" class="footer-logo">
-                    <img class="logo-light" src="images/home/logo-dark.png" alt="Sip & Create Logo">
-                    <img class="logo-dark" src="images/home/logo-light.png" alt="Sip & Create Logo">
+                    Sip &amp; Create
+                    <span>SKOPJE</span>
                 </a>
 
                 <p class="footer-description"
                    data-en="Creative workshops, good company, and a little something to make."
-                   data-mk="Креативни работилници, добро друштво и нешто уникатно што ќе го создадете."
-                >
-                    Creative workshops, good company,
-                    and a little something to make.
+                   data-mk="Креативни работилници, добро друштво и нешто уникатно што ќе го создадете.">
+                    Creative workshops, good company, and a little something to make.
                 </p>
-
             </div>
 
+            <!-- explore -->
             <div class="footer-column">
+                <p class="footer-title"
+                   data-en="EXPLORE"
+                   data-mk="ИСТРАЖИ">EXPLORE</p>
 
-                <p class="footer-title" data-en="EXPLORE" data-mk="ИСТРАЖИ">EXPLORE</p>
+                <a href="about_us.html"
+                   data-en="About Us"
+                   data-mk="За нас">About Us</a>
 
-                <a href="home.html" data-en="Home" data-mk="Почетна">Home</a>
-                <a href="#" data-en="About Us" data-mk="За нас">About Us</a>
-                <a href="pasta_workshop.html" data-en="Pasta making" data-mk="Правење тестенини">Pasta making</a>
-                <a href="glass-painting.html" data-en="Glass painting" data-mk="Сликање на стакло">Glass painting</a>
-                <a href="../Sip_and_create_full/ceramics_decoration.html" data-en="Ceramics decoration" data-mk="Декорација на керамика">Ceramics decoration</a>
-                <a href="gallery.html" data-en="Gallery" data-mk="Галерија">Gallery</a>
-                <a href="contact.html" data-en="Contact" data-mk="Контакт">Contact</a>
+                <a href="pasta_workshop.html"
+                   data-en="Pasta workshop"
+                   data-mk="Тестенини работилница">Workshops</a>
 
+                <a href="glass-painting.html"
+                   data-en="Glass painting"
+                   data-mk="Сликање на чаша">Workshops</a>
+
+                <a href="ceramics_decoration.html"
+                   data-en="Ceramics decoration "
+                   data-mk="Декорација на керамика">Workshops</a>
+
+                <a href="gallery.html"
+                   data-en="Gallery"
+                   data-mk="Галерија">Gallery</a>
+
+                <a href="contact.html"
+                   data-en="Contact"
+                   data-mk="Контакт">Contact</a>
             </div>
 
+            <!-- visit us -->
             <div class="footer-column">
+                <p class="footer-title"
+                   data-en="VISIT US"
+                   data-mk="ПОСЕТЕТЕ НÈ">VISIT US</p>
 
-                <p class="footer-title" data-en="VISIT US" data-mk="ПОСЕТЕТЕ НÈ">VISIT US</p>
-
-                <p>
+                <p class="footer-address">
                     Partizanska 12A<br>
                     1000 Skopje<br>
                     North Macedonia
                 </p>
 
-                <a href="mailto:sipandcreate@gmail.mk">sipandcreate@gmail.mk</a>
-
-                <a href="tel:+38970123456">+389 70 123 456</a>
-
+                <a href="mailto:sipandcreate@gmail.mk">
+                    sipandcreate@gmail.mk
+                </a>
             </div>
 
+            <!-- follow us -->
             <div class="footer-column">
-
-                <p class="footer-title" data-en="FOLLOW ALONG" data-mk="СЛЕДЕТЕ НÈ">FOLLOW ALONG</p>
+                <p class="footer-title"
+                   data-en="FOLLOW US"
+                   data-mk="СЛЕДЕТЕ НÈ">FOLLOW US</p>
 
                 <div class="social-links">
-                    <a href="https://www.instagram.com/sipandcreate.skopje/" aria-label="Instagram">
+                    <a href="https://www.instagram.com/sipandcreate.skopje/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Instagram">
                         <i class="bi bi-instagram"></i>
+                        <span>Instagram</span>
                     </a>
-                    <a href="https://www.facebook.com/sipandcreate.skopje/" aria-label="Facebook">
+
+                    <a href="https://www.facebook.com/sipandcreate.skopje/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook">
                         <i class="bi bi-facebook"></i>
+                        <span>Facebook</span>
                     </a>
-                    <a href="https://www.tiktok.com/@sipandcreate.skopje" aria-label="TikTok">
+
+                    <a href="https://www.tiktok.com/@sipandcreate.skopje"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="TikTok">
                         <i class="bi bi-tiktok"></i>
+                        <span>TikTok</span>
                     </a>
                 </div>
-
             </div>
 
         </div>
 
+        <!-- bottom -->
         <div class="footer-bottom">
-
-            <p data-en="© 2026 Sip & Create. All rights reserved."
-               data-mk="© 2026 Sip & Create. Сите права се задржани.">
-                © 2026 Sip & Create.
-                All rights reserved.
+            <p
+                    data-en="© 2026 Sip &amp; Create. All rights reserved."
+                    data-mk="© 2026 Sip &amp; Create. Сите права се задржани.">
+                © 2026 Sip &amp; Create. All rights reserved.
             </p>
 
-            <p data-en="Made for creative moments."
-               data-mk="Создадено за креативни моменти.">
+            <p
+                    data-en="Made for creative moments."
+                    data-mk="Создадено за креативни моменти.">
                 Made for creative moments.
             </p>
-
         </div>
-
     </div>
-
 </footer>
 
 
-<!-- global script: wine button + dark mode (must come after the elements exist) -->
 <script src="script.js"></script>
-
-<script>
-    /* ---------- language ---------- */
-
-    let language = "en";
-
-    const buttons = document.querySelectorAll(".lang-toggle button");
-    const elements = document.querySelectorAll("[data-en]");
-
-    function changeLanguage() {
-
-        elements.forEach(function (element) {
-            // innerHTML, because some headings use <em> and <br/>
-            element.innerHTML = element.getAttribute("data-" + language);
-        });
-
-        buttons.forEach(function (button) {
-            button.classList.toggle("active", button.getAttribute("data-lang") === language);
-        });
-    }
-
-    buttons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            language = button.getAttribute("data-lang");
-            changeLanguage();
-        });
-    });
-
-    changeLanguage();
-
-
-    /* ---------- hero: the sticky title slides away after a while ---------- */
-
-    const aboutText = document.querySelector(".about-text");
-    const UNPIN_START = 450;
-    const SPEED = 0.8;
-
-    window.addEventListener("scroll", () => {
-        const scrolled = window.scrollY;
-        const offset = scrolled > UNPIN_START ? (scrolled - UNPIN_START) * SPEED : 0;
-        aboutText.style.transform = `translate3d(0, -${offset}px, 0)`;
-    }, { passive: true });
-
-
-    /* ---------- scroll reveal ---------- */
-
-    const revealObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll(".reveal").forEach(element => {
-        revealObserver.observe(element);
-    });
-
-
-    /* ---------- workshops: sticky video + text follow the item closest to the screen center ---------- */
-
-    const workshopItems = document.querySelectorAll(".workshop-item");
-    const workshopImgs = document.querySelectorAll(".workshop-img");
-
-    function updateWorkshops() {
-        const viewportCenter = window.innerHeight / 2;
-        let closestIdx = workshopItems[0].dataset.index;
-        let closestDist = Infinity;
-
-        workshopItems.forEach(item => {
-            const rect = item.getBoundingClientRect();
-            const dist = Math.abs(rect.top + rect.height / 2 - viewportCenter);
-            if (dist < closestDist) {
-                closestDist = dist;
-                closestIdx = item.dataset.index;
-            }
-        });
-
-        workshopItems.forEach(i => i.classList.toggle("active", i.dataset.index === closestIdx));
-        workshopImgs.forEach(im => im.classList.toggle("active", im.dataset.index === closestIdx));
-    }
-
-    window.addEventListener("scroll", updateWorkshops, { passive: true });
-    window.addEventListener("resize", updateWorkshops);
-    updateWorkshops();
-
-
-    /* ---------- team: click a card to flip it ---------- */
-
-    document.querySelectorAll(".team-card[data-flip]").forEach(card => {
-        card.addEventListener("click", () => {
-            card.classList.toggle("flipped");
-        });
-    });
-
-
-    /* ---------- how we work: scroll path ---------- */
-
-    const pathBox = document.querySelector(".path");
-    const pathSvg = pathBox.querySelector(".path-svg");
-    const pathTrack = pathBox.querySelector(".path-track");
-    const pathFill = pathBox.querySelector(".path-fill");
-    const pathDot = pathBox.querySelector(".path-dot");
-    const pathHalo = pathBox.querySelector(".path-dot-halo");
-    const pathSteps = pathBox.querySelectorAll(".path-step");
-
-    let pathLen = 0;
-    let pathPts = [];
-
-    // draws a curved line through the center of every circle
-    function buildPath() {
-        const w = pathBox.offsetWidth;
-        const h = pathBox.offsetHeight;
-
-        pathSvg.setAttribute("viewBox", `0 0 ${w} ${h}`);
-
-        pathPts = Array.from(pathSteps).map(step => {
-            const c = step.querySelector(".path-circle");
-            return {
-                x: step.offsetLeft + c.offsetLeft + c.offsetWidth / 2,
-                y: step.offsetTop + c.offsetTop + c.offsetHeight / 2
-            };
-        });
-
-        let d = `M ${pathPts[0].x} 0 L ${pathPts[0].x} ${pathPts[0].y}`;
-
-        for (let i = 1; i < pathPts.length; i++) {
-            const a = pathPts[i - 1];
-            const b = pathPts[i];
-            const k = (b.y - a.y) * 0.6;
-            d += ` C ${a.x} ${a.y + k}, ${b.x} ${b.y - k}, ${b.x} ${b.y}`;
-        }
-
-        const last = pathPts[pathPts.length - 1];
-        d += ` L ${last.x} ${h}`;
-
-        pathTrack.setAttribute("d", d);
-        pathFill.setAttribute("d", d);
-
-        pathLen = pathFill.getTotalLength();
-        pathFill.style.strokeDasharray = pathLen;
-
-        updatePath();
-    }
-
-    // draws the line up to the middle of the screen and moves the glowing dot
-    function updatePath() {
-        if (!pathLen) return;
-
-        const rect = pathBox.getBoundingClientRect();
-        const line = window.innerHeight * 0.55 - rect.top;
-        const target = Math.max(0, Math.min(pathBox.offsetHeight, line));
-
-        // find the point on the path that sits at the "target" height
-        let lo = 0;
-        let hi = pathLen;
-        for (let i = 0; i < 18; i++) {
-            const mid = (lo + hi) / 2;
-            if (pathFill.getPointAtLength(mid).y < target) lo = mid;
-            else hi = mid;
-        }
-
-        pathFill.style.strokeDashoffset = pathLen - lo;
-
-        const p = pathFill.getPointAtLength(lo);
-        [pathDot, pathHalo].forEach(dot => {
-            dot.setAttribute("cx", p.x);
-            dot.setAttribute("cy", p.y);
-            dot.style.opacity = line > 0 && line < pathBox.offsetHeight ? 1 : 0;
-        });
-
-        pathSteps.forEach((step, i) => {
-            step.classList.toggle("active", line >= pathPts[i].y);
-        });
-    }
-
-    // steps pop in when they enter the screen
-    const stepObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("in");
-                stepObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.3 });
-
-    pathSteps.forEach(step => stepObserver.observe(step));
-
-    window.addEventListener("scroll", updatePath, { passive: true });
-
-    if (window.ResizeObserver) {
-        new ResizeObserver(buildPath).observe(pathBox);   // resize, images loading, language change
-    }
-    window.addEventListener("load", buildPath);
-    buildPath();
-</script>
+<script src="about_us.js"></script>
+<script src="cookies.js"></script>
 
 </body>
 </html>

@@ -588,9 +588,7 @@ button {
 
 
 
-/*----------------CALENDAR - DARK MODE----------------------- */
-
-
+/*calendar dark mode */
 
 body.dark {
     background: #242521;
@@ -652,7 +650,6 @@ body.dark .calendar-legend {
 }
 
 
-/* Private legend dot */
 
 body.dark .dot-private {
 
@@ -775,4 +772,81 @@ body.dark .calendar-note {
 body.dark .calendar-note strong {
 
     color: #bdbab2;
+}
+
+
+
+
+
+/* background colors */
+
+/* light mode */
+body {
+    background: #FAF7F2;
+}
+
+.calendar-page {
+    background-color: #EBE5DE;
+}
+
+.calendar-page::before {
+    background-image:
+            linear-gradient(
+                    rgba(250, 247, 242, 0.58),
+                    rgba(250, 247, 242, 0.58)
+            ),
+            url("images/contact/background_contact.png");
+}
+
+.calendar-page::after {
+    linear-gradient(
+    rgba(250, 247, 242, 0.58),
+    rgba(250, 247, 242, 0.58)
+    ),
+    url("images/contact/background_contact.png");
+}
+
+.calendar-box {
+    background: #FAF7F2;
+}
+
+.day {
+    background: #EBE5DE;
+}
+
+/* dark mode */
+body.dark {
+    background: #151014;
+}
+
+body.dark .calendar-page {
+    background-color: #151014;
+}
+
+body.dark .calendar-page::before {
+    background-image:
+            linear-gradient(
+                    rgba(21, 16, 20, 0.72),
+                    rgba(21, 16, 20, 0.72)
+            ),
+            url("images/contact/background_contact.png");
+}
+
+body.dark .calendar-page::after {
+    background-image:
+            linear-gradient(
+                    rgba(21, 16, 20, 0.72),
+                    rgba(21, 16, 20, 0.72)
+            ),
+            url("images/contact/background_contact.png");
+}
+
+body.dark .calendar-box,
+body.dark .day {
+    background: #151014;
+}
+
+.day.empty,
+body.dark .day.empty {
+    background: transparent;
 }

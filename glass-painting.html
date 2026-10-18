@@ -1,79 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Painting Workshop — Sip & Create Skopje</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
-    <title>Glass Painting | Sip & Create</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="glass-painting.css">
-
-    <!-- Bootstrap Icons -->
-
+    <!-- bootstrap icons -->
     <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     >
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="glass-painting.css">
+    <link rel="stylesheet" href="cookies.css">
 
 </head>
 
 
 <body>
 
-<!-- SIDE CONTROLS -->
-
-<div class="side-controls">
-
-    <!-- LANGUAGE -->
-
-    <div class="language-control">
-
-        <button
-                class="lang-button active"
-                data-lang="en"
-        >
-            EN
-        </button>
-
-        <div class="control-divider"></div>
-
-        <button
-                class="lang-button"
-                data-lang="mk"
-        >
-            MK
-        </button>
-
-    </div>
-
-
-    <!-- DARK MODE -->
-
-    <button
-            class="side-wine-button"
-            id="wineButton"
-            aria-label="Toggle dark mode"
-    >
-        <img
-                src="images/home/wine-glass.png"
-                alt="Wine glass"
-        >
-    </button>
-
-</div>
-
-<!-- WINE EFFECT -->
-
+<!-- wine effect -->
 <div class="wine-overlay"></div>
 
 <div class="wine-message" id="wineMessage">
     <span id="wineMessageText"></span>
 </div>
 
-<!-- NAVBAR -->
+
+
+<!-- navbar -->
 <nav class="navbar">
 
     <a href="home.html" class="logo">
@@ -81,8 +40,37 @@
         <span>SKOPJE</span>
     </a>
 
+    <!-- side controls -->
+    <div class="side-controls">
 
-    <ul class="nav-links">
+        <div class="language-control lang-toggle">
+            <button class="lang-button active" data-lang="en">EN</button>
+            <div class="control-divider"></div>
+            <button class="lang-button" data-lang="mk">MK</button>
+        </div>
+
+        <button class="side-wine-button" id="wineButton" aria-label="Toggle dark mode">
+            <img src="images/home/wine-glass.png" alt="Wine glass">
+        </button>
+
+    </div>
+
+
+    <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+
+    <ul class="nav-links" id="primary-navigation">
         <li>
 
             <a
@@ -97,7 +85,7 @@
         <li>
 
             <a
-                    href="#"
+                    href="about_us.html"
                     data-en="About"
                     data-mk="За нас"
             >
@@ -183,1110 +171,272 @@
     </ul>
 
 </nav>
-<!-- ------------- hero part ------------------ -->
+
 
 <section class="hero">
-
-    <div class="hero-decoration"></div>
-
-
-    <div class="hero-content">
-
-        <p class="hero-small"
-           data-en="Sip & Create Experience"
-           data-mk="Sip & Create искуство">
-            Sip & Create Experience
-        </p>
-
-        <h1>
-            <span data-en="Paint"
-                  data-mk="Обои">
-                Paint
-            </span><br>
-            <span data-en="Your Glass"
-                  data-mk="ја твојата чаша">
-                Your Glass
-            </span>
-        </h1>
-
-
-        <p class="hero-description"
-           data-en="A creative evening where ordinary glasses become little pieces of art. Choose your colors, relax, sip something nice and let your imagination lead."
-           data-mk="Креативна вечер во која обичните чаши стануваат мали уметнички дела. Избери ги твоите бои, опушти се, испиј нешто убаво и остави ја фантазијата да те води.">
-
-            A creative evening where ordinary glasses become
-            little pieces of art. Choose your colors, relax,
-            sip something nice and let your imagination lead.
-
-        </p>
-
-
-        <a href="#about"
-           class="hero-button"
-           data-en="Explore workshop"
-           data-mk="Истражи ја работилницата">
-
-            Explore workshop
-
-        </a>
-
+    <div class="hero-copy">
+        <h1><span data-en="A little colour.<br>A lot of <em>you.</em>" data-mk="Малку боја.<br>Многу <em>тебе.</em>">A little color.<br>A lot of <em>you.</em></span></h1>
+        <p data-en="Turn an ordinary glass into something beautifully yours. Slow down, pick up a brush, and let your imagination bloom." data-mk="Претвори обична чаша во нешто уникатно твое. Забави, земи четка и дозволи ѝ на имагинацијата да процвета.">Turn an ordinary glass into something beautifully yours. Slow down, pick up a brush, and let your imagination bloom.</p>
     </div>
-
-
-    <div class="hero-image">
-
-        <img
-                src="images/glass-painting/gp-hero.png"
-                alt="Glass Painting Workshop">
-
-
-        <div class="hero-card">
-
-            <span
-                    data-en="Creative evening"
-                    data-mk="Креативна вечер">
-                Creative evening
-            </span>
-
-            <h3
-                    data-en="Sip. Paint. Create. Have fun!"
-                    data-mk="Пиј. Сликај. Создади. Забавувај се.">
-                Sip. Paint.
-                Create. Have fun!
-            </h3>
-
+    <div class="hero-art" aria-label="A glass being painted with a floral design">
+        <div class="glass-stage">
+            <img class="glass glass-plain" src="images/glass-painting/cleanGlass.png" alt="Clear, undecorated wine glass">
+            <img class="glass glass-painted" src="images/glass-painting/paintedGlass.png" alt="The same wine glass decorated with delicate pink flowers">
+            <div class="paint-glint"></div>
+            <div class="paint-brush" aria-hidden="true"><svg viewBox="0 0 120 300" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wood" x1="0" x2="1"><stop stop-color="#b77f53"/><stop offset=".45" stop-color="#e0b88b"/><stop offset="1" stop-color="#94603e"/></linearGradient><linearGradient id="bristles" x1="0" x2="1"><stop stop-color="#7e4c45"/><stop offset=".5" stop-color="#d9a2a1"/><stop offset="1" stop-color="#8d5b54"/></linearGradient></defs><path d="M53 72 Q48 42 57 10 Q61 0 66 12 L74 74 Z" fill="url(#wood)" stroke="#855b40" stroke-width="1.5"/><path d="M51 70 L75 72 L81 91 Q65 105 47 90 Z" fill="#b7b3ae" stroke="#77716d" stroke-width="2"/><path d="M47 89 Q63 102 81 90 Q84 108 67 128 Q60 133 55 125 Q44 107 47 89Z" fill="url(#bristles)"/><path d="M55 120 Q62 129 68 120" fill="none" stroke="#f1c3bd" stroke-width="2"/></svg></div>
+            <div class="hero-phrase">Paint. Be creative. Enjoy.<span>Make something that feels like you</span></div>
         </div>
-
     </div>
-
+    <div class="hero-scroll"><span data-en="Scroll to explore" data-mk="Скролај за да истражиш">Scroll to explore</span><i></i></div>
 </section>
 
-
-
-<!-- ------------- quick info  ------------------ -->
-
-<section class="quick-info">
-
-    <div class="container quick-info-grid">
-
-
-        <div class="quick-item">
-
-            <span
-                    data-en="Duration"
-                    data-mk="Времетраење">
-                Duration
-            </span>
-
-            <strong
-                    data-en="2 Hours"
-                    data-mk="2 часа">
-                2 Hours
-            </strong>
-
+<section class="intro workshop-about" id="workshop">
+    <div class="container about-layout">
+        <div class="about-left reveal">
+            <div class="eyebrow" data-en="The workshop" data-mk="Работилницата">The workshop</div>
+            <h2><span data-en="Make it personal.<br><em>Make it yours.</em>" data-mk="Направи го лично.<br><em>Направи го свое.</em>">Make it personal.<br><em>Make it yours.</em></span></h2>
         </div>
-
-
-        <div class="quick-item">
-
-            <span
-                    data-en="Experience"
-                    data-mk="Искуство">
-                Experience
-            </span>
-
-            <strong
-                    data-en="Beginner Friendly"
-                    data-mk="За почетници">
-                Beginner Friendly
-            </strong>
-
+        <div class="about-right reveal">
+            <p data-en="Join us for a relaxed, hands-on creative session where an ordinary glass becomes a little piece of art. Choose your colours, play with patterns and paint at your own pace — no previous experience needed. We provide the materials and friendly guidance; you bring your imagination." data-mk="Придружи ни се на опуштена креативна работилница каде што обичната чаша станува мало уметничко дело. Избери бои, играј си со дезени и сликај со свое темпо — претходно искуство не е потребно. Ние ги обезбедуваме материјалите и насоките, а ти ја носиш фантазијата.">Join us for a relaxed, hands-on creative session where an ordinary glass becomes a little piece of art. Choose your colours, play with patterns and paint at your own pace — no previous experience needed. We provide the materials and friendly guidance; you bring your imagination.</p>
+            <div class="about-facts9">
+                <div class="fact9"><span data-en="Duration" data-mk="Времетраење">Duration</span><strong data-en="2 hours" data-mk="2 часа">2 hours</strong></div>
+                <div class="fact9"><span data-en="Group" data-mk="Група">Group</span><strong data-en="Up to 12 people" data-mk="До 12 лица">Up to 12 people</strong></div>
+                <div class="fact9"><span data-en="Level" data-mk="Ниво">Level</span><strong data-en="Beginner friendly" data-mk="За почетници">Beginner friendly</strong></div>
+                <div class="fact9"><span data-en="Price" data-mk="Цена">Price</span><strong data-en="1800 den" data-mk="1800 ден">1800 den</strong></div>
+            </div>
         </div>
-
-
-        <div class="quick-item">
-
-            <span
-                    data-en="Group"
-                    data-mk="Група">
-                Group
-            </span>
-
-            <strong
-                    data-en="Up to 12 People"
-                    data-mk="До 12 лица">
-                Up to 12 People
-            </strong>
-
-        </div>
-
-
-        <div class="quick-item">
-
-            <span
-                    data-en="Take home"
-                    data-mk="Однеси дома">
-                Take home
-            </span>
-
-            <strong
-                    data-en="Your Creation"
-                    data-mk="Твојата креација">
-                Your Creation
-            </strong>
-
-        </div>
-
-
     </div>
-
 </section>
 
-
-
-<!-- ------------- details about the workshop ------------------ -->
-
-<section class="about" id="about">
-
-    <div class="container about-grid">
-
-
-        <div class="about-images zoom">
-
-
-<!--            <div class="about-main-image">-->
-
-<!--                <img-->
-<!--                        src="images/gp12.png"-->
-<!--                        alt="Painting a wine glass">-->
-
-<!--            </div>-->
-            <div class="about-main-image">
-
-                <video
-                        class="about-video"
-                        autoplay
-                        muted
-                        loop
-                        playsinline>
-
-                    <source
-                            src="videos/vid2.mp4"
-                            type="video/mp4">
-
-                </video>
-
-            </div>
-
-
-<!--            <div class="about-small-image">-->
-
-<!--                <img-->
-<!--                        src="glass-about-2.jpg"-->
-<!--                        alt="Glass painting details">-->
-
-<!--            </div>-->
-
-
-<!--        </div>-->
-            <div class="about-main-image">
-
-                <video
-                        class="about-video"
-                        autoplay
-                        muted
-                        loop
-                        playsinline>
-
-                    <source
-                            src="videos/vid3.mp4"
-                            type="video/mp4">
-
-                </video>
-
-            </div>
+<!-- steps -->
+<section class="steps10" id="process">
+    <div class="s10-wrap">
+        <div class="s10-top reveal">
+            <div><div class="eyebrow" data-en="The creative process" data-mk="Креативниот процес">The creative process</div>
+                <h2><span data-en="Your little creative<br><em>adventure.</em>" data-mk="Твојата мала креативна<br><em>авантура.</em>">Your little creative<br><em>adventure.</em></span></h2></div>
+            <p data-en="Hover over a step to open it, from a blank glass to something that is truly yours." data-mk="Помини со глушецот преку чекор за да го отвориш, од празна чаша до нешто навистина твое.">Hover over a step to open it, from a blank glass to something that is truly yours.</p>
         </div>
-
-
-
-        <div class="about-content reveal">
-
-            <p class="section-label"
-               data-en="About the workshop"
-               data-mk="За работилницата">
-                About the workshop
-            </p>
-
-
-            <h2 class="section-title"
-                data-en="A glass is your new canvas."
-                data-mk="Чашата е твоето ново платно.">
-
-                A glass is your
-                new canvas.
-
-            </h2>
-
-
-            <p class="section-text"
-               data-en="Welcome to an evening where creativity meets good company. During our Glass Painting workshop, you will transform a simple glass into something completely personal and unique."
-               data-mk="Добредојде на вечер каде креативноста се среќава со добро друштво. За време на нашата работилница за сликање на стакло, едноставната чаша ќе ја претвориш во нешто целосно лично и уникатно.">
-
-                Welcome to an evening where creativity meets
-                good company. During our Glass Painting workshop,
-                you will transform a simple glass into something
-                completely personal and unique.
-
-            </p>
-
-
-            <p class="section-text"
-               data-en="Whether you prefer delicate flowers, colorful patterns, abstract shapes or something fun and unexpected, there are no rules here."
-               data-mk="Без разлика дали преферираш нежни цвеќиња, шарени дезени, апстрактни форми или нешто забавно и неочекувано, тука нема правила.">
-
-                Whether you prefer delicate flowers, colorful
-                patterns, abstract shapes or something fun and
-                unexpected, there are no rules here.
-
-            </p>
-
-
-            <div class="about-note"
-                 data-en="You don't need experience. Just come and bring your imagination."
-                 data-mk="Не ти е потребно искуство. Само дојди и понеси ја твојата фантазија.">
-
-                You don't need experience.
-                Just come and bring
-                your imagination.
-
-            </div>
-
-
+        <div class="s10-panels reveal">
+            <article class="s10-panel on" tabindex="0"><img class="s10-bg" src="images/glass-painting/blankGlasses.png" alt=""><span class="s10-num">1</span><div class="s10-content"><small data-en="START HERE" data-mk="ПОЧНИ ТУКА">START HERE</small><h3 data-en="Choose your glass" data-mk="Избери ја чашата">Choose your glass</h3><p data-en="Pick your blank canvas and imagine what it could become." data-mk="Избери го своето празно платно и замисли во што може да се претвори.">Pick your blank canvas and imagine what it could become.</p></div></article>
+            <article class="s10-panel" tabindex="0"><img class="s10-bg" src="images/glass-painting/wallInspo.png" alt=""><span class="s10-num">2</span><div class="s10-content"><small data-en="GET INSPIRED" data-mk="НАЈДИ ИНСПИРАЦИЈА">GET INSPIRED</small><h3 data-en="Find your inspiration" data-mk="Пронајди ја својата инспирација">Find your inspiration</h3><p data-en="Explore patterns, palettes and ideas that feel like you." data-mk="Истражи дезени, палети и идеи што те претставуваат.">Explore patterns, palettes and ideas that feel like you.</p></div></article>
+            <article class="s10-panel" tabindex="0"><img class="s10-bg" src="images/glass-painting/painting.jpg" alt=""><span class="s10-num">3</span><div class="s10-content"><small data-en="MAKE MAGIC" data-mk="СОЗДАЈ МАГИЈА">MAKE MAGIC</small><h3 data-en="Paint &amp; create" data-mk="Сликај и создавај">Paint &amp; create</h3><p data-en="Bring your design to life, one brushstroke at a time." data-mk="Оживеј го дизајнот, потег по потег со четката.">Bring your design to life, one brushstroke at a time.</p></div></article>
+            <article class="s10-panel" tabindex="0"><img class="s10-bg" src="images/glass-painting/paintedGlasses.png" alt=""><span class="s10-num">4</span><div class="s10-content"><small data-en="TAKE IT HOME" data-mk="ПОНЕСИ ЈА ДОМА">TAKE IT HOME</small><h3 data-en="Keep your creation" data-mk="Зачувај ја креацијата">Keep your creation</h3><p data-en="Leave with a one-of-a-kind piece made by you." data-mk="Замини со уникатно дело создадено од тебе.">Leave with a one-of-a-kind piece made by you.</p></div></article>
         </div>
-
-
     </div>
-
 </section>
 
+<!-- glass designs -->
+<section class="designs9" id="designs">
+    <div class="d9-grid">
+        <div class="d9-left">
+            <div class="d9-hero">
+                <h2><span data-en="Find a design,<br>and make it yours" data-mk="Најди дизајн,<br>и направи го свој">Find a design,<br>and make it yours</span></h2>
+                <p data-en="Every glass starts as an idea. Browse a few styles for inspiration, then paint your own version with your colours and your little details." data-mk="Секоја чаша започнува како идеја. Разгледај неколку стилови за инспирација, па насликај своја верзија со твои бои и мали детали.">Every glass starts as an idea. Browse a few styles for inspiration, then paint your own version with your colours and your little details.</p>
+            </div>
+            <div class="d9-strip">
+                <div><h3 data-en="Come to the workshop" data-mk="Дојди на работилница">Come to the workshop</h3><p data-en="Pick a date, bring your friends and paint a glass of your own." data-mk="Избери датум, доведи другари и насликај своја чаша.">Pick a date, bring your friends and paint a glass of your own.</p></div>
+                <a class="circle9" href="reserve.html"><span data-en="Book" data-mk="Резервирај">Book</span></a>
+            </div>
+        </div>
+        <div class="d9-rail">
+            <button class="circle9 d9-next" id="d9Next" type="button" data-en="Next" data-mk="Следно">Next</button>
+            <div class="d9-track" id="d9Track">
+                <article class="d9-card"><div class="d9-img"><img src="images/glass-painting/paintedGlass.png" alt="Blush florals"></div><div class="d9-name" data-en="Glass design: Blush florals" data-mk="Дизајн: Румени цветови">Glass design: Blush florals</div><div class="d9-row"><span data-en="Inspiration" data-mk="Инспирација">Inspiration</span><a class="circle9" href="reserve.html" aria-label="Book this design">+</a></div></article>
+                <article class="d9-card"><div class="d9-img"><img style="filter:hue-rotate(90deg) saturate(.9)" src="images/glass-painting/paintedGlass.png" alt="Sage garden"></div><div class="d9-name" data-en="Glass design: Sage garden" data-mk="Дизајн: Зелена градина">Glass design: Sage garden</div><div class="d9-row"><span data-en="Inspiration" data-mk="Инспирација">Inspiration</span><a class="circle9" href="reserve.html" aria-label="Book this design">+</a></div></article>
+                <article class="d9-card"><div class="d9-img"><img style="filter:hue-rotate(200deg) saturate(1.1)" src="images/glass-painting/paintedGlass.png" alt="Midnight blue"></div><div class="d9-name" data-en="Glass design: Midnight blue" data-mk="Дизајн: Полноќно сино">Glass design: Midnight blue</div><div class="d9-row"><span data-en="Inspiration" data-mk="Инспирација">Inspiration</span><a class="circle9" href="reserve.html" aria-label="Book this design">+</a></div></article>
+                <article class="d9-card"><div class="d9-img"><img style="filter:hue-rotate(-35deg) saturate(1.3)" src="images/glass-painting/paintedGlass.png" alt="Golden hour"></div><div class="d9-name" data-en="Glass design: Golden hour" data-mk="Дизајн: Златен час">Glass design: Golden hour</div><div class="d9-row"><span data-en="Inspiration" data-mk="Инспирација">Inspiration</span><a class="circle9" href="reserve.html" aria-label="Book this design">+</a></div></article>
+                <article class="d9-card"><div class="d9-img"><img src="images/glass-painting/cleanGlass.png" alt="Your own idea"></div><div class="d9-name" data-en="Glass design: Your own idea" data-mk="Дизајн: Твоја идеја">Glass design: Your own idea</div><div class="d9-row"><span data-en="Inspiration" data-mk="Инспирација">Inspiration</span><a class="circle9" href="reserve.html" aria-label="Book this design">+</a></div></article>
+            </div>
+        </div>
+    </div>
+</section>
 
-
-<!-- ------------- step-by-step part ------------------ -->
-
-<section class="steps-section">
-
+<section class="the-process-section" id="the-process">
     <div class="container">
-
-
-        <div class="steps-header reveal">
-
-            <p class="section-label"
-               data-en="The creative process"
-               data-mk="Креативниот процес">
-                The creative process
-            </p>
-
-
-            <h2 class="section-title"
-                data-en="Step by step, sip by sip."
-                data-mk="Чекор по чекор, голтка по голтка.">
-
-                Step by step,
-                sip by sip.
-
-            </h2>
-
-        </div>
-
-
-
-        <div class="steps-wrapper">
-
-
-            <!-- STEP 1 -->
-
-            <div class="step-item reveal">
-
-
-                <div class="step-number">
-                    01
-                </div>
-
-
-                <div class="step-text">
-
-                    <h3
-                            data-en="Choose your glass"
-                            data-mk="Избери ја твојата чаша">
-                        Choose your glass
-                    </h3>
-
-                    <p
-                            data-en="Start by choosing your canvas. Each participant receives a glass ready to be transformed into something unique."
-                            data-mk="Започни со избор на твоето платно. Секој учесник добива чаша подготвена да се претвори во нешто уникатно.">
-
-                        Start by choosing your canvas.
-                        Each participant receives a glass ready
-                        to be transformed into something unique.
-
-                    </p>
-
-                </div>
-
-
-                <div class="step-image">
-
-                    <img
-                            src="images/glass-painting/gp-step1.png"
-                            alt="Choosing a glass">
-
-                </div>
-
-            </div>
-
-
-
-            <!-- STEP 2 -->
-
-            <div class="step-item reveal">
-
-
-                <div class="step-number">
-                    02
-                </div>
-
-
-                <div class="step-text">
-
-                    <h3
-                            data-en="Find your inspiration"
-                            data-mk="Пронајди ја твојата инспирација">
-                        Find your inspiration
-                    </h3>
-
-                    <p
-                            data-en="Explore colors, patterns and inspiration cards or bring your own creative idea."
-                            data-mk="Истражувај бои, дезени и картички со инспирација или донеси ја твојата сопствена креативна идеја.">
-
-                        Explore colors, patterns and inspiration
-                        cards or bring your own creative idea.
-
-                    </p>
-
-                </div>
-
-
-                <div class="step-image">
-
-                    <img
-                            src="images/glass-painting/gp-step2.png"
-                            alt="Glass painting inspiration">
-
-                </div>
-
-            </div>
-
-
-
-            <!-- STEP 3 -->
-
-            <div class="step-item reveal">
-
-
-                <div class="step-number">
-                    03
-                </div>
-
-
-                <div class="step-text">
-
-                    <h3
-                            data-en="Paint & create"
-                            data-mk="Сликај и креирај">
-                        Paint & create
-                    </h3>
-
-                    <p
-                            data-en="Grab your brushes and start bringing your design to life while enjoying the relaxed studio atmosphere."
-                            data-mk="Земи ги твоите четки и започни да го оживуваш твојот дизајн додека уживаш во опуштената атмосфера на студиото.">
-
-                        Grab your brushes and start bringing
-                        your design to life while enjoying the
-                        relaxed studio atmosphere.
-
-                    </p>
-
-                </div>
-
-
-                <div class="step-image">
-
-                    <img
-                            src="images/glass-painting/gp-step3.png"
-                            alt="Painting glass">
-
-                </div>
-
-            </div>
-
-
-
-            <!-- STEP 4 -->
-
-            <div class="step-item reveal">
-
-
-                <div class="step-number">
-                    04
-                </div>
-
-
-                <div class="step-text">
-
-                    <h3
-                            data-en="Make memories"
-                            data-mk="Создавај спомени">
-                        Make memories
-                    </h3>
-
-                    <p
-                            data-en="Take photos, enjoy the moment and leave with a handmade glass that reminds you of your creative evening."
-                            data-mk="Фотографирај се, уживај во моментот и замини со рачно изработена чаша која ќе те потсетува на твојата креативна вечер.">
-
-                        Take photos, enjoy the moment and leave
-                        with a handmade glass that reminds you
-                        of your creative evening.
-
-                    </p>
-
-                </div>
-
-
-                <div class="step-image">
-
-                    <img
-                            src="images/glass-painting/gp-step4.png"
-                            alt="Finished painted glasses">
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ------------- included part ------------------ --> -->
-
-<section class="included">
-
-    <div class="container">
-
-
-        <div class="included-heading reveal">
-
-            <p class="section-label"
-               data-en="Everything is prepared"
-               data-mk="Сè е подготвено">
-                Everything is prepared
-            </p>
-
-
-            <h2 class="section-title"
-                data-en="What's included?"
-                data-mk="Што е вклучено?">
-
-                What's included?
-
-            </h2>
-
-        </div>
-
-
-
-        <div class="included-grid">
-
-
-            <!-- CARD 1 -->
-
-            <div class="included-card zoom">
-
-                <div class="card-number">
-                    01
-                </div>
-
-
-                <h3
-                        data-en="Your glass"
-                        data-mk="Твојата чаша">
-                    Your glass
-                </h3>
-
-
-                <p
-                        data-en="A beautiful glass ready to become your personal piece of art."
-                        data-mk="Прекрасна чаша подготвена да стане твоето лично уметничко дело.">
-
-                    A beautiful glass ready to become
-                    your personal piece of art.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- CARD 2 -->
-
-            <div class="included-card zoom">
-
-                <div class="card-number">
-                    02
-                </div>
-
-
-                <h3
-                        data-en="All materials"
-                        data-mk="Сите материјали">
-                    All materials
-                </h3>
-
-
-                <p
-                        data-en="Glass paints, brushes, palettes and everything you need to create."
-                        data-mk="Бои за стакло, четки, палети и сè што ти е потребно за креирање.">
-
-                    Glass paints, brushes, palettes
-                    and everything you need to create.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- CARD 3 -->
-
-            <div class="included-card zoom">
-
-                <div class="card-number">
-                    03
-                </div>
-
-
-                <h3
-                        data-en="Creative guidance"
-                        data-mk="Креативно водство">
-                    Creative guidance
-                </h3>
-
-
-                <p
-                        data-en="Friendly help and guidance whenever you need inspiration or assistance."
-                        data-mk="Пријателска помош и насоки секогаш кога ти е потребна инспирација или помош.">
-
-                    Friendly help and guidance whenever
-                    you need inspiration or assistance.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- CARD 4 -->
-
-            <div class="included-card zoom">
-
-                <div class="card-number">
-                    04
-                </div>
-
-
-                <h3
-                        data-en="Inspiration"
-                        data-mk="Инспирација">
-                    Inspiration
-                </h3>
-
-
-                <p
-                        data-en="Design ideas, color combinations and examples to spark your creativity."
-                        data-mk="Идеи за дизајн, комбинации на бои и примери кои ќе ја поттикнат твојата креативност.">
-
-                    Design ideas, color combinations
-                    and examples to spark your creativity.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- CARD 5 -->
-
-            <div class="included-card zoom">
-
-                <div class="card-number">
-                    05
-                </div>
-
-
-                <h3
-                        data-en="Good atmosphere"
-                        data-mk="Добра атмосфера">
-                    Good atmosphere
-                </h3>
-
-
-                <p
-                        data-en="Music, laughter, creativity and an evening spent doing something different."
-                        data-mk="Музика, смеа, креативност и вечер помината правејќи нешто поразлично.">
-
-                    Music, laughter, creativity and
-                    an evening spent doing something different.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- CARD 6 -->
-
-            <div class="included-card zoom">
-
-                <div class="card-number">
-                    06
-                </div>
-
-
-                <h3
-                        data-en="Your creation"
-                        data-mk="Твојата креација">
-                    Your creation
-                </h3>
-
-
-                <p
-                        data-en="At the end of the workshop, your handmade glass goes home with you."
-                        data-mk="На крајот од работилницата, твојата рачно изработена чаша оди дома со тебе.">
-
-                    At the end of the workshop,
-                    your handmade glass goes home with you.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ------------- small galery ------------------ -->
-
-<section class="gallery">
-
-    <div class="container">
-
-
-        <div class="gallery-header reveal">
-
-
+        <div class="process-intro reveal">
             <div>
-
-                <p class="section-label"
-                   data-en="A little inspiration"
-                   data-mk="Малку инспирација">
-                    A little inspiration
-                </p>
-
-
-                <h2 class="section-title"
-                    data-en="Made by creativity."
-                    data-mk="Создадено со креативност.">
-                    Made by creativity.
-                </h2>
-
+                <div class="eyebrow" data-en="Behind the brushstrokes" data-mk="Зад потезите со четка">Behind the brushstrokes</div>
+                <h2><span data-en="The Process" data-mk="Процесот">The Process</span></h2>
             </div>
-
-
-            <p class="section-text"
-               data-en="Every glass is different. That's what makes each workshop completely unique."
-               data-mk="Секоја чаша е различна. Токму тоа ја прави секоја работилница целосно уникатна.">
-
-                Every glass is different.
-                That's what makes each workshop
-                completely unique.
-
-            </p>
-
-
+            <p data-en="A little peek into the making: the colours, the details, and the joy of creating something by hand." data-mk="Мал поглед зад процесот: боите, деталите и радоста да создадеш нешто со свои раце.">A little peek into the making: the colours, the details, and the joy of creating something by hand.</p>
         </div>
-
-
-
-        <div class="gallery-grid">
-
-
-            <div class="gallery-image">
-
-                <img
-                        src="images/glass-painting/glass-gallery-1.png"
-                        alt="Painted glass">
-
-            </div>
-
-
-            <div class="gallery-image">
-
-                <img
-                        src="images/glass-painting/glass-gallery-2.png"
-                        alt="Glass painting workshop">
-
-            </div>
-
-
-            <div class="gallery-image">
-
-                <img
-                        src="images/glass-painting/glass-gallery-3.png"
-                        alt="Creative workshop">
-
-            </div>
-
-
+        <div class="process-filmstrip reveal">
+            <article class="process-video-card process-video-card-one">
+                <div class="process-video-frame">
+                    <video controls preload="metadata"  aria-label="Glass painting process video one">
+                        <source src="videos/vid2.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                    <span class="video-frame-note" data-en="THE LITTLE DETAILS" data-mk="МАЛИТЕ ДЕТАЛИ">THE LITTLE DETAILS</span>
+                </div>
+                <div class="video-card-caption"><span class="caption-dash"></span><div><h3 data-en="Color & inspiration" data-mk="Бои и инспирација">Colour &amp; inspiration</h3><p data-en="Choosing a palette and finding the little details that make each design special." data-mk="Избор на палета и откривање детали што го прават секој дизајн посебен.">Choosing a palette and finding the little details that make each design special.</p></div></div>
+            </article>
+            <article class="process-video-card process-video-card-two">
+                <div class="process-video-frame">
+                    <video controls preload="metadata" aria-label="Glass painting process video two">
+                        <source src="videos/vid3.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                    <span class="video-frame-note" data-en="MADE BY HAND" data-mk="СОЗДАДЕНО РАЧНО">MADE BY HAND</span>
+                </div>
+                <div class="video-card-caption"><span class="caption-dash"></span><div><h3 data-en="From clear to colorful" data-mk="Од проѕирно до шарено">From clear to colourful</h3><p data-en="Watch a simple glass turn into a personal keepsake, one brushstroke at a time." data-mk="Погледни како обична чаша станува личен спомен, потег по потег со четката.">Watch a simple glass turn into a personal keepsake, one brushstroke at a time.</p></div></div>
+            </article>
         </div>
-
-
     </div>
-
 </section>
 
-
-
-<!-- ------------- cta ------------------ -->
+<section class="gallery" id="gallery">
+    <div class="container gallery-container">
+        <div class="gallery-heading reveal">
+            <div><div class="eyebrow" data-en="A little inspiration" data-mk="Малку инспирација">A little inspiration</div><h2><span data-en="Every glass has<br><em>a story to tell.</em>" data-mk="Секоја чаша има<br><em>своја приказна.</em>">Every glass has<br><em>a story to tell.</em></span></h2></div>
+            <p data-en="Start with an idea, then let the little details take you somewhere new. Every glass is different — that’s the beauty of it." data-mk="Започни со идеја, а потоа дозволи малите детали да те одведат во нова насока. Секоја чаша е различна — токму во тоа е убавината.">Start with an idea, then let the little details take you somewhere new. Every glass is different — that’s the beauty of it.</p>
+        </div>
+        <div class="gallery-grid gallery-expanded reveal">
+            <figure class="gallery-tile gallery-feature"><img src="images/glass-painting/glass-gallery-1.png" alt="The small details that matter."><figcaption data-en="Details" data-mk="Детали">Details</figcaption></figure>
+            <figure class="gallery-tile gallery-detail gallery-wide"><img src="images/glass-painting/glass-gallery-2.png" alt="Painting a glass by hand"><figcaption data-en="Made by hand" data-mk="Рачно изработено">Made by hand</figcaption></figure>
+            <figure class="gallery-tile gallery-detail"><img src="images/glass-painting/workingTable.jpg" alt="A clear glass ready to decorate"><figcaption data-en="THE DECOR" data-mk="Декорацијата">THE DECOR</figcaption></figure>
+            <figure class="gallery-tile gallery-detail"><img src="images/glass-painting/colorInspo.jpg" alt="Colour and design inspiration"><figcaption data-en="Colour inspiration" data-mk="Инспирација за бои">Colour inspiration</figcaption></figure>
+            <figure class="gallery-tile gallery-detail"><img src="images/glass-painting/theResult.png" alt="A finished hand-painted glass"><figcaption data-en="Your little masterpiece" data-mk="Твоето мало ремек-дело">Your little masterpiece</figcaption></figure>
+            <figure class="gallery-tile gallery-detail"><img src="images/glass-painting/peoplePainting.png" alt="Glass ready for the creative process"><figcaption data-en="The first step" data-mk="Првиот чекор">The first step</figcaption></figure>
+            <figure class="gallery-tile gallery-detail"><img src="images/glass-painting/blueflowers.png" alt="Hand-painted glass"><figcaption data-en="Painted with love" data-mk="Насликано со љубов">Painted with love</figcaption></figure>
+        </div>
+    </div>
+</section>
 
 <section class="cta">
-
-    <div class="cta-content reveal">
-
-
-        <p class="section-label"
-           style="color:#d8c9b8;"
-           data-en="Ready to create?"
-           data-mk="Подготвенa за креативност?">
-
-            Ready to create?
-
-        </p>
-
-
-        <h2
-                data-en="Your masterpiece starts with one brushstroke."
-                data-mk="Твоето<br/>ремек-дело започнува со еден потег со четката.">
-
-            Your masterpiece
-            starts with
-            one brushstroke.
-
-        </h2>
-
-
-        <p
-                data-en="Gather your friends, choose a date and join us for an evening full of creativity, color and good memories."
-                data-mk="Собери ги пријателите, избери датум и придружи ни се на вечер исполнета со креативност, бои и убави спомени.">
-
-            Gather your friends, choose a date
-            and join us for an evening full of
-            creativity, color and good memories.
-
-        </p>
-
-
-        <a
-                href="reserve.html"
-                class="cta-button"
-                data-en="Reserve your spot"
-                data-mk="Резервирај го твоето место">
-
-            Reserve your spot
-
-        </a>
-
-
+    <span class="cta-orbit cta-orbit-one"></span><span class="cta-orbit cta-orbit-two"></span>
+    <div class="container reveal">
+        <div class="eyebrow" data-en="Your creative moment awaits" data-mk="Твојот креативен момент те чека">Your creative moment awaits</div>
+        <h2><span data-en="Ready to create<br><em>something beautiful?</em>" data-mk="Подготвен/а да создадеш<br><em>нешто прекрасно?</em>">Ready to create<br><em>something beautiful?</em></span></h2>
+        <p data-en="Gather your favourite people, pick up a brush and turn an ordinary afternoon into a memory worth keeping." data-mk="Собери ги омилените луѓе, земи четка и претвори едно обично попладне во спомен што вреди да се зачува.">Gather your favourite people, pick up a brush and turn an ordinary afternoon into a memory worth keeping.</p>
+        <a class="btn-primary" href="reserve.html" data-en="Book your workshop" data-mk="Резервирај работилница">Book your workshop</a>
+        <small class="cta-footnote" data-en="A little colour. A lot of you." data-mk="Малку боја. Многу тебе.">A little colour. A lot of you.</small>
     </div>
-
 </section>
 
-<!---------------------FOOTER------------------------>
-
 <footer class="site-footer">
-
-
     <div class="footer-container">
-
-
-
         <div class="footer-top">
 
-
+            <!-- brand -->
             <div class="footer-brand">
-
                 <a href="home.html" class="footer-logo">
-
-                    <img
-                            class="logo-light"
-                            src="images/home/logo-dark.png"
-                            alt="Sip & Create Logo"
-                    >
-
-                    <img
-                            class="logo-dark"
-                            src="images/home/logo-light.png"
-                            alt="Sip & Create Logo"
-                    >
-
+                    Sip &amp; Create
+                    <span>SKOPJE</span>
                 </a>
-
-
 
                 <p class="footer-description"
                    data-en="Creative workshops, good company, and a little something to make."
-                   data-mk="Креативни работилници, добро друштво и нешто уникатно што ќе го создадете."
-                >
-
-                    Creative workshops, good company,
-                    and a little something to make.
-
+                   data-mk="Креативни работилници, добро друштво и нешто уникатно што ќе го создадете.">
+                    Creative workshops, good company, and a little something to make.
                 </p>
-
-
             </div>
 
-
-
+            <!-- explore -->
             <div class="footer-column">
-
                 <p class="footer-title"
                    data-en="EXPLORE"
-                   data-mk="ИСТРАЖИ"
-                >
-                    EXPLORE
-                </p>
+                   data-mk="ИСТРАЖИ">EXPLORE</p>
 
-                <a href="home.html"
-                   data-en="Home"
-                   data-mk="Почетна"
-                >
-                    Home
-                </a>
-
-                <a href="#"
-                   data-en="Workshops"
-                   data-mk="Работилници"
-                >
-                    Workshops
-                </a>
-
-                <a href="#"
+                <a href="about_us.html"
                    data-en="About Us"
-                   data-mk="За нас"
-                >
-                    About Us
-                </a>
-
-                </a>
+                   data-mk="За нас">About Us</a>
 
                 <a href="pasta_workshop.html"
-                   data-en="Pasta making"
-                   data-mk="Правење тестенини"
-                >
-                    Pasta making
-                </a>
+                   data-en="Pasta workshop"
+                   data-mk="Тестенини работилница">Workshops</a>
 
                 <a href="glass-painting.html"
                    data-en="Glass painting"
-                   data-mk="Сликање на стакло"
-                >
-                    Glass Painting
-                </a>
+                   data-mk="Сликање на чаша">Workshops</a>
 
-                <a href="#"
-                   data-en="Ceramics decoration"
-                   data-mk="Декорација на керамика"
-                >
-                    Ceramics decoration
-                </a>
+                <a href="ceramics_decoration.html"
+                   data-en="Ceramics decoration "
+                   data-mk="Декорација на керамика">Workshops</a>
 
                 <a href="gallery.html"
                    data-en="Gallery"
-                   data-mk="Галерија"
-                >
-                    Gallery
-                </a>
+                   data-mk="Галерија">Gallery</a>
 
                 <a href="contact.html"
                    data-en="Contact"
-                   data-mk="Контакт"
-                >
-                    Contact
-                </a>
-
-
+                   data-mk="Контакт">Contact</a>
             </div>
 
-
-
-
+            <!-- visit us -->
             <div class="footer-column">
-
-
                 <p class="footer-title"
                    data-en="VISIT US"
-                   data-mk="ПОСЕТЕТЕ НÈ"
-                >
-                    VISIT US
-                </p>
+                   data-mk="ПОСЕТЕТЕ НÈ">VISIT US</p>
 
-
-                <p>
-
+                <p class="footer-address">
                     Partizanska 12A<br>
-
                     1000 Skopje<br>
-
                     North Macedonia
-
                 </p>
 
-
-                <a
-                        href="mailto:sipandcreate@gmail.mk"
-                >
-
+                <a href="mailto:sipandcreate@gmail.mk">
                     sipandcreate@gmail.mk
-
                 </a>
-
-
-                <a
-                        href="tel:+38970123456"
-                >
-
-                    +389 70 123 456
-
-                </a>
-
-
             </div>
 
-
-
-            <!-- ================= social media  ================= -->
-
+            <!-- follow us -->
             <div class="footer-column">
-
-
                 <p class="footer-title"
-                   data-en="FOLLOW ALONG"
-                   data-mk="СЛЕДЕТЕ НÈ"
-                >
-                    FOLLOW ALONG
-                </p>
-
+                   data-en="FOLLOW US"
+                   data-mk="СЛЕДЕТЕ НÈ">FOLLOW US</p>
 
                 <div class="social-links">
-
-
-                    <a
-                            href="https://www.instagram.com/sipandcreate.skopje/"
-                            aria-label="Instagram"
-                    >
-
+                    <a href="https://www.instagram.com/sipandcreate.skopje/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Instagram">
                         <i class="bi bi-instagram"></i>
-
+                        <span>Instagram</span>
                     </a>
 
-
-
-                    <a
-                            href="https://www.facebook.com/sipandcreate.skopje/"
-                            aria-label="Facebook"
-                    >
-
+                    <a href="https://www.facebook.com/sipandcreate.skopje/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook">
                         <i class="bi bi-facebook"></i>
-
+                        <span>Facebook</span>
                     </a>
 
-
-
-                    <a
-                            href="https://www.tiktok.com/@sipandcreate.skopje"
-                            aria-label="TikTok"
-                    >
-
+                    <a href="https://www.tiktok.com/@sipandcreate.skopje"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="TikTok">
                         <i class="bi bi-tiktok"></i>
-
+                        <span>TikTok</span>
                     </a>
-
-
                 </div>
-
-
             </div>
-
 
         </div>
 
-
+        <!-- bottom -->
         <div class="footer-bottom">
-
-
             <p
-                    data-en="© 2026 Sip & Create. All rights reserved."
-                    data-mk="© 2026 Sip & Create. Сите права се задржани."
-            >
-
-                © 2026 Sip & Create.
-                All rights reserved.
-
+                    data-en="© 2026 Sip &amp; Create. All rights reserved."
+                    data-mk="© 2026 Sip &amp; Create. Сите права се задржани.">
+                © 2026 Sip &amp; Create. All rights reserved.
             </p>
-
 
             <p
                     data-en="Made for creative moments."
-                    data-mk="Создадено за креативни моменти."
-            >
-
+                    data-mk="Создадено за креативни моменти.">
                 Made for creative moments.
-
             </p>
-
-
         </div>
-
-
     </div>
-
-
 </footer>
 
 <script src="script.js"></script>
-<script src="language.js"></script>
 <script src="glass-painting.js"></script>
+<script src="language.js"></script>
+<script src="cookies.js"></script>
 
 
 </body>
-
 </html>

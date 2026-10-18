@@ -1,6 +1,4 @@
-/* =========================================================
-   WINE BUTTON / DARK MODE TOGGLE (shared across all pages)
-========================================================= */
+/* wine button za site stranici */
 
 const wineButton = document.getElementById("wineButton");
 const wineOverlay = document.querySelector(".wine-overlay");
@@ -57,7 +55,7 @@ if(wineButton && wineOverlay){
 
             document.body.classList.toggle("dark");
 
-            /* SAVE THEME */
+            /* save theme */
             localStorage.setItem(
                 "theme",
                 document.body.classList.contains("dark")
@@ -83,61 +81,81 @@ if(wineButton && wineOverlay){
 
 
 
+/* home: hero text */
 
-/* =========================================================
-   HOME —  HERO TEXT
-========================================================= */
+const changingText = document.getElementById("changing-text");
 
-const changingText =
-    document.getElementById("changing-text");
+if (changingText) {
 
-
-if(changingText){
-
-    const phrases = [
-        "Craft.",
-        "Connect.",
-        "Sip.",
-        "Create.",
-        "Paint.",
-        "Repeat!"
-    ];
+    const phrases = {
+        en: [
+            "Craft.",
+            "Connect.",
+            "Sip.",
+            "Create.",
+            "Paint.",
+            "Repeat!"
+        ],
+        mk: [
+            "Твори.",
+            "Поврзи се.",
+            "Наздрави.",
+            "Создавај.",
+            "Сликај.",
+            "Повтори!"
+        ]
+    };
 
     let current = 0;
 
+    function getLanguage() {
+        const activeButton = document.querySelector(".lang-button.active");
 
-    setInterval(()=>{
+        if (activeButton) {
+            return activeButton.dataset.lang === "mk" ? "mk" : "en";
+        }
 
+        return document.documentElement.lang === "mk" ? "mk" : "en";
+    }
+
+    function showCurrentPhrase() {
+        const language = getLanguage();
+
+        changingText.textContent = phrases[language][current];
+    }
+
+    document.querySelectorAll(".lang-button").forEach(button => {
+        button.addEventListener("click", function () {
+            current = 0;
+            showCurrentPhrase();
+        });
+    });
+
+    showCurrentPhrase();
+
+    setInterval(() => {
         changingText.style.opacity = "0";
         changingText.style.transform = "translateY(35px)";
 
+        setTimeout(() => {
+            const language = getLanguage();
 
-        setTimeout(()=>{
+            current = (current + 1) % phrases[language].length;
 
-            current++;
-
-            if(current >= phrases.length){
-                current = 0;
-            }
-
-            changingText.textContent = phrases[current];
+            changingText.textContent = phrases[language][current];
 
             changingText.style.opacity = "1";
             changingText.style.transform = "translateY(0)";
+        }, 800);
 
-        },800);
-
-    },3000);
-
+    }, 3000);
 }
 
 
 
 
 
-/* =========================================================
-   HOME — ORBIT RESPONSIVE SCALE
-========================================================= */
+/* home: orbit responsive scale */
 
 const orbitScale =
     document.querySelector(".orbit-scale");
@@ -172,9 +190,7 @@ if(orbitScale){
 }
 
 
-/* =========================================================
-   HOME — STORY IMAGE ZOOM ON SCROLL
-========================================================= */
+/* home: story image zoom on scroll */
 
 const storySection =
     document.querySelector(".story-section");
@@ -242,9 +258,7 @@ if(storySection){
 
 
 
-/* =========================================================
-   HOME — TESTIMONIAL CAROUSEL
-========================================================= */
+/* home: testimonial carousel */
 
 const testimonialTrack =
     document.getElementById("testimonialTrack");
@@ -413,7 +427,7 @@ if(testimonialTrack) {
 
 
 
-// FAQ flipping
+// faq flipping
 
 function flipCard(card) {
     card.classList.toggle("flipped");
@@ -421,3 +435,105 @@ function flipCard(card) {
 
 
 
+/* responsive navbar */
+
+(() => {
+    const navbar = document.querySelector(".navbar");
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const workshopsItem = document.querySelector(".nav-dropdown");
+    const workshopsLink = document.querySelector(".workshops-link");
+
+    if (!navbar || !navToggle || !navLinks) return;
+
+    const mobileNav = window.matchMedia("(max-width: 1050px)");
+
+    // close the mobile menu
+    function closeMenu() {
+        navLinks.classList.remove("is-open");
+
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+
+        if (workshopsItem) {
+            workshopsItem.classList.remove("submenu-open");
+        }
+
+        if (workshopsLink) {
+            workshopsLink.setAttribute("aria-expanded", "false");
+        }
+    }
+
+    // open and close the hamburger menu
+    navToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("is-open");
+
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+        navToggle.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
+    });
+
+    // workshops submenu
+    if (workshopsLink && workshopsItem) {
+        workshopsLink.setAttribute("aria-expanded", "false");
+
+        workshopsLink.addEventListener("click", (event) => {
+            if (!mobileNav.matches) {
+
+                return;
+            }
+
+            event.preventDefault();
+
+            const isOpen =
+                workshopsItem.classList.toggle("submenu-open");
+
+            workshopsLink.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+        });
+    }
+
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+        if (link === workshopsLink) return;
+
+        link.addEventListener("click", () => {
+            if (mobileNav.matches) {
+                closeMenu();
+            }
+        });
+    });
+
+
+    document.addEventListener("click", (event) => {
+        if (
+            mobileNav.matches &&
+            !navbar.contains(event.target)
+        ) {
+            closeMenu();
+        }
+    });
+
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && mobileNav.matches) {
+            closeMenu();
+            navToggle.focus();
+        }
+    });
+
+
+    mobileNav.addEventListener("change", () => {
+        closeMenu();
+        navLinks.style.removeProperty("display");
+    });
+})();

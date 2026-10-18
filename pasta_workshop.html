@@ -7,10 +7,13 @@
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pasta_workshop.css">
+    <link rel="stylesheet" href="cookies.css">
 
-    <!-- Bootstrap Icons -->
+    <!-- bootstrap icons -->
 
     <link
             rel="stylesheet"
@@ -21,7 +24,7 @@
 <body>
 
 
-<!-- NAVBAR -->
+<!-- nav bar -->
 <nav class="navbar">
 
     <a href="home.html" class="logo">
@@ -29,8 +32,37 @@
         <span>SKOPJE</span>
     </a>
 
+    <!-- side controls -->
+    <div class="side-controls">
 
-    <ul class="nav-links">
+        <div class="language-control lang-toggle">
+            <button class="lang-button active" data-lang="en">EN</button>
+            <div class="control-divider"></div>
+            <button class="lang-button" data-lang="mk">MK</button>
+        </div>
+
+        <button class="side-wine-button" id="wineButton" aria-label="Toggle dark mode">
+            <img src="images/home/wine-glass.png" alt="Wine glass">
+        </button>
+
+    </div>
+
+
+    <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+
+    <ul class="nav-links" id="primary-navigation">
         <li>
 
             <a
@@ -45,7 +77,7 @@
         <li>
 
             <a
-                    href="#"
+                    href="about_us.html"
                     data-en="About"
                     data-mk="За нас"
             >
@@ -133,60 +165,17 @@
 </nav>
 
 
-<!-- SIDE CONTROLS -->
-
-<div class="side-controls">
-
-    <!-- LANGUAGE -->
-
-    <div class="language-control">
-
-        <button
-                class="lang-button active"
-                data-lang="en"
-        >
-            EN
-        </button>
-
-        <div class="control-divider"></div>
-
-        <button
-                class="lang-button"
-                data-lang="mk"
-        >
-            MK
-        </button>
-
-    </div>
-
-
-    <!-- DARK MODE -->
-
-    <button
-            class="side-wine-button"
-            id="wineButton"
-            aria-label="Toggle dark mode"
-    >
-        <img
-                src="images/home/wine-glass.png"
-                alt="Wine glass"
-        >
-    </button>
-
-</div>
-
-
-
-
-<!-- WINE EFFECT -->
-
+<!-- vino efekt -->
 <div class="wine-overlay"></div>
 
 <div class="wine-message" id="wineMessage">
     <span id="wineMessageText"></span>
 </div>
 
-<!-- HERO -->
+
+
+
+<!-- hero -->
 <section class="hero">
     <div class="fork-animation">
         <img alt="Fork twirling handmade tagliatelle" class="fork-img-pasta" src="images/pasta_workshop/tagliatelle_fork_nobg.png"/>
@@ -213,7 +202,7 @@
     </div>
 </section>
 
-<!-- INTRO -->
+<!-- intro -->
 <section class="intro">
     <div class="container">
         <div class="intro-grid">
@@ -278,7 +267,9 @@
         </div>
     </div>
 </section>
-<!-- RECIPE -->
+
+
+<!-- cekori za receptot -->
 <section class="recipe">
     <div class="container">
         <div class="recipe-head reveal">
@@ -466,7 +457,7 @@
             </div>
         </div>
 
-        <!-- SPLIT -->
+        <!-- razdelba na dva vida na pasta -->
         <div class="recipe-fork reveal">
             <svg preserveaspectratio="none" viewbox="0 0 340 130">
                 <path d="M170,0 L170,35 C170,55 30,55 30,80 L30,130"></path>
@@ -478,7 +469,7 @@
             </div>
         </div>
 
-        <!-- PASTA CHOICE -->
+        <!-- izbor -->
         <div class="pasta-choice">
             <div class="pasta-switch reveal">
                 <button class="pasta-tab active" data-pasta="tagliatelle">
@@ -493,7 +484,7 @@
                 </button>
             </div>
 
-            <!-- TAGLIATELLE -->
+            <!-- tagliatelle -->
             <div class="pasta-panel active" id="tagliatelle">
                 <div class="pasta-panel-header reveal">
                     <h3>
@@ -564,7 +555,9 @@
                     </div>
                 </div>
             </div>
-            <!-- RAVIOLI -->
+
+
+            <!-- ravioli -->
             <div class="pasta-panel" id="ravioli">
                 <div class="pasta-panel-header reveal">
                     <h3>
@@ -641,7 +634,9 @@
         </div>
     </div>
 </section>
-<!--  ATMOSPHERE -->
+
+
+<!-- atmosfera -->
 <section class="atmosphere">
     <div class="container">
         <div class="atmosphere-head">
@@ -760,7 +755,9 @@
         </div>
     </div>
 </section>
-<!-- TAKE HOME -->
+
+
+<!-- take home -->
 <section class="take-home">
     <div class="container">
         <div class="take-home-inner">
@@ -793,7 +790,10 @@
         </div>
     </div>
 </section>
-<!-- FINAL -->
+
+
+
+<!-- final -->
 <section class="final">
     <div class="container">
         <div class="eyebrow">
@@ -818,252 +818,133 @@
 </section>
 
 
+<!-- footer -->
 
-<!---------------------FOOTER------------------------>
 
 <footer class="site-footer">
-
-
     <div class="footer-container">
-
-
-
         <div class="footer-top">
 
-
+            <!-- BRAND -->
             <div class="footer-brand">
-
                 <a href="home.html" class="footer-logo">
-
-                    <img
-                            class="logo-light"
-                            src="images/home/logo-dark.png"
-                            alt="Sip & Create Logo"
-                    >
-
-                    <img
-                            class="logo-dark"
-                            src="images/home/logo-light.png"
-                            alt="Sip & Create Logo"
-                    >
-
+                    Sip &amp; Create
+                    <span>SKOPJE</span>
                 </a>
-
-
 
                 <p class="footer-description"
                    data-en="Creative workshops, good company, and a little something to make."
-                   data-mk="Креативни работилници, добро друштво и нешто уникатно што ќе го создадете."
-                >
-
-                    Creative workshops, good company,
-                    and a little something to make.
-
+                   data-mk="Креативни работилници, добро друштво и нешто уникатно што ќе го создадете.">
+                    Creative workshops, good company, and a little something to make.
                 </p>
-
-
             </div>
 
-
-
+            <!-- explore -->
             <div class="footer-column">
-
                 <p class="footer-title"
                    data-en="EXPLORE"
-                   data-mk="ИСТРАЖИ"
-                >
-                    EXPLORE
-                </p>
+                   data-mk="ИСТРАЖИ">EXPLORE</p>
 
-                <a href="home.html"
-                   data-en="Home"
-                   data-mk="Почетна"
-                >
-                    Home
-                </a>
-                <a href="#"
+                <a href="about_us.html"
                    data-en="About Us"
-                   data-mk="За нас"
-                >
-                    About Us
-                </a>
+                   data-mk="За нас">About Us</a>
 
                 <a href="pasta_workshop.html"
-                   data-en="Pasta making"
-                   data-mk="Правење тестенини"
-                >
-                    Pasta making
-                </a>
+                   data-en="Pasta workshop"
+                   data-mk="Тестенини работилница">Workshops</a>
 
                 <a href="glass-painting.html"
                    data-en="Glass painting"
-                   data-mk="Сликање на стакло"
-                >
-                    Glass Painting
-                </a>
+                   data-mk="Сликање на чаша">Workshops</a>
 
-                <a href="#"
-                   data-en="Ceramics decoration"
-                   data-mk="Декорација на керамика"
-                >
-                    Ceramics decoration
-                </a>
+                <a href="ceramics_decoration.html"
+                   data-en="Ceramics decoration "
+                   data-mk="Декорација на керамика">Workshops</a>
 
                 <a href="gallery.html"
                    data-en="Gallery"
-                   data-mk="Галерија"
-                >
-                    Gallery
-                </a>
+                   data-mk="Галерија">Gallery</a>
 
                 <a href="contact.html"
                    data-en="Contact"
-                   data-mk="Контакт"
-                >
-                    Contact
-                </a>
-
-
+                   data-mk="Контакт">Contact</a>
             </div>
 
-
+            <!-- visit us -->
             <div class="footer-column">
-
-
                 <p class="footer-title"
                    data-en="VISIT US"
-                   data-mk="ПОСЕТЕТЕ НÈ"
-                >
-                    VISIT US
-                </p>
+                   data-mk="ПОСЕТЕТЕ НÈ">VISIT US</p>
 
-
-                <p>
-
+                <p class="footer-address">
                     Partizanska 12A<br>
-
                     1000 Skopje<br>
-
                     North Macedonia
-
                 </p>
 
-
-                <a
-                        href="mailto:sipandcreate@gmail.mk"
-                >
-
+                <a href="mailto:sipandcreate@gmail.mk">
                     sipandcreate@gmail.mk
-
                 </a>
-
-
-                <a
-                        href="tel:+38970123456"
-                >
-
-                    +389 70 123 456
-
-                </a>
-
-
             </div>
 
-
-
-            <!-- ================= social media  ================= -->
-
+            <!-- follow us -->
             <div class="footer-column">
-
-
                 <p class="footer-title"
-                   data-en="FOLLOW ALONG"
-                   data-mk="СЛЕДЕТЕ НÈ"
-                >
-                    FOLLOW ALONG
-                </p>
-
+                   data-en="FOLLOW US"
+                   data-mk="СЛЕДЕТЕ НÈ">FOLLOW US</p>
 
                 <div class="social-links">
-
-
-                    <a
-                            href="https://www.instagram.com/sipandcreate.skopje/"
-                            aria-label="Instagram"
-                    >
-
+                    <a href="https://www.instagram.com/sipandcreate.skopje/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Instagram">
                         <i class="bi bi-instagram"></i>
-
+                        <span>Instagram</span>
                     </a>
 
-
-
-                    <a
-                            href="https://www.facebook.com/sipandcreate.skopje/"
-                            aria-label="Facebook"
-                    >
-
+                    <a href="https://www.facebook.com/sipandcreate.skopje/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook">
                         <i class="bi bi-facebook"></i>
-
+                        <span>Facebook</span>
                     </a>
 
-
-
-                    <a
-                            href="https://www.tiktok.com/@sipandcreate.skopje"
-                            aria-label="TikTok"
-                    >
-
+                    <a href="https://www.tiktok.com/@sipandcreate.skopje"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="TikTok">
                         <i class="bi bi-tiktok"></i>
-
+                        <span>TikTok</span>
                     </a>
-
-
                 </div>
-
-
             </div>
-
 
         </div>
 
-
+        <!-- bottom -->
         <div class="footer-bottom">
-
-
             <p
-                    data-en="© 2026 Sip & Create. All rights reserved."
-                    data-mk="© 2026 Sip & Create. Сите права се задржани."
-            >
-
-                © 2026 Sip & Create.
-                All rights reserved.
-
+                    data-en="© 2026 Sip &amp; Create. All rights reserved."
+                    data-mk="© 2026 Sip &amp; Create. Сите права се задржани.">
+                © 2026 Sip &amp; Create. All rights reserved.
             </p>
-
 
             <p
                     data-en="Made for creative moments."
-                    data-mk="Создадено за креативни моменти."
-            >
-
+                    data-mk="Создадено за креативни моменти.">
                 Made for creative moments.
-
             </p>
-
-
         </div>
-
-
     </div>
-
-
 </footer>
 
 
 <script src="script.js"></script>
 <script src="pasta_workshop.js"></script>
 <script src="language.js"></script>
+<script src="cookies.js"></script>
+
 
 </body>
 </html>

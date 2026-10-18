@@ -1,7 +1,3 @@
-/* =========================================
-   ELEMENTS
-========================================= */
-
 const workshopSelect =
     document.getElementById("workshop");
 
@@ -313,7 +309,7 @@ function updateWorkshop(
 
 
     /*
-     * PRIVATE EVENT
+     * ako se izbere private event
      */
 
     if (
@@ -377,8 +373,7 @@ function updateWorkshop(
     ) {
 
         /*
-         * If user manually chooses
-         * Private Event, allow time selection.
+         * se dozvoluva biranje na vreme po zhelba
          */
 
     }

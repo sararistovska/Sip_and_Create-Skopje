@@ -1,3 +1,16 @@
+.logo {
+    font:400 30px "Playfair Display",serif;
+    font-weight: bold;
+    white-space:nowrap;
+    line-height:1.05;
+}
+.logo span {
+    display:block;
+    font:600 9px "DM Sans",sans-serif;
+    letter-spacing:4px;
+    margin-top:6px;
+}
+
 /* hero */
 .intro{
     min-height:92vh;
@@ -595,3 +608,31 @@ body.dark .photo-credit a{
 
 }
 
+
+
+/* background colors */
+
+/* light mode: alternating backgrounds */
+.intro {
+    background-color: #FAF7F2;
+}
+
+.gallery-card {
+    background-color: #EBE5DE;
+}
+
+.journal {
+    background-color: #FAF7F2;
+}
+
+.article-card {
+    background-color: #EBE5DE;
+}
+
+/* dark mode: unified background */
+body.dark .intro,
+body.dark .gallery-card,
+body.dark .journal,
+body.dark .article-card {
+    background-color: #151014;
+}
