@@ -629,6 +629,15 @@ body.dark .photo-credit a{
     background-color: #EBE5DE;
 }
 
+/* news section: inverted colors so it separates from the journal */
+.news {
+    background-color: #EBE5DE;
+}
+
+.news .article-card {
+    background-color: #FAF7F2;
+}
+
 /* dark mode: unified background */
 body.dark .intro,
 body.dark .gallery-card,
