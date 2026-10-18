@@ -1,0 +1,7 @@
+services:
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./web:/usr/share/nginx/html:ro
+    cpus: 0.25
+    mem_limit: 128m
